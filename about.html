@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ============================================================
+     FAST TRACK ORTHOPAEDIC CARE
+     About Page — Dr. Intekhab Alam
+     Theme: Consistent with index.html v2.0
+     ============================================================ -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Dr. Intekhab Alam — MBBS, MS Ortho (AMU). Ex Consultant Apollo, Max & Fortis. 10,000+ surgeries. Lucknow's leading orthopaedic surgeon." />
+  <title>About Dr. Intekhab Alam | Fast Track Orthopaedic Care</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- BOOTSTRAP 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    /* ── CSS VARIABLES (identical to index.html) ─────────────── */
+    :root {
+      --clr-primary:     #0a3d6b;
+      --clr-primary-lt:  #1060a8;
+      --clr-accent:      #e8a020;
+      --clr-accent-lt:   #ffeabc;
+      --clr-teal:        #0d8a74;
+      --clr-bg:          #f5f7fb;
+      --clr-bg-dark:     #071e38;
+      --clr-text:        #1e2d3d;
+      --clr-text-muted:  #6c7a8a;
+      --clr-white:       #ffffff;
+      --clr-border:      #dde4ee;
+
+      --font-head:  'Playfair Display', Georgia, serif;
+      --font-body:  'DM Sans', sans-serif;
+
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  24px;
+      --shadow-sm:  0 2px 8px rgba(10,61,107,.08);
+      --shadow-md:  0 6px 28px rgba(10,61,107,.14);
+      --shadow-lg:  0 18px 52px rgba(10,61,107,.18);
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--clr-text);
+      background: var(--clr-white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); color: var(--clr-primary); line-height: 1.25; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; display: block; }
+    section { overflow: hidden; }
+
+    /* ── UTILITIES ───────────────────────────────────────────── */
+    .section-pad    { padding: 90px 0; }
+    .section-pad-sm { padding: 60px 0; }
+
+    .badge-tag {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 12px;
+    }
+    .badge-tag::before { content: "─── "; opacity: .5; }
+    .badge-tag::after  { content: " ───"; opacity: .5; }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--clr-text-muted);
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .divider {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary-lt));
+      border-radius: 4px;
+      margin: 18px auto 32px;
+    }
+
+    .btn-primary-custom {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 30px;
+      background: var(--clr-primary); color: var(--clr-white);
+      border: 2px solid var(--clr-primary);
+      border-radius: var(--radius-sm);
+      font-weight: 600; font-size: .95rem; cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-primary-custom:hover {
+      background: var(--clr-accent); border-color: var(--clr-accent);
+      color: var(--clr-white); transform: translateY(-2px); box-shadow: var(--shadow-md);
+    }
+    .btn-accent-custom {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 30px;
+      background: var(--clr-accent); color: var(--clr-white);
+      border: 2px solid var(--clr-accent);
+      border-radius: var(--radius-sm);
+      font-weight: 600; font-size: .95rem; cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-accent-custom:hover {
+      background: transparent; color: var(--clr-accent); transform: translateY(-2px);
+    }
+    .lang-hidden { display: none !important; }
+
+    /* ── TICKER ──────────────────────────────────────────────── */
+    .ticker-bar {
+      background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-lt));
+      color: var(--clr-white); padding: 9px 0; overflow: hidden; white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-block; font-size: .85rem; font-weight: 500; letter-spacing: .03em;
+      animation: ticker-scroll 22s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ── INFO BAR ────────────────────────────────────────────── */
+    .info-bar {
+      background: #f0f5fb; border-bottom: 1px solid var(--clr-border);
+      padding: 8px 0; font-size: .82rem; color: var(--clr-text-muted);
+    }
+    .info-bar .info-item { display: flex; align-items: center; gap: 7px; }
+    .info-bar .info-item i { color: var(--clr-primary); font-size: .9rem; }
+    .info-bar a { color: var(--clr-text-muted); }
+    .info-bar a:hover { color: var(--clr-primary); }
+
+    /* ── NAVBAR ──────────────────────────────────────────────── */
+    .main-navbar {
+      background: var(--clr-white); border-bottom: 1px solid var(--clr-border);
+      padding: 0; position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 12px rgba(10,61,107,.07); transition: box-shadow var(--transition);
+    }
+    .main-navbar .navbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0; gap: 20px;
+    }
+    .nav-logo img { height: 56px; width: auto; border-radius: var(--radius-sm); }
+    .logo-hi { display: none; }
+
+    .nav-links { display: flex; list-style: none; gap: 4px; margin: 0; padding: 0; }
+    .nav-links li a {
+      display: block; padding: 8px 14px; font-size: .9rem; font-weight: 500;
+      color: var(--clr-text); border-radius: var(--radius-sm); position: relative;
+    }
+    .nav-links li a::after {
+      content: ''; position: absolute; bottom: 4px; left: 14px; right: 14px;
+      height: 2px; background: var(--clr-accent); border-radius: 2px;
+      transform: scaleX(0); transition: var(--transition); transform-origin: left;
+    }
+    .nav-links li a:hover, .nav-links li a.active { color: var(--clr-primary); background: #f0f5fb; }
+    .nav-links li a:hover::after, .nav-links li a.active::after { transform: scaleX(1); }
+
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .lang-selector {
+      display: flex; border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm); overflow: hidden; font-size: .82rem; font-weight: 600;
+    }
+    .lang-btn {
+      padding: 6px 12px; background: transparent; border: none;
+      cursor: pointer; color: var(--clr-text-muted); transition: var(--transition);
+    }
+    .lang-btn.active, .lang-btn:hover { background: var(--clr-primary); color: var(--clr-white); }
+    .nav-appt-btn {
+      padding: 9px 20px; background: var(--clr-accent); color: var(--clr-white);
+      border: none; border-radius: var(--radius-sm); font-weight: 600;
+      font-size: .85rem; cursor: pointer; transition: var(--transition); white-space: nowrap;
+    }
+    .nav-appt-btn:hover { background: var(--clr-primary); transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none; background: none; border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm); padding: 7px 10px; cursor: pointer;
+      color: var(--clr-primary); font-size: 1.1rem;
+    }
+    .mobile-menu { display: none; background: var(--clr-white); border-top: 1px solid var(--clr-border); padding: 16px 0; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
+    .mobile-menu ul li a {
+      display: block; padding: 10px 20px; font-weight: 500;
+      color: var(--clr-text); border-bottom: 1px solid var(--clr-border);
+    }
+    .mobile-menu ul li a:hover { background: #f0f5fb; color: var(--clr-primary); }
+
+    /* ── PAGE HERO (Breadcrumb Banner) ───────────────────────── */
+    .page-hero {
+      position: relative;
+      background: linear-gradient(110deg, var(--clr-bg-dark) 0%, #0e3a6e 100%);
+      padding: 80px 0 60px;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero-bg-img {
+      position: absolute; inset: 0;
+      background-image: url('img/fasttrack (62).jpeg');
+      background-size: cover; background-position: center;
+      opacity: .18;
+    }
+    .page-hero .container { position: relative; z-index: 2; }
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--clr-white); margin-bottom: 16px;
+    }
+    .page-hero h1 span { color: var(--clr-accent); }
+    .breadcrumb-nav { display: flex; align-items: center; gap: 8px; font-size: .9rem; }
+    .breadcrumb-nav a { color: rgba(255,255,255,.65); transition: var(--transition); }
+    .breadcrumb-nav a:hover { color: var(--clr-accent); }
+    .breadcrumb-nav .sep { color: rgba(255,255,255,.35); font-size: .75rem; }
+    .breadcrumb-nav .current { color: var(--clr-accent); font-weight: 600; }
+
+    /* ── ABOUT INTRO ─────────────────────────────────────────── */
+    .about-intro { background: var(--clr-white); }
+
+    .doctor-img-wrap { position: relative; }
+    .doctor-img-wrap img {
+      width: 100%; height: 560px; object-fit: cover;
+      border-radius: var(--radius-lg); display: block;
+    }
+    .doctor-badge {
+      position: absolute; bottom: 28px; right: -18px;
+      background: var(--clr-accent); color: var(--clr-white);
+      padding: 18px 22px; border-radius: var(--radius-md);
+      text-align: center; box-shadow: var(--shadow-lg);
+    }
+    .doctor-badge .num { font-size: 2.4rem; font-family: var(--font-head); font-weight: 700; line-height: 1; }
+    .doctor-badge .lbl { font-size: .76rem; font-weight: 500; opacity: .9; margin-top: 4px; }
+
+    .doctor-card-strip {
+      position: absolute; bottom: -24px; left: 20px; right: 60px;
+      background: var(--clr-primary);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex; align-items: center; gap: 14px;
+      box-shadow: var(--shadow-md);
+    }
+    .doctor-card-strip .dc-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-accent); font-size: 1.1rem; flex-shrink: 0;
+    }
+    .doctor-card-strip .dc-name { font-size: .88rem; font-weight: 700; color: var(--clr-white); }
+    .doctor-card-strip .dc-role { font-size: .75rem; color: rgba(255,255,255,.7); }
+
+    .about-content-box { padding-left: 52px; }
+
+    /* Qualification list */
+    .qual-list { list-style: none; padding: 0; margin: 24px 0; }
+    .qual-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid var(--clr-border);
+    }
+    .qual-list li:last-child { border-bottom: none; }
+    .qual-list li .q-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: linear-gradient(135deg, #e6f0fb, #d0e4f7);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-primary); font-size: .85rem;
+      margin-top: 2px;
+    }
+    .qual-list li .q-body .q-title { font-weight: 700; font-size: .92rem; margin-bottom: 2px; }
+    .qual-list li .q-body .q-meta { font-size: .8rem; color: var(--clr-text-muted); }
+
+    /* Mini stats row */
+    .mini-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0;
+    }
+    .mini-stat {
+      background: var(--clr-bg); border-radius: var(--radius-md);
+      padding: 18px 16px; text-align: center;
+      border-top: 3px solid var(--clr-primary-lt);
+      transition: var(--transition);
+    }
+    .mini-stat:hover { border-top-color: var(--clr-accent); transform: translateY(-3px); }
+    .mini-stat .ms-num {
+      font-size: 1.8rem; font-family: var(--font-head); font-weight: 700;
+      color: var(--clr-primary); line-height: 1;
+    }
+    .mini-stat .ms-num span { color: var(--clr-accent); }
+    .mini-stat .ms-label { font-size: .78rem; color: var(--clr-text-muted); margin-top: 6px; font-weight: 500; }
+
+    /* ── SPECIALTIES SECTION ─────────────────────────────────── */
+    .specialties-section { background: var(--clr-bg); }
+
+    .specialty-card {
+      background: var(--clr-white); border-radius: var(--radius-lg);
+      padding: 32px 28px; height: 100%;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .specialty-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-lt));
+      transition: var(--transition);
+    }
+    .specialty-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .specialty-card:hover::before { background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary-lt)); }
+    .spec-icon-wrap {
+      width: 60px; height: 60px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #e6f0fb, #d0e4f7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--clr-primary); margin-bottom: 18px;
+      transition: var(--transition);
+    }
+    .specialty-card:hover .spec-icon-wrap {
+      background: var(--clr-primary); color: var(--clr-white);
+    }
+    .specialty-card h4 { font-size: 1.05rem; margin-bottom: 10px; }
+    .specialty-card p { font-size: .85rem; color: var(--clr-text-muted); margin: 0; line-height: 1.6; }
+
+    /* ── TIMELINE / JOURNEY ──────────────────────────────────── */
+    .journey-section { background: var(--clr-white); }
+
+    .timeline { position: relative; padding: 20px 0; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px; background: var(--clr-border);
+      transform: translateX(-50%);
+    }
+    .timeline-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 40px); margin-bottom: 40px; position: relative; }
+    .timeline-item.right { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 40px); }
+
+    .timeline-dot {
+      position: absolute; left: 50%; top: 16px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--clr-accent); border: 3px solid var(--clr-white);
+      box-shadow: 0 0 0 3px var(--clr-primary-lt);
+      transform: translateX(-50%);
+    }
+    .timeline-card {
+      background: var(--clr-bg); border-radius: var(--radius-md);
+      padding: 20px 24px; max-width: 400px; width: 100%;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .timeline-card:hover { box-shadow: var(--shadow-md); transform: scale(1.02); }
+    .timeline-year {
+      display: inline-block; font-size: .78rem; font-weight: 700;
+      color: var(--clr-white); background: var(--clr-primary);
+      padding: 3px 10px; border-radius: 100px; margin-bottom: 8px;
+    }
+    .timeline-card h4 { font-size: 1rem; margin-bottom: 6px; }
+    .timeline-card p { font-size: .83rem; color: var(--clr-text-muted); margin: 0; }
+
+    /* ── CTA STRIP ───────────────────────────────────────────── */
+    .cta-strip {
+      background: linear-gradient(110deg, var(--clr-primary) 0%, var(--clr-primary-lt) 100%);
+      padding: 56px 0; position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='white' stroke-opacity='0.05' stroke-width='1' fill='none'/%3E%3C/svg%3E") center/250px;
+    }
+    .cta-strip .container { position: relative; z-index: 2; }
+    .cta-strip h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--clr-white); margin-bottom: 12px; }
+    .cta-strip p { color: rgba(255,255,255,.75); margin-bottom: 0; font-size: .95rem; }
+    .btn-outline-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; background: transparent; color: var(--clr-white);
+      border: 2px solid rgba(255,255,255,.5); border-radius: var(--radius-sm);
+      font-weight: 600; font-size: .9rem; transition: var(--transition);
+    }
+    .btn-outline-white:hover { background: var(--clr-white); color: var(--clr-primary); border-color: var(--clr-white); }
+
+    /* ── TESTIMONIALS ────────────────────────────────────────── */
+    .testimonials-section { background: var(--clr-bg); }
+
+    .testimonial-card {
+      background: var(--clr-white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--clr-border);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-card .quote-icon { font-size: 2.5rem; color: var(--clr-accent); line-height: 1; margin-bottom: 14px; font-family: Georgia, serif; }
+    .testimonial-card p { color: var(--clr-muted); font-size: .92rem; line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .testimonial-card .reviewer { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--clr-border); margin-top: auto; }
+    .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--clr-primary), var(--clr-teal)); display: flex; align-items: center; justify-content: center; color: var(--clr-white); font-size: 1.1rem; font-weight: 700; flex-shrink: 0; }
+    .reviewer-name { font-weight: 700; font-size: .92rem; }
+    .reviewer-role { font-size: .78rem; color: var(--clr-muted); }
+    .star-rating { display: flex; gap: 2px; margin-bottom: 12px; }
+    .star-rating i { color: #f59e0b; font-size: .85rem; }
+
+    /* ── STATS STRIP ─────────────────────────────────────────── */
+    .stats-section {
+      background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-lt) 100%);
+      position: relative;
+    }
+    .stats-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .stat-card { text-align: center; padding: 40px 20px; position: relative; }
+    .stat-card::after {
+      content: ''; position: absolute; right: 0; top: 20%; bottom: 20%;
+      width: 1px; background: rgba(255,255,255,.15);
+    }
+    .stat-card:last-child::after { display: none; }
+    .stat-number { font-size: clamp(2.4rem, 4vw, 3.4rem); font-family: var(--font-head); font-weight: 700; color: var(--clr-white); line-height: 1; }
+    .stat-number span { color: var(--clr-accent); }
+    .stat-label { color: rgba(255,255,255,.7); font-size: .88rem; font-weight: 500; margin-top: 8px; text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    .site-footer { background: var(--clr-bg-dark); color: rgba(255,255,255,.75); padding-top: 72px; }
+    .footer-logo { margin-bottom: 18px; }
+    .footer-logo img { height: 58px; border-radius: var(--radius-sm); }
+    .footer-desc { font-size: .88rem; line-height: 1.7; max-width: 300px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .footer-social a {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.7); font-size: .9rem;
+      border: 1px solid rgba(255,255,255,.1); transition: var(--transition);
+    }
+    .footer-social a:hover { background: var(--clr-accent); border-color: var(--clr-accent); color: var(--clr-white); transform: translateY(-2px); }
+    .footer-heading { font-family: var(--font-body); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--clr-accent); margin-bottom: 20px; }
+    .footer-links { list-style: none; padding: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { font-size: .88rem; color: rgba(255,255,255,.65); display: flex; align-items: center; gap: 6px; transition: var(--transition); }
+    .footer-links a:hover { color: var(--clr-accent); padding-left: 4px; }
+    .footer-links a i { font-size: .7rem; color: var(--clr-accent); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .footer-contact-item i { color: var(--clr-accent); font-size: .95rem; margin-top: 3px; flex-shrink: 0; }
+    .footer-contact-item span { font-size: .88rem; color: rgba(255,255,255,.7); }
+    .footer-hours { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-md); padding: 18px; margin-top: 8px; }
+    .hours-row { display: flex; justify-content: space-between; font-size: .85rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row .day { color: rgba(255,255,255,.6); }
+    .hours-row .time { color: var(--clr-white); font-weight: 500; }
+    .hours-row .open { color: var(--clr-teal); }
+    .footer-bottom { margin-top: 60px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08); text-align: center; font-size: .82rem; color: rgba(255,255,255,.4); }
+    .footer-bottom a { color: var(--clr-accent); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; align-items: center; }
+      .about-content-box { padding-left: 0; margin-top: 60px; }
+      .doctor-badge { right: 12px; }
+      .doctor-card-strip { left: 10px; right: 50px; }
+      .timeline::before { left: 24px; }
+      .timeline-item, .timeline-item.right { justify-content: flex-start; padding-left: 60px; padding-right: 0; }
+      .timeline-dot { left: 24px; }
+    }
+    @media (max-width: 768px) {
+      .section-pad { padding: 60px 0; }
+      .mini-stats { grid-template-columns: repeat(2, 1fr); }
+      .doctor-img-wrap img { height: 380px; }
+    }
+    @media (max-width: 480px) {
+      .mini-stats { grid-template-columns: 1fr; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================ TICKER ============================================================ -->
+  <!-- <div class="ticker-bar" role="marquee" aria-label="Announcements">
+    <span class="ticker-inner">
+      🏥 24×7 Emergency Services Available &nbsp;|&nbsp;
+      🦴 Expert Orthopaedic Surgeons &nbsp;|&nbsp;
+      🔬 Advanced Diagnostic Facility &nbsp;|&nbsp;
+      💊 Minimally Invasive Surgery &nbsp;|&nbsp;
+      ❤️ Your Health, Our Priority &nbsp;|&nbsp;
+      📞 Call Now: +91 93350 30190 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+  </div> -->
+
+  <!-- ============================================================ INFO BAR ============================================================ -->
+  <div class="info-bar">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-4 col-sm-12 mb-1 mb-md-0">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="en">Tedhi Pulia, Kalyanpur, Lucknow, U.P. 226022</span>
+            <span class="hi lang-hidden">टेढ़ी पुलिया, कल्याणपुर, लखनऊ, उ.प्र. 226022</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-1 mb-md-0 text-md-center">
+          <div class="info-item justify-content-md-center">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@fasttrackortho.com">info@fasttrackortho.com</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 text-md-end">
+          <div class="info-item justify-content-md-end">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+919335030190">+91 9335030190</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ NAVBAR ============================================================ -->
+  <nav class="main-navbar" id="mainNav" aria-label="Main Navigation">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo" aria-label="Fast Track Orthopaedic Care — Home">
+          <img src="images/logo/logoint.jpeg" alt="Orthopaedic Care Logo" class="logo-en" />
+          <img src="images/logo/logoint.jpeg" alt="Orthopaedic Care Logo Hindi" class="logo-hi" />
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+          <li><a href="about.html" class="active"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+          <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+          <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+          <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+          <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+        </ul>
+
+        <div class="nav-right">
+          <div class="lang-selector" role="group" aria-label="Language Selector">
+            <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn"        id="btn-hi" onclick="setLanguage('hi')">हि</button>
+          </div>
+          <a href="appointment.html" class="nav-appt-btn">
+            <span class="en">Book Appointment</span>
+            <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
+          </a>
+          <button class="nav-hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation">
+      <ul>
+        <li><a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+        <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+        <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+        <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+        <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+        <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+        <li><a href="appointment.html" style="color:var(--clr-accent);font-weight:700;">
+          <span class="en">📅 Book Appointment</span><span class="hi lang-hidden">📅 अपॉइंटमेंट लें</span>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================ PAGE HERO ============================================================ -->
+  <section class="page-hero" aria-label="About Page Banner">
+    <div class="page-hero-bg-img"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8" data-aos="fade-up">
+          <h1>
+            <span class="en">About <span>Dr. Intekhab Alam</span></span>
+            <span class="hi lang-hidden">डॉ. <span>इंतेखाब आलम</span> के बारे में</span>
+          </h1>
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a>
+            <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="current"><span class="en">About Us</span><span class="hi lang-hidden">हमारे बारे में</span></span>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ ABOUT INTRO ============================================================ -->
+  <section class="about-intro section-pad" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Image -->
+        <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+          <div class="doctor-img-wrap" style="padding-right: 28px; padding-bottom: 40px;">
+            <img src="images/doctor/intekhabalam.jpg" alt="Dr. Intekhab Alam — Orthopaedic Surgeon" loading="lazy" />
+            <div class="doctor-badge">
+              <div class="num">30+</div>
+              <div class="lbl"><span class="en">Years Experience</span><span class="hi lang-hidden">वर्ष अनुभव</span></div>
+            </div>
+            <div class="doctor-card-strip">
+              <div class="dc-icon"><i class="fa-solid fa-user-doctor"></i></div>
+              <div>
+                <div class="dc-name">Dr. Intekhab Alam</div>
+                <div class="dc-role"><span class="en">MS Ortho (AMU) · Peoples Mobility First</span><span class="hi lang-hidden">MS ऑर्थो (AMU) · पीपल्स मोबिलिटी फर्स्ट</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="about-content-box">
+            <span class="badge-tag">
+              <span class="en">Meet The Doctor</span>
+              <span class="hi lang-hidden">डॉक्टर से मिलें</span>
+            </span>
+            <h2 class="section-title">
+              <span class="en">Lucknow's Trusted Orthopaedic & Trauma Surgeon</span>
+              <span class="hi lang-hidden">लखनऊ के विश्वसनीय ऑर्थोपेडिक और ट्रॉमा सर्जन</span>
+            </h2>
+            <p style="color:var(--clr-text-muted); margin-bottom: 16px;">
+              <span class="en">Dr. Intekhab Alam is a highly accomplished orthopaedic and trauma surgeon with over three decades of clinical practice. Trained at Aligarh Muslim University, he has served as a consultant at Apollo Hospital Lucknow, Max Hospital New Delhi, and Fortis Hospital Gurugram — bringing big-hospital expertise to his own centre, Fast Track Orthopaedic Care.</span>
+              <span class="hi lang-hidden">डॉ. इंतेखाब आलम अलीगढ़ मुस्लिम यूनिवर्सिटी से प्रशिक्षित एक अत्यंत कुशल ऑर्थोपेडिक और ट्रॉमा सर्जन हैं। वे अपोलो हॉस्पिटल लखनऊ, मैक्स हॉस्पिटल नई दिल्ली और फोर्टिस हॉस्पिटल गुरुग्राम में कंसल्टेंट रह चुके हैं।</span>
+            </p>
+            <p style="color:var(--clr-text-muted); margin-bottom: 24px;">
+              <span class="en">With 10,000+ surgeries, 7,000+ fracture surgeries, and 2,000+ joint replacements to his credit, Dr. Alam brings unparalleled surgical experience to every patient. His guiding philosophy — <strong style="color:var(--clr-primary);">Peoples Mobility First</strong> — drives his commitment to restoring movement and quality of life for all his patients.</span>
+              <span class="hi lang-hidden">10,000+ सर्जरी, 7,000+ फ्रैक्चर सर्जरी और 2,000+ जॉइंट रिप्लेसमेंट के साथ, डॉ. आलम हर मरीज को अद्वितीय सर्जिकल अनुभव प्रदान करते हैं। उनका मूल दर्शन — <strong style="color:var(--clr-white);">पीपल्स मोबिलिटी फर्स्ट</strong> — उनकी प्रतिबद्धता को दर्शाता है।</span>
+            </p>
+
+            <!-- Qualifications -->
+            <ul class="qual-list">
+              <li>
+                <div class="q-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="q-body">
+                  <div class="q-title">MBBS</div>
+                  <div class="q-meta"><span class="en">Aligarh Muslim University (AMU)</span><span class="hi lang-hidden">अलीगढ़ मुस्लिम यूनिवर्सिटी (AMU)</span></div>
+                </div>
+              </li>
+              <li>
+                <div class="q-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="q-body">
+                  <div class="q-title">MS — Orthopaedics</div>
+                  <div class="q-meta"><span class="en">Aligarh Muslim University (AMU)</span><span class="hi lang-hidden">अलीगढ़ मुस्लिम यूनिवर्सिटी (AMU)</span></div>
+                </div>
+              </li>
+              <li>
+                <div class="q-icon"><i class="fa-solid fa-hospital"></i></div>
+                <div class="q-body">
+                  <div class="q-title"><span class="en">Ex Consultant — Apollo Hospital</span><span class="hi lang-hidden">पूर्व परामर्शदाता — अपोलो हॉस्पिटल</span></div>
+                  <div class="q-meta"><span class="en">Apollo Hospital, Lucknow</span><span class="hi lang-hidden">अपोलो हॉस्पिटल, लखनऊ</span></div>
+                </div>
+              </li>
+              <li>
+                <div class="q-icon"><i class="fa-solid fa-hospital"></i></div>
+                <div class="q-body">
+                  <div class="q-title"><span class="en">Ex Consultant — Max Hospital</span><span class="hi lang-hidden">पूर्व परामर्शदाता — मैक्स हॉस्पिटल</span></div>
+                  <div class="q-meta"><span class="en">Max Hospital, New Delhi</span><span class="hi lang-hidden">मैक्स हॉस्पिटल, नई दिल्ली</span></div>
+                </div>
+              </li>
+              <li>
+                <div class="q-icon"><i class="fa-solid fa-hospital"></i></div>
+                <div class="q-body">
+                  <div class="q-title"><span class="en">Ex Consultant — Fortis Hospital</span><span class="hi lang-hidden">पूर्व परामर्शदाता — फोर्टिस हॉस्पिटल</span></div>
+                  <div class="q-meta"><span class="en">Fortis Hospital, Gurugram</span><span class="hi lang-hidden">फोर्टिस हॉस्पिटल, गुरुग्राम</span></div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Mini Stats -->
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <div class="ms-num"><span class="counter" data-target="10000">0</span><span>+</span></div>
+                <div class="ms-label"><span class="en">Total Surgeries</span><span class="hi lang-hidden">कुल सर्जरी</span></div>
+              </div>
+              <div class="mini-stat">
+                <div class="ms-num"><span class="counter" data-target="7000">0</span><span>+</span></div>
+                <div class="ms-label"><span class="en">Fracture Surgeries</span><span class="hi lang-hidden">फ्रैक्चर सर्जरी</span></div>
+              </div>
+              <div class="mini-stat">
+                <div class="ms-num"><span class="counter" data-target="2000">0</span><span>+</span></div>
+                <div class="ms-label"><span class="en">Joint Replacements</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 flex-wrap mt-2">
+              <a href="appointment.html" class="btn-primary-custom">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span class="en">Book Appointment</span>
+                <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
+              </a>
+              <a href="department.html" class="btn-accent-custom">
+                <i class="fa-solid fa-stethoscope"></i>
+                <span class="en">Our Departments</span>
+                <span class="hi lang-hidden">हमारे विभाग</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SPECIALTIES ============================================================ -->
+  <section class="specialties-section section-pad" id="specialties">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag">
+          <span class="en">Areas of Expertise</span>
+          <span class="hi lang-hidden">विशेषज्ञता के क्षेत्र</span>
+        </span>
+        <h2 class="section-title">
+          <span class="en">Clinical Specialisations</span>
+          <span class="hi lang-hidden">नैदानिक विशेषज्ञताएं</span>
+        </h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          <span class="en">Dr. Alam's expertise spans the full spectrum of orthopaedic care — from sports injuries to complex reconstruction.</span>
+          <span class="hi lang-hidden">डॉ. आलम की विशेषज्ञता ऑर्थोपेडिक देखभाल के पूर्ण स्पेक्ट्रम तक फैली है।</span>
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="specialty-card">
+            <div class="spec-icon-wrap"><i class="fa-solid fa-bone"></i></div>
+            <h4><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></h4>
+            <p><span class="en">Total knee and hip replacement surgeries using advanced implant systems with minimal blood loss and faster recovery protocols.</span><span class="hi lang-hidden">उन्नत इम्प्लांट सिस्टम का उपयोग करके टोटल नी और हिप रिप्लेसमेंट सर्जरी।</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="80">
+          <div class="specialty-card">
+            <div class="spec-icon-wrap"><i class="fa-solid fa-eye"></i></div>
+            <h4><span class="en">Arthroscopic Surgery</span><span class="hi lang-hidden">आर्थ्रोस्कोपिक सर्जरी</span></h4>
+            <p><span class="en">Minimally invasive ACL/PCL reconstruction, meniscus repair, and shoulder arthroscopy with keyhole incisions for faster healing.</span><span class="hi lang-hidden">ACL/PCL पुनर्निर्माण, मेनिस्कस रिपेयर और शोल्डर आर्थ्रोस्कोपी।</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="160">
+          <div class="specialty-card">
+            <div class="spec-icon-wrap"><i class="fa-solid fa-child"></i></div>
+            <h4><span class="en">Paediatric Orthopaedics</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span></h4>
+            <p><span class="en">Specialised treatment of CTEV (clubfoot), congenital deformities, limb lengthening, and growth plate disorders in children.</span><span class="hi lang-hidden">CTEV, जन्मजात विकृतियों, अंग लंबाई और ग्रोथ प्लेट विकारों का उपचार।</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="specialty-card">
+            <div class="spec-icon-wrap"><i class="fa-solid fa-person-falling-burst"></i></div>
+            <h4><span class="en">Trauma & Fracture Care</span><span class="hi lang-hidden">ट्रॉमा और फ्रैक्चर देखभाल</span></h4>
+            <p><span class="en">Management of all fracture types — open, closed, and complex trauma — using modern fixation techniques including plating and nailing.</span><span class="hi lang-hidden">सभी प्रकार के फ्रैक्चर का प्रबंधन — खुले, बंद और जटिल ट्रॉमा।</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="80">
+          <div class="specialty-card">
+            <div class="spec-icon-wrap"><i class="fa-solid fa-fire-flame-simple"></i></div>
+            <h4><span class="en">Arthritis Management</span><span class="hi lang-hidden">गठिया प्रबंधन</span></h4>
+            <p><span class="en">Comprehensive rheumatoid and osteoarthritis management including PRP therapy, joint injections, physiotherapy programmes, and lifestyle guidance.</span><span class="hi lang-hidden">रूमेटाइड और ऑस्टियोआर्थराइटिस का व्यापक प्रबंधन।</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="160">
+          <div class="specialty-card">
+            <div class="spec-icon-wrap"><i class="fa-solid fa-running"></i></div>
+            <h4><span class="en">Sports Injury Repair</span><span class="hi lang-hidden">खेल चोट मरम्मत</span></h4>
+            <p><span class="en">Diagnosis and surgical repair of sports-related injuries with evidence-based rehabilitation protocols to return athletes to peak performance.</span><span class="hi lang-hidden">खेल-संबंधी चोटों का निदान और सर्जिकल मरम्मत।</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ JOURNEY / TIMELINE ============================================================ -->
+  <section class="journey-section section-pad" id="journey">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag">
+          <span class="en">Career Milestones</span>
+          <span class="hi lang-hidden">करियर की उपलब्धियां</span>
+        </span>
+        <h2 class="section-title">
+          <span class="en">A Journey of Excellence</span>
+          <span class="hi lang-hidden">उत्कृष्टता की यात्रा</span>
+        </h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="timeline" data-aos="fade-up">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">Education</span>
+            <h4><span class="en">MBBS & MS Orthopaedics — Aligarh Muslim University</span><span class="hi lang-hidden">MBBS और MS ऑर्थोपेडिक्स — अलीगढ़ मुस्लिम यूनिवर्सिटी</span></h4>
+            <p><span class="en">Completed foundational MBBS and postgraduate MS (Ortho.) specialisation at the prestigious Aligarh Muslim University (AMU).</span><span class="hi lang-hidden">प्रतिष्ठित अलीगढ़ मुस्लिम यूनिवर्सिटी से MBBS और MS (ऑर्थो.) पूरी की।</span></p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">Apollo Hospital</span>
+            <h4><span class="en">Ex Consultant — Apollo Hospital, Lucknow</span><span class="hi lang-hidden">पूर्व परामर्शदाता — अपोलो हॉस्पिटल, लखनऊ</span></h4>
+            <p><span class="en">Served as an orthopaedic consultant at Apollo Hospital Lucknow, gaining extensive experience in advanced joint and trauma care.</span><span class="hi lang-hidden">अपोलो हॉस्पिटल लखनऊ में ऑर्थोपेडिक कंसल्टेंट के रूप में सेवा दी।</span></p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">Max Hospital</span>
+            <h4><span class="en">Ex Consultant — Max Hospital, New Delhi</span><span class="hi lang-hidden">पूर्व परामर्शदाता — मैक्स हॉस्पिटल, नई दिल्ली</span></h4>
+            <p><span class="en">Practiced at Max Hospital New Delhi, one of India's top-tier multispecialty hospitals, refining skills in complex orthopaedic procedures.</span><span class="hi lang-hidden">भारत के शीर्ष मल्टीस्पेशलिटी अस्पताल मैक्स हॉस्पिटल नई दिल्ली में प्रैक्टिस की।</span></p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">Fortis Hospital</span>
+            <h4><span class="en">Ex Consultant — Fortis Hospital, Gurugram</span><span class="hi lang-hidden">पूर्व परामर्शदाता — फोर्टिस हॉस्पिटल, गुरुग्राम</span></h4>
+            <p><span class="en">Served at Fortis Hospital Gurugram, a world-class institution, gaining expertise in high-volume joint replacement and arthroscopic surgeries.</span><span class="hi lang-hidden">फोर्टिस हॉस्पिटल गुरुग्राम में सेवा दी — जॉइंट रिप्लेसमेंट और आर्थ्रोस्कोपिक सर्जरी में विशेषज्ञता प्राप्त की।</span></p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">Now</span>
+            <h4><span class="en">Founder — Fast Track Orthopaedic Care, Lucknow</span><span class="hi lang-hidden">संस्थापक — Fast Track Orthopaedic Care, लखनऊ</span></h4>
+            <p><span class="en">Bringing world-class expertise home — 10,000+ surgeries, 7,000+ fracture repairs, and 2,000+ joint replacements, all under the banner of <em>Peoples Mobility First</em>.</span><span class="hi lang-hidden">10,000+ सर्जरी, 7,000+ फ्रैक्चर रिपेयर और 2,000+ जॉइंट रिप्लेसमेंट के साथ लखनऊ में विश्वस्तरीय देखभाल।</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ STATS ============================================================ -->
+  <section class="stats-section section-pad-sm" id="stats">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="0">
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="10000">0</span><span>+</span></div>
+            <div class="stat-label"><span class="en">Total Surgeries</span><span class="hi lang-hidden">कुल सर्जरी</span></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="80">
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="7000">0</span><span>+</span></div>
+            <div class="stat-label"><span class="en">Fracture Surgeries</span><span class="hi lang-hidden">फ्रैक्चर सर्जरी</span></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="160">
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="2000">0</span><span>+</span></div>
+            <div class="stat-label"><span class="en">Joint Replacements</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="240">
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="4500">0</span><span>+</span></div>
+            <div class="stat-label"><span class="en">Happy Patients</span><span class="hi lang-hidden">संतुष्ट मरीज</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CTA STRIP ============================================================ -->
+  <section class="cta-strip" data-aos="fade-up">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <h2>
+            <span class="en">We Provide Free Health Consultation</span>
+            <span class="hi lang-hidden">हम नि:शुल्क स्वास्थ्य परामर्श प्रदान करते हैं</span>
+          </h2>
+          <p>
+            <span class="en">Your health is our top priority. Reach out to Dr. Alam's team today for expert guidance and compassionate care.</span>
+            <span class="hi lang-hidden">आपका स्वास्थ्य हमारी सर्वोच्च प्राथमिकता है। आज डॉ. आलम की टीम से संपर्क करें।</span>
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end d-flex gap-3 justify-content-lg-end flex-wrap">
+          <a href="appointment.html" class="btn-accent-custom">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span class="en">Free Consultation</span>
+            <span class="hi lang-hidden">नि:शुल्क परामर्श</span>
+          </a>
+          <a href="contact.html" class="btn-outline-white">
+            <span class="en">Contact Us</span>
+            <span class="hi lang-hidden">संपर्क करें</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ TESTIMONIALS ============================================================ -->
+  <section class="testimonials-section section-pad" id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag"><span class="en">Testimonials</span><span class="hi lang-hidden">प्रशंसापत्र</span></span>
+        <h2 class="section-title"><span class="en">What Our Patients Say</span><span class="hi lang-hidden">हमारे मरीज क्या कहते हैं</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub"><span class="en">Patients trust Fast Track Orthopaedic Care for expert treatment, clear guidance, and compassionate care.</span><span class="hi lang-hidden">मरीज Fast Track Orthopaedic Care पर भरोसा करते हैं।</span></p>
+      </div>
+
+      <div class="carousel-outer px-4" data-aos="fade-up">
+        <button class="c-arrow prev" id="testPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="c-arrow next" id="testNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="carousel-viewport" id="testViewport">
+          <div class="carousel-track" id="testTrack">
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">My mother had spine surgery by Dr. Intekhab Sir. She was bedridden for 2 months, but Alhamdulillah she has started walking again. Best orthopaedic hospital in Lucknow.</span><span class="hi lang-hidden">मेरी अम्मी की स्पाइन की सर्जरी के बाद अल्हम्दुलिल्लाह चलने लगी हैं।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">AK</div><div><div class="reviewer-name">Adnan Khan</div><div class="reviewer-role"><span class="en">Farmer, Lucknow</span><span class="hi lang-hidden">किसान, लखनऊ</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">My relative was admitted here for leg surgery. Dr. Intekhab Alam performed the operation brilliantly. The staff is very cooperative and food is provided as per patient needs.</span><span class="hi lang-hidden">Dr. Intekhab Alam ने शानदार ऑपरेशन किया। स्टाफ बहुत सहयोगी है।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">AF</div><div><div class="reviewer-name">Abdul Fareed</div><div class="reviewer-role"><span class="en">Businessman</span><span class="hi lang-hidden">व्यापारी</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">I had an accident that badly injured my left shoulder. Dr. Intekhab Alam performed the surgery successfully. Now I am fully recovered and happy.</span><span class="hi lang-hidden">Dr. Intekhab Alam ने सफलतापूर्वक ऑपरेशन किया। अब मैं पूरी तरह ठीक हूँ।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">SA</div><div><div class="reviewer-name">Sarfraz Ahmad</div><div class="reviewer-role"><span class="en">Professional</span><span class="hi lang-hidden">पेशेवर</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">Fast Track Hospital is the best option for orthopaedic care. I am highly satisfied with the services. Dr. Intekhab Alam and his staff are very helpful and supportive.</span><span class="hi lang-hidden">Fast Track Hospital ऑर्थोपेडिक इलाज के लिए सबसे अच्छा विकल्प है।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">AS</div><div><div class="reviewer-name">Abdul Samad</div><div class="reviewer-role"><span class="en">Student</span><span class="hi lang-hidden">छात्र</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">My mother underwent bilateral knee replacement here. The care and guidance were outstanding. The hospital uses advanced technology. Truly worth it.</span><span class="hi lang-hidden">मेरी माँ का दोनों घुटनों का प्रत्यारोपण यहाँ हुआ। देखभाल और मार्गदर्शन बेहतरीन था।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">SS</div><div><div class="reviewer-name">Shadma Shamim</div><div class="reviewer-role"><span class="en">Manager</span><span class="hi lang-hidden">मैनेजर</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                
+                <p><span class="en">Excellent experience at Fast Track Orthocare. The diagnosis was precise and the treatment plan clearly explained. The staff treated us like family throughout.</span><span class="hi lang-hidden">Fast Track Orthocare में शानदार अनुभव। स्टाफ ने पूरे समय परिवार जैसा व्यवहार किया।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">MR</div><div><div class="reviewer-name">Mohammad Raza</div><div class="reviewer-role"><span class="en">Retired Officer</span><span class="hi lang-hidden">सेवानिवृत्त अधिकारी</span></div></div></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="c-dots" id="testDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FOOTER ============================================================ -->
+  <footer class="site-footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-logo">
+            <img src="img/fasttrack (17).jpeg" alt="Fast Track Orthopaedic Care" />
+          </div>
+          <p class="footer-desc">
+            <span class="en">Expert orthopaedic care in Lucknow. Led by Dr. Intekhab Alam — committed to restoring mobility and improving lives.</span>
+            <span class="hi lang-hidden">लखनऊ में विशेषज्ञ ऑर्थोपेडिक देखभाल। डॉ. इंतेखाब आलम के नेतृत्व में।</span>
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-heading"><span class="en">Quick Links</span><span class="hi lang-hidden">त्वरित लिंक</span></div>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i><span class="en">About Doctor</span><span class="hi lang-hidden">डॉक्टर के बारे में</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट</span></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-heading"><span class="en">Services</span><span class="hi lang-hidden">सेवाएं</span></div>
+          <ul class="footer-links">
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Arthritis Care</span><span class="hi lang-hidden">गठिया देखभाल</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Fracture Treatment</span><span class="hi lang-hidden">फ्रैक्चर उपचार</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Arthroscopy</span><span class="hi lang-hidden">आर्थ्रोस्कोपी</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Paediatric Ortho</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Spine Care</span><span class="hi lang-hidden">स्पाइन केयर</span></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-heading"><span class="en">Contact Info</span><span class="hi lang-hidden">संपर्क जानकारी</span></div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>529/078CC, Tedhi Pulia Ring Rd, Kalyanpur (East), Lucknow, U.P. 226022</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+919335030190" style="color:rgba(255,255,255,.7);">+91 93350 30190</a> &nbsp;|&nbsp; <a href="tel:05223646448" style="color:rgba(255,255,255,.7);">0522-3646448</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:info@fasttrackortho.com" style="color:rgba(255,255,255,.7);">info@fasttrackortho.com</a></span>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-heading"><span class="en">Opening Hours</span><span class="hi lang-hidden">खुलने का समय</span></div>
+          <div class="footer-hours">
+            <div class="hours-row">
+              <span class="day"><span class="en">Mon – Fri</span><span class="hi lang-hidden">सोम – शुक्र</span></span>
+              <span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span>
+            </div>
+            <div class="hours-row">
+              <span class="day"><span class="en">Saturday</span><span class="hi lang-hidden">शनिवार</span></span>
+              <span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span>
+            </div>
+            <div class="hours-row">
+              <span class="day"><span class="en">Sunday</span><span class="hi lang-hidden">रविवार</span></span>
+              <span class="time open"><span class="en">Emergency</span><span class="hi lang-hidden">आपातकालीन</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="copyrightYear"></span>
+          <span class="en">Fast Track Orthopaedic Care. All Rights Reserved. Designed with</span>
+          <span class="hi lang-hidden">Fast Track Orthopaedic Care. सर्वाधिकार सुरक्षित।</span>
+          ❤️
+          <span class="en">for better healthcare in Lucknow.</span>
+          <span class="hi lang-hidden">लखनऊ में बेहतर स्वास्थ्य सेवा के लिए।</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  /* ══════════════════════════════════════════════════════
+     AOS
+  ══════════════════════════════════════════════════════ */
+  AOS.init({ duration: 700, easing: 'ease-out-quad', once: true, offset: 60 });
+
+  /* ══════════════════════════════════════════════════════
+     LANGUAGE SWITCHER
+  ══════════════════════════════════════════════════════ */
+  function setLanguage(lang) {
+    document.querySelectorAll('.en').forEach(el => el.classList.toggle('lang-hidden', lang !== 'en'));
+    document.querySelectorAll('.hi').forEach(el => el.classList.toggle('lang-hidden', lang !== 'hi'));
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-hi').classList.toggle('active', lang === 'hi');
+    document.documentElement.lang = lang;
+    document.querySelector('.logo-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelector('.logo-hi').style.display = lang === 'hi' ? 'block' : 'none';
+    localStorage.setItem('preferredLang', lang);
+  }
+  setLanguage(localStorage.getItem('preferredLang') || 'en');
+
+  /* ══════════════════════════════════════════════════════
+     HERO SLIDER
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const slides = document.querySelectorAll('.hero-slide');
+    const wrap   = document.getElementById('heroIndicators');
+    let cur = 0, timer;
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', `Slide ${i+1}`);
+      if (i === 0) b.classList.add('active');
+      b.onclick = () => goTo(i);
+      wrap.appendChild(b);
+    });
+    function goTo(i) {
+      slides[cur].classList.remove('active'); wrap.children[cur].classList.remove('active');
+      cur = (i + slides.length) % slides.length;
+      slides[cur].classList.add('active'); wrap.children[cur].classList.add('active');
+      clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000);
+    }
+    document.getElementById('heroPrev').onclick = () => goTo(cur - 1);
+    document.getElementById('heroNext').onclick = () => goTo(cur + 1);
+    document.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') goTo(cur-1); if (e.key === 'ArrowRight') goTo(cur+1); });
+    timer = setInterval(() => goTo(cur + 1), 5000);
+  })();
+
+  /* ══════════════════════════════════════════════════════
+     TREATMENT TABS
+  ══════════════════════════════════════════════════════ */
+  document.querySelectorAll('.treatment-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.treatment-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.treatment-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* ══════════════════════════════════════════════════════
+     UNIVERSAL RESPONSIVE CAROUSEL ENGINE
+     Supports: 3-up (≥992), 2-up (≥576), 1-up (<576)
+     Features: arrows, dots, touch/mouse drag, auto-play
+  ══════════════════════════════════════════════════════ */
+  function buildCarousel(cfg) {
+    const { trackId, viewportId, prevId, nextId, dotsId, perPage, autoPlay, autoDelay } = cfg;
+
+    const track    = document.getElementById(trackId);
+    const viewport = document.getElementById(viewportId);
+    const prevBtn  = document.getElementById(prevId);
+    const nextBtn  = document.getElementById(nextId);
+    const dotsWrap = document.getElementById(dotsId);
+
+    if (!track || !viewport) return;
+
+    const slides  = Array.from(track.children);
+    const total   = slides.length;
+    let cur       = 0;
+    let autoTimer = null;
+
+    /* Determine how many slides to show based on viewport width */
+    function getVisible() {
+      const w = window.innerWidth;
+      if (w >= 992)  return Math.min(perPage[2] || 3, total);
+      if (w >= 576)  return Math.min(perPage[1] || 2, total);
+      return Math.min(perPage[0] || 1, total);
+    }
+
+    /* Total number of "pages" */
+    function getPages() { return Math.max(1, total - getVisible() + 1); }
+
+    /* Width of one slide = viewport / visible */
+    function setWidths() {
+      const vis   = getVisible();
+      const pct   = 100 / vis;
+      slides.forEach(s => s.style.width = pct + '%');
+    }
+
+    /* Move to page index */
+    function goTo(idx) {
+      const pages = getPages();
+      cur = (idx + pages) % pages;
+      const pct = (cur / total) * 100;
+      track.style.transform = `translateX(-${pct}%)`;
+      updateDots();
+    }
+
+    /* Build dots */
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const pages = getPages();
+      for (let i = 0; i < pages; i++) {
+        const d = document.createElement('button');
+        d.className = 'c-dot' + (i === cur ? ' active' : '');
+        d.setAttribute('aria-label', `Page ${i+1}`);
+        d.onclick = () => { goTo(i); resetAuto(); };
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    /* Prev / next */
+    prevBtn && prevBtn.addEventListener('click', () => { goTo(cur - 1); resetAuto(); });
+    nextBtn && nextBtn.addEventListener('click', () => { goTo(cur + 1); resetAuto(); });
+
+    /* Auto-play */
+    function startAuto() {
+      if (!autoPlay) return;
+      autoTimer = setInterval(() => goTo(cur + 1), autoDelay || 4000);
+    }
+    function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+    /* Touch / mouse drag */
+    let dragStart = null, dragDelta = 0, isDragging = false;
+
+    function onDragStart(x) { dragStart = x; isDragging = false; }
+    function onDragMove(x) {
+      if (dragStart === null) return;
+      dragDelta = x - dragStart;
+      if (Math.abs(dragDelta) > 8) { isDragging = true; }
+    }
+    function onDragEnd() {
+      if (isDragging) {
+        const threshold = viewport.offsetWidth * 0.2;
+        if (dragDelta < -threshold) goTo(cur + 1);
+        else if (dragDelta > threshold) goTo(cur - 1);
+        resetAuto();
+      }
+      dragStart = null; dragDelta = 0; isDragging = false;
+    }
+
+    viewport.addEventListener('mousedown',  e => onDragStart(e.clientX));
+    viewport.addEventListener('mousemove',  e => onDragMove(e.clientX));
+    viewport.addEventListener('mouseup',    () => onDragEnd());
+    viewport.addEventListener('mouseleave', () => onDragEnd());
+    viewport.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+    viewport.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
+    viewport.addEventListener('touchend',   () => onDragEnd());
+
+    /* Click guard (prevent link clicks during drag) */
+    viewport.addEventListener('click', e => { if (isDragging) e.preventDefault(); }, true);
+
+    /* Recalculate on resize */
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const pages = getPages();
+        if (cur >= pages) cur = pages - 1;
+        setWidths();
+        buildDots();
+        goTo(cur);
+      }, 200);
+    });
+
+    /* Init */
+    setWidths();
+    buildDots();
+    goTo(0);
+    startAuto();
+  }
+
+  /* ── Gallery Carousel (3 → 2 → 1) ── */
+  buildCarousel({
+    trackId:    'gallTrack',
+    viewportId: 'gallViewport',
+    prevId:     'gallPrev',
+    nextId:     'gallNext',
+    dotsId:     'gallDots',
+    perPage:    [1, 2, 3],   // [mobile, tablet, desktop]
+    autoPlay:   true,
+    autoDelay:  3500
+  });
+
+  /* ── Testimonials Carousel (3 → 2 → 1) ── */
+  buildCarousel({
+    trackId:    'testTrack',
+    viewportId: 'testViewport',
+    prevId:     'testPrev',
+    nextId:     'testNext',
+    dotsId:     'testDots',
+    perPage:    [1, 2, 3],
+    autoPlay:   true,
+    autoDelay:  4500
+  });
+
+  /* ── Blog Carousel (3 → 2 → 1) ── */
+  buildCarousel({
+    trackId:    'blogTrack',
+    viewportId: 'blogViewport',
+    prevId:     'blogPrev',
+    nextId:     'blogNext',
+    dotsId:     'blogDots',
+    perPage:    [1, 2, 3],
+    autoPlay:   false
+  });
+
+  /* ══════════════════════════════════════════════════════
+     COUNTER ANIMATION
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const counters = document.querySelectorAll('.counter');
+    let done = false;
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting || done) return;
+        done = true;
+        counters.forEach(el => {
+          const target = +el.dataset.target;
+          const step   = target / (2000 / 16);
+          let cur = 0;
+          const tick = () => {
+            cur = Math.min(cur + step, target);
+            el.textContent = Math.floor(cur).toLocaleString('en-IN');
+            if (cur < target) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      });
+    }, { threshold: 0.3 }).observe(document.getElementById('stats'));
+  })();
+
+  /* ══════════════════════════════════════════════════════
+     MOBILE HAMBURGER
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const btn  = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+    document.addEventListener('click', e => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    });
+  })();
+
+  /* ══════════════════════════════════════════════════════
+     STICKY NAV SHADOW
+  ══════════════════════════════════════════════════════ */
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.boxShadow =
+      window.scrollY > 60 ? '0 4px 20px rgba(10,61,107,.15)' : '0 2px 12px rgba(10,61,107,.07)';
+  }, { passive: true });
+
+  /* ══════════════════════════════════════════════════════
+     APPOINTMENT FORM
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const form = document.getElementById('appointmentForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const fn = form.firstName.value.trim();
+      const ln = form.lastName.value.trim();
+      const ph = form.phone.value.trim();
+      if (!fn || !ln || !ph) { alert('Please fill in all required fields.'); return; }
+      if (!/^[\d\s\+\-]{7,15}$/.test(ph)) { alert('Please enter a valid phone number.'); return; }
+      form.innerHTML = `<div style="text-align:center;padding:40px 0;"><div style="font-size:3rem;color:var(--clr-teal);margin-bottom:16px;"><i class="fa-solid fa-circle-check"></i></div><h4 style="color:var(--clr-primary);margin-bottom:8px;">Appointment Request Received!</h4><p style="color:var(--clr-muted);">Thank you, <strong>${fn}</strong>. Our team will contact you shortly.</p></div>`;
+    });
+  })();
+
+  /* COPYRIGHT YEAR */
+  document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    /* 1. AOS */
+    AOS.init({ duration: 700, easing: 'ease-out-quad', once: true, offset: 60 });
+
+    /* 2. LANGUAGE SWITCHER */
+    function setLanguage(lang) {
+      const enEls = document.querySelectorAll('.en');
+      const hiEls = document.querySelectorAll('.hi');
+      const btnEn = document.getElementById('btn-en');
+      const btnHi = document.getElementById('btn-hi');
+      if (lang === 'en') {
+        enEls.forEach(el => el.classList.remove('lang-hidden'));
+        hiEls.forEach(el => el.classList.add('lang-hidden'));
+        btnEn.classList.add('active'); btnHi.classList.remove('active');
+        document.documentElement.lang = 'en';
+        document.querySelector('.logo-en').style.display = 'block';
+        document.querySelector('.logo-hi').style.display = 'none';
+      } else {
+        hiEls.forEach(el => el.classList.remove('lang-hidden'));
+        enEls.forEach(el => el.classList.add('lang-hidden'));
+        btnHi.classList.add('active'); btnEn.classList.remove('active');
+        document.documentElement.lang = 'hi';
+        document.querySelector('.logo-en').style.display = 'none';
+        document.querySelector('.logo-hi').style.display = 'block';
+      }
+      localStorage.setItem('preferredLang', lang);
+    }
+    (function initLang() { setLanguage(localStorage.getItem('preferredLang') || 'en'); })();
+
+    /* 3. COUNTER ANIMATION */
+    (function initCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const animated = new Set();
+      function animateCounter(el) {
+        if (animated.has(el)) return;
+        animated.add(el);
+        const target = +el.dataset.target;
+        const step   = target / (2000 / 16);
+        let current  = 0;
+        const tick = () => {
+          current = Math.min(current + step, target);
+          el.textContent = Math.floor(current).toLocaleString('en-IN');
+          if (current < target) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            counters.forEach(c => {
+              if (entry.target.contains(c) || entry.target === c.closest('section'))
+                animateCounter(c);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('#stats, .about-intro').forEach(s => observer.observe(s));
+    })();
+
+    /* 4. MOBILE HAMBURGER */
+    (function initMobileMenu() {
+      const btn  = document.getElementById('hamburgerBtn');
+      const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+        btn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      });
+      document.addEventListener('click', e => {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+      });
+    })();
+
+    /* 5. STICKY NAV SHADOW */
+    (function() {
+      const nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', () => {
+        nav.style.boxShadow = window.scrollY > 60
+          ? '0 4px 20px rgba(10,61,107,.15)'
+          : '0 2px 12px rgba(10,61,107,.07)';
+      }, { passive: true });
+    })();
+
+    /* 6. COPYRIGHT YEAR */
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

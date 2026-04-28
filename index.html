@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fast Track Orthopaedic Care — Expert orthopaedic treatment by Dr. Intekhab Alam. Lucknow's leading orthopaedic hospital." />
+  <title>Dr. Intekhab Alam | Fast Track Orthopaedic Care</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    /* ══════════════════════════════════════
+       CSS VARIABLES
+    ══════════════════════════════════════ */
+    :root {
+      --clr-primary:    #0a3d6b;
+      --clr-primary-lt: #1060a8;
+      --clr-accent:     #e8a020;
+      --clr-accent-lt:  #ffeabc;
+      --clr-teal:       #0d8a74;
+      --clr-bg:         #f5f7fb;
+      --clr-bg-dark:    #071e38;
+      --clr-text:       #1e2d3d;
+      --clr-muted:      #6c7a8a;
+      --clr-white:      #ffffff;
+      --clr-border:     #dde4ee;
+      --font-head: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 2px 8px rgba(10,61,107,.08);
+      --shadow-md: 0 6px 28px rgba(10,61,107,.14);
+      --shadow-lg: 0 18px 52px rgba(10,61,107,.18);
+      --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); color: var(--clr-text); background: var(--clr-white); line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); color: var(--clr-primary); line-height: 1.25; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; display: block; }
+    section { overflow: hidden; }
+
+    /* ══ UTILITIES ══ */
+    .section-pad    { padding: 90px 0; }
+    .section-pad-sm { padding: 60px 0; }
+
+    .badge-tag {
+      display: inline-block; font-size: .75rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--clr-accent); margin-bottom: 12px;
+    }
+    .badge-tag::before { content: "─── "; opacity: .5; }
+    .badge-tag::after  { content: " ───"; opacity: .5; }
+
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 16px; }
+    .section-sub   { color: var(--clr-muted); font-size: 1rem; max-width: 560px; margin: 0 auto; }
+
+    .divider {
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary-lt));
+      border-radius: 4px; margin: 18px auto 32px;
+    }
+
+    .lang-hidden { display: none !important; }
+
+    .btn-primary-custom {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 30px; background: var(--clr-primary); color: var(--clr-white);
+      border: 2px solid var(--clr-primary); border-radius: var(--radius-sm);
+      font-weight: 600; font-size: .95rem; cursor: pointer; transition: var(--transition);
+    }
+    .btn-primary-custom:hover { background: var(--clr-accent); border-color: var(--clr-accent); color: var(--clr-white); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .btn-outline-custom {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 28px; background: transparent; color: var(--clr-white);
+      border: 2px solid rgba(255,255,255,.5); border-radius: var(--radius-sm);
+      font-weight: 600; font-size: .95rem; cursor: pointer; transition: var(--transition);
+    }
+    .btn-outline-custom:hover { background: var(--clr-white); color: var(--clr-primary); border-color: var(--clr-white); }
+
+    /* ══ TICKER ══ */
+    .ticker-bar { background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-lt)); color: var(--clr-white); padding: 9px 0; overflow: hidden; white-space: nowrap; }
+    .ticker-inner { display: inline-block; font-size: .85rem; font-weight: 500; letter-spacing: .03em; animation: ticker-scroll 22s linear infinite; }
+    @keyframes ticker-scroll { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+
+    /* ══ INFO BAR ══ */
+    .info-bar { background: #f0f5fb; border-bottom: 1px solid var(--clr-border); padding: 8px 0; font-size: .82rem; color: var(--clr-muted); }
+    .info-bar .info-item { display: flex; align-items: center; gap: 7px; }
+    .info-bar .info-item i { color: var(--clr-primary); font-size: .9rem; }
+    .info-bar a { color: var(--clr-muted); }
+    .info-bar a:hover { color: var(--clr-primary); }
+
+    /* ══ NAVBAR ══ */
+    .main-navbar { background: var(--clr-white); border-bottom: 1px solid var(--clr-border); padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 12px rgba(10,61,107,.07); transition: box-shadow var(--transition); }
+    .main-navbar .navbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; gap: 20px; }
+    .nav-logo img { height: 56px; width: auto; border-radius: var(--radius-sm); }
+    .logo-hi { display: none; }
+    .nav-links { display: flex; list-style: none; gap: 4px; margin: 0; padding: 0; }
+    .nav-links li a { display: block; padding: 8px 14px; font-size: .9rem; font-weight: 500; color: var(--clr-text); border-radius: var(--radius-sm); position: relative; }
+    .nav-links li a::after { content: ''; position: absolute; bottom: 4px; left: 14px; right: 14px; height: 2px; background: var(--clr-accent); border-radius: 2px; transform: scaleX(0); transition: var(--transition); transform-origin: left; }
+    .nav-links li a:hover, .nav-links li a.active { color: var(--clr-primary); background: #f0f5fb; }
+    .nav-links li a:hover::after, .nav-links li a.active::after { transform: scaleX(1); }
+    .nav-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .lang-selector { display: flex; border: 1px solid var(--clr-border); border-radius: var(--radius-sm); overflow: hidden; font-size: .82rem; font-weight: 600; }
+    .lang-btn { padding: 6px 12px; background: transparent; border: none; cursor: pointer; color: var(--clr-muted); transition: var(--transition); }
+    .lang-btn.active, .lang-btn:hover { background: var(--clr-primary); color: var(--clr-white); }
+    .nav-appt-btn { padding: 9px 20px; background: var(--clr-accent); color: var(--clr-white); border: none; border-radius: var(--radius-sm); font-weight: 600; font-size: .85rem; cursor: pointer; transition: var(--transition); white-space: nowrap; }
+    .nav-appt-btn:hover { background: var(--clr-primary); transform: translateY(-1px); }
+    .nav-hamburger { display: none; background: none; border: 1px solid var(--clr-border); border-radius: var(--radius-sm); padding: 7px 10px; cursor: pointer; color: var(--clr-primary); font-size: 1.1rem; }
+    .mobile-menu { display: none; background: var(--clr-white); border-top: 1px solid var(--clr-border); padding: 16px 0; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
+    .mobile-menu ul li a { display: block; padding: 10px 20px; font-weight: 500; color: var(--clr-text); border-bottom: 1px solid var(--clr-border); }
+    .mobile-menu ul li a:hover { background: #f0f5fb; color: var(--clr-primary); }
+
+    /* ══ HERO ══ */
+    .hero-section { position: relative; height: 88vh; min-height: 520px; overflow: hidden; background: var(--clr-bg-dark); }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.2s ease; }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(110deg, rgba(7,30,56,.82) 0%, rgba(7,30,56,.55) 55%, rgba(7,30,56,.2) 100%); }
+    .hero-content { position: relative; z-index: 10; height: 100%; display: flex; align-items: center; }
+    .hero-text { max-width: 620px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,160,32,.18); border: 1px solid rgba(232,160,32,.4); color: var(--clr-accent); padding: 6px 16px; border-radius: 100px; font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; animation: fadeInUp .8s ease .2s both; }
+    .hero-title { font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--clr-white); margin-bottom: 20px; animation: fadeInUp .8s ease .4s both; }
+    .hero-title span { color: var(--clr-accent); }
+    .hero-desc { color: rgba(255,255,255,.78); font-size: 1.05rem; margin-bottom: 32px; animation: fadeInUp .8s ease .6s both; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeInUp .8s ease .8s both; }
+    .hero-indicators { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 20; }
+    .hero-indicators button { width: 32px; height: 4px; border: none; border-radius: 4px; background: rgba(255,255,255,.35); cursor: pointer; transition: var(--transition); }
+    .hero-indicators button.active { background: var(--clr-accent); width: 56px; }
+    .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 20; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); color: var(--clr-white); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(6px); transition: var(--transition); font-size: 1.1rem; }
+    .hero-arrow:hover { background: var(--clr-accent); border-color: var(--clr-accent); }
+    .hero-arrow.prev { left: 24px; }
+    .hero-arrow.next { right: 24px; }
+
+    /* ══ FEATURES STRIP ══ */
+    .features-strip { background: var(--clr-white); box-shadow: var(--shadow-md); position: relative; z-index: 5; }
+    .feature-card { padding: 30px 24px; border-right: 1px solid var(--clr-border); display: flex; align-items: flex-start; gap: 16px; transition: var(--transition); }
+    .feature-card:last-child { border-right: none; }
+    .feature-card:hover { background: #f8fbff; }
+    .feature-card .icon-wrap { width: 54px; height: 54px; border-radius: var(--radius-md); background: linear-gradient(135deg, #e6f0fb, #d0e4f7); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--clr-primary); flex-shrink: 0; transition: var(--transition); }
+    .feature-card:hover .icon-wrap { background: var(--clr-primary); color: var(--clr-white); transform: scale(1.08); }
+    .feature-card h4 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 4px; }
+    .feature-card p { font-size: .83rem; color: var(--clr-muted); margin: 0; line-height: 1.5; }
+
+    /* ══ ABOUT ══ */
+    .about-section { background: var(--clr-white); }
+    .about-img-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
+    .about-img-wrap img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius-lg); }
+    .about-exp-badge { position: absolute; bottom: 28px; right: -18px; background: var(--clr-accent); color: var(--clr-white); padding: 18px 24px; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-lg); }
+    .about-exp-badge .num { font-size: 2.4rem; font-family: var(--font-head); font-weight: 700; line-height: 1; }
+    .about-exp-badge .label { font-size: .78rem; font-weight: 500; opacity: .9; }
+    .about-content { padding-left: 48px; }
+    .about-services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .about-service-item { display: flex; align-items: flex-start; gap: 12px; padding: 16px; background: var(--clr-bg); border-radius: var(--radius-md); border-left: 3px solid var(--clr-primary-lt); transition: var(--transition); }
+    .about-service-item:hover { background: #e8f0fb; border-left-color: var(--clr-accent); transform: translateX(4px); }
+    .about-service-item .svc-icon { font-size: 1.3rem; color: var(--clr-primary-lt); margin-top: 2px; flex-shrink: 0; }
+    .about-service-item h5 { font-size: .9rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 2px; }
+    .about-service-item p { font-size: .8rem; color: var(--clr-muted); margin: 0; }
+
+    /* ══ TREATMENTS ══ */
+    .treatments-section { background: var(--clr-bg); }
+    .treatment-tabs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 40px; }
+    .treatment-tab-btn { padding: 10px 22px; background: var(--clr-white); border: 1.5px solid var(--clr-border); border-radius: 100px; font-size: .85rem; font-weight: 600; color: var(--clr-muted); cursor: pointer; transition: var(--transition); }
+    .treatment-tab-btn:hover, .treatment-tab-btn.active { background: var(--clr-primary); border-color: var(--clr-primary); color: var(--clr-white); box-shadow: var(--shadow-sm); }
+    .treatment-panel { display: none; background: var(--clr-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .treatment-panel.active { display: flex; }
+    .treatment-panel .panel-img { width: 42%; flex-shrink: 0; background-size: cover; background-position: center; min-height: 380px; }
+    .treatment-panel .panel-body { padding: 48px 44px; flex: 1; }
+    .panel-body h3 { font-size: 1.7rem; margin-bottom: 14px; }
+    .panel-body p { color: var(--clr-muted); font-size: .95rem; margin-bottom: 28px; }
+    .panel-points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .panel-point { display: flex; align-items: center; gap: 10px; font-size: .85rem; font-weight: 500; }
+    .panel-point i { width: 28px; height: 28px; background: #e6f0fb; color: var(--clr-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; flex-shrink: 0; }
+
+    /* ══ STATS ══ */
+    .stats-section { background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-lt) 100%); position: relative; }
+    .stats-section::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .stat-card { text-align: center; padding: 40px 20px; position: relative; }
+    .stat-card::after { content: ''; position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(255,255,255,.15); }
+    .stat-card:last-child::after { display: none; }
+    .stat-number { font-size: clamp(2.4rem, 4vw, 3.4rem); font-family: var(--font-head); font-weight: 700; color: var(--clr-white); line-height: 1; }
+    .stat-label { color: rgba(255,255,255,.7); font-size: .88rem; font-weight: 500; margin-top: 8px; text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ══════════════════════════════════════
+       GALLERY CAROUSEL
+    ══════════════════════════════════════ */
+    .events-section { background: var(--clr-white); }
+
+    .carousel-outer {
+      position: relative;
+    }
+
+    /* The sliding track wrapper — clips overflow */
+    .carousel-viewport {
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      cursor: grab;
+      user-select: none;
+    }
+    .carousel-viewport:active { cursor: grabbing; }
+
+    /* The track that slides */
+    .carousel-track {
+      display: flex;
+      transition: transform .45s cubic-bezier(.4,0,.2,1);
+      will-change: transform;
+    }
+
+    /* Each slide */
+    .carousel-slide {
+      flex-shrink: 0;
+      padding: 0 8px;
+    }
+
+    /* Gallery item inside slide */
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; display: block; }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,30,56,.82) 0%, transparent 60%); opacity: 0; transition: var(--transition); display: flex; align-items: flex-end; padding: 16px; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-caption { color: var(--clr-white); font-size: .85rem; font-weight: 600; }
+
+    /* Prev / Next arrows shared style */
+    .c-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--clr-white);
+      border: 2px solid var(--clr-border);
+      color: var(--clr-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+    .c-arrow:hover { background: var(--clr-primary); color: var(--clr-white); border-color: var(--clr-primary); }
+    .c-arrow.prev { left: -22px; }
+    .c-arrow.next { right: -22px; }
+
+    /* Dot indicators shared */
+    .c-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 22px;
+    }
+    .c-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--clr-border);
+      border: none; cursor: pointer;
+      transition: var(--transition);
+      padding: 0;
+    }
+    .c-dot.active {
+      background: var(--clr-accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ══════════════════════════════════════
+       TESTIMONIALS CAROUSEL
+    ══════════════════════════════════════ */
+    .testimonials-section { background: var(--clr-bg); }
+
+    .testimonial-card {
+      background: var(--clr-white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--clr-border);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-card .quote-icon { font-size: 2.5rem; color: var(--clr-accent); line-height: 1; margin-bottom: 14px; font-family: Georgia, serif; }
+    .testimonial-card p { color: var(--clr-muted); font-size: .92rem; line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .testimonial-card .reviewer { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--clr-border); margin-top: auto; }
+    .reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--clr-primary), var(--clr-teal)); display: flex; align-items: center; justify-content: center; color: var(--clr-white); font-size: 1.1rem; font-weight: 700; flex-shrink: 0; }
+    .reviewer-name { font-weight: 700; font-size: .92rem; }
+    .reviewer-role { font-size: .78rem; color: var(--clr-muted); }
+    .star-rating { display: flex; gap: 2px; margin-bottom: 12px; }
+    .star-rating i { color: #f59e0b; font-size: .85rem; }
+
+    /* ══════════════════════════════════════
+       BLOG CAROUSEL
+    ══════════════════════════════════════ */
+    .blog-section { background: var(--clr-bg); }
+
+    .blog-card { background: var(--clr-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--clr-border); transition: var(--transition); height: 100%; display: flex; flex-direction: column; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .blog-card .blog-thumb { height: 190px; background-size: cover; background-position: center; position: relative; flex-shrink: 0; }
+    .blog-card .blog-date-badge { position: absolute; top: 14px; left: 14px; background: var(--clr-accent); color: var(--clr-white); padding: 5px 11px; border-radius: var(--radius-sm); font-size: .76rem; font-weight: 700; }
+    .blog-card .blog-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .blog-card .blog-category { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--clr-primary-lt); margin-bottom: 7px; }
+    .blog-card .blog-title { font-size: 1rem; margin-bottom: 9px; color: var(--clr-primary); line-height: 1.4; transition: var(--transition); }
+    .blog-card:hover .blog-title { color: var(--clr-accent); }
+    .blog-card .blog-excerpt { font-size: .83rem; color: var(--clr-muted); margin-bottom: 14px; line-height: 1.6; flex: 1; }
+    .blog-card .blog-footer { display: flex; justify-content: space-between; align-items: center; font-size: .79rem; color: var(--clr-muted); padding-top: 12px; border-top: 1px solid var(--clr-border); margin-top: auto; }
+    .read-more-link { color: var(--clr-primary-lt); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+    .read-more-link:hover { color: var(--clr-accent); }
+
+    /* ══ APPOINTMENT ══ */
+    .appointment-section { background: linear-gradient(135deg, var(--clr-bg-dark) 0%, #0e3a6e 100%); position: relative; }
+    .appointment-section::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='white' stroke-opacity='0.03' stroke-width='1' fill='none'/%3E%3C/svg%3E") center/300px; }
+    .appt-form-card { background: var(--clr-white); border-radius: var(--radius-lg); padding: 44px; box-shadow: var(--shadow-lg); }
+    .appt-form-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+    .appt-form-card p { color: var(--clr-muted); font-size: .9rem; margin-bottom: 28px; }
+    .form-group-custom { margin-bottom: 16px; }
+    .form-label-custom { font-size: .82rem; font-weight: 600; color: var(--clr-text); margin-bottom: 6px; display: block; }
+    .form-input-custom { width: 100%; padding: 11px 16px; border: 1.5px solid var(--clr-border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: .92rem; color: var(--clr-text); background: var(--clr-white); transition: var(--transition); outline: none; }
+    .form-input-custom:focus { border-color: var(--clr-primary-lt); box-shadow: 0 0 0 3px rgba(16,96,168,.1); }
+    select.form-input-custom { appearance: none; cursor: pointer; }
+    textarea.form-input-custom { resize: vertical; min-height: 90px; }
+    .appt-info-side { color: var(--clr-white); padding-left: 24px; }
+    .appt-info-side h2 { font-size: 2rem; color: var(--clr-white); margin-bottom: 16px; }
+    .appt-info-side p { color: rgba(255,255,255,.75); margin-bottom: 30px; }
+    .appt-contact-list { list-style: none; padding: 0; }
+    .appt-contact-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+    .appt-contact-list li .ci { width: 40px; height: 40px; background: rgba(255,255,255,.1); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--clr-accent); flex-shrink: 0; }
+    .appt-contact-list li .ct { font-size: .88rem; color: rgba(255,255,255,.8); }
+    .appt-contact-list li .ct strong { display: block; color: var(--clr-white); font-size: .92rem; margin-bottom: 2px; }
+
+    /* ══ FOOTER ══ */
+    .site-footer { background: var(--clr-bg-dark); color: rgba(255,255,255,.75); padding-top: 72px; }
+    .footer-logo { margin-bottom: 18px; }
+    .footer-logo img { height: 58px; border-radius: var(--radius-sm); }
+    .footer-desc { font-size: .88rem; line-height: 1.7; max-width: 300px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.7); font-size: .9rem; border: 1px solid rgba(255,255,255,.1); transition: var(--transition); }
+    .footer-social a:hover { background: var(--clr-accent); border-color: var(--clr-accent); color: var(--clr-white); transform: translateY(-2px); }
+    .footer-heading { font-family: var(--font-body); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--clr-accent); margin-bottom: 20px; }
+    .footer-links { list-style: none; padding: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { font-size: .88rem; color: rgba(255,255,255,.65); display: flex; align-items: center; gap: 6px; transition: var(--transition); }
+    .footer-links a:hover { color: var(--clr-accent); padding-left: 4px; }
+    .footer-links a i { font-size: .7rem; color: var(--clr-accent); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+    .footer-contact-item i { color: var(--clr-accent); font-size: .95rem; margin-top: 3px; flex-shrink: 0; }
+    .footer-contact-item span { font-size: .88rem; color: rgba(255,255,255,.7); }
+    .footer-hours { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-md); padding: 18px; margin-top: 8px; }
+    .hours-row { display: flex; justify-content: space-between; font-size: .85rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row .day { color: rgba(255,255,255,.6); }
+    .hours-row .time { color: var(--clr-white); font-weight: 500; }
+    .hours-row .open { color: var(--clr-teal); }
+    .footer-bottom { margin-top: 60px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08); text-align: center; font-size: .82rem; color: rgba(255,255,255,.4); }
+    .footer-bottom a { color: var(--clr-accent); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; align-items: center; }
+      .about-content { padding-left: 0; margin-top: 32px; }
+      .about-exp-badge { right: 12px; }
+      .treatment-panel { flex-direction: column; }
+      .treatment-panel .panel-img { width: 100%; min-height: 240px; }
+      .appt-info-side { padding-left: 0; margin-top: 40px; }
+      .c-arrow.prev { left: -14px; }
+      .c-arrow.next { right: -14px; }
+    }
+
+    @media (max-width: 768px) {
+      .section-pad { padding: 60px 0; }
+      .section-pad-sm { padding: 40px 0; }
+      .features-strip .row > div { border-right: none; border-bottom: 1px solid var(--clr-border); }
+      .features-strip .row > div:last-child { border-bottom: none; }
+      .panel-points { grid-template-columns: 1fr; }
+      .hero-arrow { display: none; }
+      .appt-form-card { padding: 28px 20px; }
+      .about-services-grid { grid-template-columns: 1fr; }
+      .c-arrow { display: none; }
+      .about-img-wrap img { height: 320px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.9rem; }
+      .stat-card { padding: 28px 12px; }
+      .stat-card::after { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TICKER -->
+  <!-- <div class="ticker-bar" role="marquee">
+    <span class="ticker-inner">
+      🏥 24×7 Emergency Services Available &nbsp;|&nbsp;
+      🦴 Expert Orthopaedic Surgeons &nbsp;|&nbsp;
+      🔬 Advanced Diagnostic Facility &nbsp;|&nbsp;
+      💊 Minimally Invasive Surgery &nbsp;|&nbsp;
+      ❤️ Peoples Mobility First &nbsp;|&nbsp;
+      📞 Call Now: +91 93350 30190 / 0522-3646448 &nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+  </div> -->
+
+  <!-- INFO BAR -->
+  <div class="info-bar">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-4 col-sm-12 mb-1 mb-md-0">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="en">Tedhi Pulia, Kalyanpur, Lucknow, U.P. 226022</span>
+            <span class="hi lang-hidden">टेढ़ी पुलिया, कल्याणपुर, लखनऊ, उ.प्र. 226022</span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 mb-1 mb-md-0 text-md-center">
+          <div class="info-item justify-content-md-center">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:info@fasttrackortho.com">info@fasttrackortho.com</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 text-md-end">
+          <div class="info-item justify-content-md-end">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+919335030190">+91 9335030190</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="main-navbar" id="mainNav">
+    <div class="container">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-en" />
+          <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-hi" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+          <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+          <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+          <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+          <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+          <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="lang-selector">
+            <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" id="btn-hi" onclick="setLanguage('hi')">हि</button>
+          </div>
+          <a href="appointment.html" class="nav-appt-btn">
+            <span class="en">Book Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट लें</span>
+          </a>
+          <button class="nav-hamburger" id="hamburgerBtn" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+        <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+        <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+        <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+        <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+        <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+        <li><a href="appointment.html" style="color:var(--clr-accent);font-weight:700;"><span class="en">📅 Book Appointment</span><span class="hi lang-hidden">📅 अपॉइंटमेंट लें</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section" id="hero">
+    <div class="hero-slide active" style="background-image:url('images/homeBanner/slide0.jpeg');"></div>
+    <div class="hero-slide" style="background-image:url('images/homeBanner/slide1.jpeg');"></div>
+    <div class="hero-slide" style="background-image:url('images/homeBanner/slide2.jpeg');"></div>
+    <div class="hero-slide" style="background-image:url('images/homeBanner/slide3.jpeg');"></div>
+    <div class="hero-slide" style="background-image:url('images/homeBanner/slide4.jpeg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <i class="fa-solid fa-circle-check"></i>
+            <span class="en">Lucknow's Trusted Orthopaedic Centre</span>
+            <span class="hi lang-hidden">लखनऊ का विश्वसनीय ऑर्थोपेडिक केंद्र</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="en">Advanced Care for <span>Bones &amp; Joints</span></span>
+            <span class="hi lang-hidden">हड्डियों और जोड़ों की <span>उन्नत देखभाल</span></span>
+          </h1>
+          <p class="hero-desc">
+            <span class="en">Expert orthopaedic treatment by Dr. Intekhab Alam. 10,000+ surgeries, compassionate care, modern technology — all under one roof.</span>
+            <span class="hi lang-hidden">डॉ. इंतेखाब आलम द्वारा विशेषज्ञ ऑर्थोपेडिक उपचार। 10,000+ सर्जरी, करुणामय देखभाल और आधुनिक तकनीक।</span>
+          </p>
+          <div class="hero-actions">
+            <a href="appointment.html" class="btn-primary-custom"><i class="fa-regular fa-calendar-check"></i><span class="en">Book Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट लें</span></a>
+            <a href="department.html" class="btn-outline-custom"><span class="en">Our Departments</span><span class="hi lang-hidden">हमारे विभाग</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="hero-arrow prev" id="heroPrev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="hero-arrow next" id="heroNext"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="hero-indicators" id="heroIndicators"></div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <section class="features-strip">
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="feature-card">
+            <div class="icon-wrap"><i class="fa-solid fa-user-doctor"></i></div>
+            <div><h4><span class="en">Qualified Doctor</span><span class="hi lang-hidden">योग्य डॉक्टर</span></h4><p><span class="en">AMU trained, Apollo · Max · Fortis experience</span><span class="hi lang-hidden">AMU प्रशिक्षित, Apollo · Max · Fortis अनुभव</span></p></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
+          <div class="feature-card">
+            <div class="icon-wrap"><i class="fa-solid fa-truck-medical"></i></div>
+            <div><h4><span class="en">Emergency Care</span><span class="hi lang-hidden">आपातकालीन देखभाल</span></h4><p><span class="en">24/7 rapid response for critical situations</span><span class="hi lang-hidden">गंभीर स्थितियों में 24/7 त्वरित सहायता</span></p></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
+          <div class="feature-card">
+            <div class="icon-wrap"><i class="fa-solid fa-stethoscope"></i></div>
+            <div><h4><span class="en">OPD Checkups</span><span class="hi lang-hidden">OPD जांच</span></h4><p><span class="en">Regular consultations and preventive care</span><span class="hi lang-hidden">नियमित परामर्श और निवारक देखभाल</span></p></div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
+          <div class="feature-card">
+            <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
+            <div><h4><span class="en">24 Hours Service</span><span class="hi lang-hidden">24 घंटे सेवा</span></h4><p><span class="en">Round-the-clock healthcare, every single day</span><span class="hi lang-hidden">हर दिन चौबीसों घंटे स्वास्थ्य सेवा</span></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section section-pad" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+          <div class="about-img-wrap" style="padding-right:28px;">
+            <img src="images/doctor/intekhabalam.jpg" alt="Dr. Intekhab Alam" loading="lazy" />
+            <div class="about-exp-badge">
+              <div class="num">30+</div>
+              <div class="label"><span class="en">Years Experience</span><span class="hi lang-hidden">वर्ष अनुभव</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="about-content">
+            <span class="badge-tag"><span class="en">About The Doctor</span><span class="hi lang-hidden">डॉक्टर के बारे में</span></span>
+            <h2 class="section-title"><span class="en">Dr. Intekhab Alam — Leading Orthopaedic Surgeon in Lucknow</span><span class="hi lang-hidden">डॉ. इंतेखाब आलम — लखनऊ के अग्रणी ऑर्थोपेडिक सर्जन</span></h2>
+            <p style="color:var(--clr-muted);margin-bottom:16px;">
+              <span class="en">MBBS & MS Orthopaedics from Aligarh Muslim University. Ex Consultant at Apollo Hospital Lucknow, Max Hospital New Delhi, and Fortis Hospital Gurugram — now bringing world-class expertise to Fast Track Orthopaedic Care. 10,000+ surgeries, 7,000+ fracture repairs, 2,000+ joint replacements.</span>
+              <span class="hi lang-hidden">अलीगढ़ मुस्लिम यूनिवर्सिटी से MBBS और MS ऑर्थोपेडिक्स। अपोलो, मैक्स और फोर्टिस हॉस्पिटल में पूर्व परामर्शदाता। 10,000+ सर्जरी, 7,000+ फ्रैक्चर, 2,000+ जॉइंट रिप्लेसमेंट।</span>
+            </p>
+            <div class="about-services-grid">
+              <div class="about-service-item"><i class="fa-solid fa-kit-medical svc-icon"></i><div><h5><span class="en">Primary Care</span><span class="hi lang-hidden">प्राथमिक देखभाल</span></h5><p><span class="en">Comprehensive diagnosis and treatment plans</span><span class="hi lang-hidden">व्यापक निदान और उपचार योजनाएं</span></p></div></div>
+              <div class="about-service-item"><i class="fa-solid fa-flask svc-icon"></i><div><h5><span class="en">Lab Investigations</span><span class="hi lang-hidden">लैब जांच</span></h5><p><span class="en">In-house pathology and diagnostic imaging</span><span class="hi lang-hidden">इन-हाउस पैथोलॉजी और इमेजिंग</span></p></div></div>
+              <div class="about-service-item"><i class="fa-solid fa-microscope svc-icon"></i><div><h5><span class="en">Symptom Evaluation</span><span class="hi lang-hidden">लक्षण मूल्यांकन</span></h5><p><span class="en">Precise orthopaedic symptom assessment</span><span class="hi lang-hidden">सटीक ऑर्थोपेडिक लक्षण मूल्यांकन</span></p></div></div>
+              <div class="about-service-item"><i class="fa-solid fa-heart-pulse svc-icon"></i><div><h5><span class="en">Post-Op Monitoring</span><span class="hi lang-hidden">ऑपरेशन के बाद निगरानी</span></h5><p><span class="en">Dedicated follow-up and rehabilitation care</span><span class="hi lang-hidden">समर्पित फॉलो-अप और पुनर्वास देखभाल</span></p></div></div>
+            </div>
+            <div class="mt-4">
+              <a href="about.html" class="btn-primary-custom"><span class="en">See More About Dr. Alam</span><span class="hi lang-hidden">डॉ. आलम के बारे में और जानें</span><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section section-pad-sm" id="stats">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="0"><div class="stat-card"><div class="stat-number"><span class="counter" data-target="10000">0</span>+</div><div class="stat-label"><span class="en">Total Surgeries</span><span class="hi lang-hidden">कुल सर्जरी</span></div></div></div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="80"><div class="stat-card"><div class="stat-number"><span class="counter" data-target="7000">0</span>+</div><div class="stat-label"><span class="en">Fracture Surgeries</span><span class="hi lang-hidden">फ्रैक्चर सर्जरी</span></div></div></div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="160"><div class="stat-card"><div class="stat-number"><span class="counter" data-target="2000">0</span>+</div><div class="stat-label"><span class="en">Joint Replacements</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></div></div></div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="240"><div class="stat-card"><div class="stat-number"><span class="counter" data-target="4500">0</span>+</div><div class="stat-label"><span class="en">Happy Patients</span><span class="hi lang-hidden">संतुष्ट मरीज</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="treatments-section section-pad" id="treatments">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag"><span class="en">What We Treat</span><span class="hi lang-hidden">हम क्या इलाज करते हैं</span></span>
+        <h2 class="section-title"><span class="en">Surgeries &amp; Treatments</span><span class="hi lang-hidden">सर्जरी और उपचार</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub"><span class="en">Comprehensive orthopaedic procedures performed with precision, compassion, and the latest medical technology.</span><span class="hi lang-hidden">सटीकता, करुणा और नवीनतम चिकित्सा तकनीक के साथ व्यापक ऑर्थोपेडिक प्रक्रियाएं।</span></p>
+      </div>
+      <div class="treatment-tabs" data-aos="fade-up">
+        <button class="treatment-tab-btn active" data-tab="treat-1"><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></button>
+        <button class="treatment-tab-btn" data-tab="treat-2"><span class="en">Arthritis Care</span><span class="hi lang-hidden">गठिया देखभाल</span></button>
+        <button class="treatment-tab-btn" data-tab="treat-3"><span class="en">Fracture Treatment</span><span class="hi lang-hidden">फ्रैक्चर उपचार</span></button>
+        <button class="treatment-tab-btn" data-tab="treat-4"><span class="en">Arthroscopy</span><span class="hi lang-hidden">आर्थ्रोस्कोपी</span></button>
+        <button class="treatment-tab-btn" data-tab="treat-5"><span class="en">Paediatric Ortho</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span></button>
+      </div>
+      <div data-aos="fade-up">
+        <div class="treatment-panel active" id="treat-1">
+          <div class="panel-img" style="background-image:url('img/fasttrack (42).jpeg');"></div>
+          <div class="panel-body"><h3><span class="en">Joint Replacement Surgery</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट सर्जरी</span></h3><p><span class="en">Advanced joint replacement — 2,000+ procedures. Total knee and hip replacement using modern implants to restore movement and quality of life.</span><span class="hi lang-hidden">2,000+ जॉइंट रिप्लेसमेंट प्रक्रियाएं। आधुनिक इम्प्लांट से गतिशीलता बहाल।</span></p><div class="panel-points"><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Total Knee Replacement</span><span class="hi lang-hidden">टोटल नी रिप्लेसमेंट</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Hip Replacement Surgery</span><span class="hi lang-hidden">हिप रिप्लेसमेंट सर्जरी</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Minimal Incision Technique</span><span class="hi lang-hidden">न्यूनतम चीरा तकनीक</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Fast Recovery Protocol</span><span class="hi lang-hidden">तेज़ रिकवरी प्रोटोकॉल</span></div></div></div>
+        </div>
+        <div class="treatment-panel" id="treat-2">
+          <div class="panel-img" style="background-image:url('img/fasttrack (40).jpeg');"></div>
+          <div class="panel-body"><h3><span class="en">Arthritis Care &amp; Management</span><span class="hi lang-hidden">गठिया देखभाल और प्रबंधन</span></h3><p><span class="en">Comprehensive arthritis management through medication, physiotherapy, lifestyle guidance, and minimally invasive procedures to reduce pain and improve joint function.</span><span class="hi lang-hidden">दवा, फिजियोथेरेपी और न्यूनतम इनवेसिव प्रक्रियाओं के माध्यम से व्यापक उपचार।</span></p><div class="panel-points"><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Rheumatoid Arthritis</span><span class="hi lang-hidden">रूमेटाइड आर्थराइटिस</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Osteoarthritis Management</span><span class="hi lang-hidden">ऑस्टियोआर्थराइटिस प्रबंधन</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Joint Injections / PRP</span><span class="hi lang-hidden">जोड़ इंजेक्शन / PRP</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Physiotherapy Programs</span><span class="hi lang-hidden">फिजियोथेरेपी कार्यक्रम</span></div></div></div>
+        </div>
+        <div class="treatment-panel" id="treat-3">
+          <div class="panel-img" style="background-image:url('img/fasttrack (38).jpeg');"></div>
+          <div class="panel-body"><h3><span class="en">Fracture Treatment</span><span class="hi lang-hidden">फ्रैक्चर उपचार</span></h3><p><span class="en">7,000+ fracture surgeries — from simple bone injuries to complex trauma. Advanced fixation using casting, plating, or nailing for proper healing.</span><span class="hi lang-hidden">7,000+ फ्रैक्चर सर्जरी — सरल से जटिल ट्रॉमा तक। उन्नत फिक्सेशन तकनीकें।</span></p><div class="panel-points"><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Closed &amp; Open Fractures</span><span class="hi lang-hidden">बंद और खुले फ्रैक्चर</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Surgical Plating / Nailing</span><span class="hi lang-hidden">सर्जिकल प्लेटिंग / नेलिंग</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Complex Trauma Surgery</span><span class="hi lang-hidden">जटिल ट्रॉमा सर्जरी</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Post-Fracture Rehab</span><span class="hi lang-hidden">फ्रैक्चर के बाद पुनर्वास</span></div></div></div>
+        </div>
+        <div class="treatment-panel" id="treat-4">
+          <div class="panel-img" style="background-image:url('img/fasttrack (42).jpeg');"></div>
+          <div class="panel-body"><h3><span class="en">Arthroscopic Ligament Surgery</span><span class="hi lang-hidden">आर्थ्रोस्कोपिक लिगामेंट सर्जरी</span></h3><p><span class="en">Minimally invasive arthroscopy for joint problems — ACL/PCL reconstruction and meniscus repair using small incisions for faster recovery.</span><span class="hi lang-hidden">जोड़ों की समस्याओं के लिए न्यूनतम इनवेसिव आर्थ्रोस्कोपी।</span></p><div class="panel-points"><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">ACL / PCL Reconstruction</span><span class="hi lang-hidden">ACL / PCL पुनर्निर्माण</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Meniscus Repair</span><span class="hi lang-hidden">मेनिस्कस रिपेयर</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Shoulder Arthroscopy</span><span class="hi lang-hidden">शोल्डर आर्थ्रोस्कोपी</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Sports Injury Repair</span><span class="hi lang-hidden">खेल चोट मरम्मत</span></div></div></div>
+        </div>
+        <div class="treatment-panel" id="treat-5">
+          <div class="panel-img" style="background-image:url('img/fasttrack (51).jpeg');"></div>
+          <div class="panel-body"><h3><span class="en">Paediatric Orthopaedics</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span></h3><p><span class="en">Specialised care for CTEV (clubfoot), congenital deformities, limb lengthening and growth plate disorders in children.</span><span class="hi lang-hidden">CTEV (क्लबफुट), जन्मजात विकृतियों और ग्रोथ प्लेट विकारों का उपचार।</span></p><div class="panel-points"><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">CTEV / Clubfoot Correction</span><span class="hi lang-hidden">CTEV / क्लबफुट सुधार</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Congenital Deformities</span><span class="hi lang-hidden">जन्मजात विकृतियां</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Limb Lengthening</span><span class="hi lang-hidden">अंग लंबाई सुधार</span></div><div class="panel-point"><i class="fa-solid fa-check"></i><span class="en">Growth Plate Disorders</span><span class="hi lang-hidden">ग्रोथ प्लेट विकार</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       GALLERY CAROUSEL  (9 images, 3-up → 2-up → 1-up)
+  ══════════════════════════════════════════════ -->
+  <section class="events-section section-pad" id="gallery">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag"><span class="en">Highlights</span><span class="hi lang-hidden">मुख्य घटनाएं</span></span>
+        <h2 class="section-title"><span class="en">Memorable Events</span><span class="hi lang-hidden">यादगार घटनाएं</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub"><span class="en">A glimpse of our milestones, conferences, live surgeries, and international workshops.</span><span class="hi lang-hidden">हमारी उपलब्धियों, सम्मेलनों और अंतर्राष्ट्रीय कार्यशालाओं की एक झलक।</span></p>
+      </div>
+
+      <div class="carousel-outer px-4" data-aos="fade-up">
+        <button class="c-arrow prev" id="gallPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="c-arrow next" id="gallNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="carousel-viewport" id="gallViewport">
+          <div class="carousel-track" id="gallTrack">
+
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (10).jpeg" alt="Demonstrating on bone models" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>Demonstrating on Bone Models</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (33).jpeg" alt="With Suresh Raina" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>With Suresh Raina</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (24).jpeg" alt="Workshop at Singapore" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>Workshop at Singapore</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (22).jpeg" alt="Advanced Orthopaedic Seminar" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>Advanced Orthopaedic Seminar</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (21).jpeg" alt="Live Surgery Training" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>Live Surgery Training</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (65).jpeg" alt="International Conference" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>International Conference</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (68).jpeg" alt="Advanced Orthopaedic Seminar 2" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>Advanced Orthopaedic Seminar</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (13).jpeg" alt="Live Surgery Training 2" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>Live Surgery Training</span></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="gallery-item"><img src="img/fasttrack (25).jpeg" alt="International Conference 2" loading="lazy" /><div class="gallery-overlay"><span class="gallery-caption"><i class="fa-solid fa-camera me-1"></i>International Conference</span></div></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="c-dots" id="gallDots"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       TESTIMONIALS CAROUSEL  (6 cards, 3-up → 2-up → 1-up)
+  ══════════════════════════════════════════════ -->
+  <section class="testimonials-section section-pad" id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag"><span class="en">Testimonials</span><span class="hi lang-hidden">प्रशंसापत्र</span></span>
+        <h2 class="section-title"><span class="en">What Our Patients Say</span><span class="hi lang-hidden">हमारे मरीज क्या कहते हैं</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub"><span class="en">Patients trust Fast Track Orthopaedic Care for expert treatment, clear guidance, and compassionate care.</span><span class="hi lang-hidden">मरीज Fast Track Orthopaedic Care पर भरोसा करते हैं।</span></p>
+      </div>
+
+      <div class="carousel-outer px-4" data-aos="fade-up">
+        <button class="c-arrow prev" id="testPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="c-arrow next" id="testNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="carousel-viewport" id="testViewport">
+          <div class="carousel-track" id="testTrack">
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">My mother had spine surgery by Dr. Intekhab Sir. She was bedridden for 2 months, but Alhamdulillah she has started walking again. Best orthopaedic hospital in Lucknow.</span><span class="hi lang-hidden">मेरी अम्मी की स्पाइन की सर्जरी के बाद अल्हम्दुलिल्लाह चलने लगी हैं।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">AK</div><div><div class="reviewer-name">Adnan Khan</div><div class="reviewer-role"><span class="en">Farmer, Lucknow</span><span class="hi lang-hidden">किसान, लखनऊ</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">My relative was admitted here for leg surgery. Dr. Intekhab Alam performed the operation brilliantly. The staff is very cooperative and food is provided as per patient needs.</span><span class="hi lang-hidden">Dr. Intekhab Alam ने शानदार ऑपरेशन किया। स्टाफ बहुत सहयोगी है।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">AF</div><div><div class="reviewer-name">Abdul Fareed</div><div class="reviewer-role"><span class="en">Businessman</span><span class="hi lang-hidden">व्यापारी</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">I had an accident that badly injured my left shoulder. Dr. Intekhab Alam performed the surgery successfully. Now I am fully recovered and happy.</span><span class="hi lang-hidden">Dr. Intekhab Alam ने सफलतापूर्वक ऑपरेशन किया। अब मैं पूरी तरह ठीक हूँ।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">SA</div><div><div class="reviewer-name">Sarfraz Ahmad</div><div class="reviewer-role"><span class="en">Professional</span><span class="hi lang-hidden">पेशेवर</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">Fast Track Hospital is the best option for orthopaedic care. I am highly satisfied with the services. Dr. Intekhab Alam and his staff are very helpful and supportive.</span><span class="hi lang-hidden">Fast Track Hospital ऑर्थोपेडिक इलाज के लिए सबसे अच्छा विकल्प है।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">AS</div><div><div class="reviewer-name">Abdul Samad</div><div class="reviewer-role"><span class="en">Student</span><span class="hi lang-hidden">छात्र</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                
+                <p><span class="en">My mother underwent bilateral knee replacement here. The care and guidance were outstanding. The hospital uses advanced technology. Truly worth it.</span><span class="hi lang-hidden">मेरी माँ का दोनों घुटनों का प्रत्यारोपण यहाँ हुआ। देखभाल और मार्गदर्शन बेहतरीन था।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">SS</div><div><div class="reviewer-name">Shadma Shamim</div><div class="reviewer-role"><span class="en">Manager</span><span class="hi lang-hidden">मैनेजर</span></div></div></div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="testimonial-card">
+                <div class="star-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                
+                <p><span class="en">Excellent experience at Fast Track Orthocare. The diagnosis was precise and the treatment plan clearly explained. The staff treated us like family throughout.</span><span class="hi lang-hidden">Fast Track Orthocare में शानदार अनुभव। स्टाफ ने पूरे समय परिवार जैसा व्यवहार किया।</span></p>
+                <div class="reviewer"><div class="reviewer-avatar">MR</div><div><div class="reviewer-name">Mohammad Raza</div><div class="reviewer-role"><span class="en">Retired Officer</span><span class="hi lang-hidden">सेवानिवृत्त अधिकारी</span></div></div></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="c-dots" id="testDots"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- APPOINTMENT -->
+  <section class="appointment-section section-pad" id="appointment">
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+          <div class="appt-form-card">
+            <h3><span class="en">Book a Consultation</span><span class="hi lang-hidden">परामर्श बुक करें</span></h3>
+            <p><span class="en">Fill in the form below and our team will confirm your appointment shortly.</span><span class="hi lang-hidden">नीचे फ़ॉर्म भरें, हमारी टीम जल्द ही पुष्टि करेगी।</span></p>
+            <form id="appointmentForm" novalidate>
+              <div class="row">
+                <div class="col-sm-6"><div class="form-group-custom"><label class="form-label-custom" for="firstName"><span class="en">First Name *</span><span class="hi lang-hidden">पहला नाम *</span></label><input type="text" id="firstName" name="firstName" class="form-input-custom" required placeholder="John" /></div></div>
+                <div class="col-sm-6"><div class="form-group-custom"><label class="form-label-custom" for="lastName"><span class="en">Last Name *</span><span class="hi lang-hidden">अंतिम नाम *</span></label><input type="text" id="lastName" name="lastName" class="form-input-custom" required placeholder="Doe" /></div></div>
+              </div>
+              <div class="form-group-custom"><label class="form-label-custom" for="phone"><span class="en">Phone Number *</span><span class="hi lang-hidden">फ़ोन नंबर *</span></label><input type="tel" id="phone" name="phone" class="form-input-custom" required placeholder="+91 XXXXX XXXXX" /></div>
+              <div class="form-group-custom"><label class="form-label-custom" for="service"><span class="en">Select Service</span><span class="hi lang-hidden">सेवा चुनें</span></label><select id="service" name="service" class="form-input-custom"><option value="">— Select Treatment —</option><option value="joint">Joint Replacement Surgery</option><option value="arthritis">Arthritis Care &amp; Management</option><option value="fracture">Fracture Treatment</option><option value="arthroscopy">Arthroscopic Ligament Surgery</option><option value="paediatric">Paediatric Orthopaedics</option><option value="other">Other</option></select></div>
+              <div class="row">
+                <div class="col-sm-6"><div class="form-group-custom"><label class="form-label-custom" for="apptDate"><span class="en">Preferred Date</span><span class="hi lang-hidden">पसंदीदा तिथि</span></label><input type="date" id="apptDate" name="apptDate" class="form-input-custom" /></div></div>
+                <div class="col-sm-6"><div class="form-group-custom"><label class="form-label-custom" for="apptTime"><span class="en">Preferred Time</span><span class="hi lang-hidden">पसंदीदा समय</span></label><select id="apptTime" name="apptTime" class="form-input-custom"><option value="">— Select Time —</option><option>09:00 AM – 10:00 AM</option><option>10:00 AM – 11:00 AM</option><option>11:00 AM – 12:00 PM</option><option>02:00 PM – 03:00 PM</option><option>03:00 PM – 04:00 PM</option><option>05:00 PM – 06:00 PM</option></select></div></div>
+              </div>
+              <div class="form-group-custom"><label class="form-label-custom" for="message"><span class="en">Additional Notes</span><span class="hi lang-hidden">अतिरिक्त नोट्स</span></label><textarea id="message" name="message" class="form-input-custom" placeholder="Describe your symptoms..."></textarea></div>
+              <button type="submit" class="btn-primary-custom w-100 justify-content-center"><i class="fa-regular fa-calendar-check"></i><span class="en">Confirm Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट पुष्टि करें</span></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="appt-info-side">
+            <span class="badge-tag" style="color:var(--clr-accent);"><span class="en">Get In Touch</span><span class="hi lang-hidden">संपर्क करें</span></span>
+            <h2><span class="en">We're Here to Help You Heal</span><span class="hi lang-hidden">हम आपको स्वस्थ करने के लिए यहाँ हैं</span></h2>
+            <p><span class="en">Our team is available 24/7 to answer your queries and guide you toward the best orthopaedic treatment.</span><span class="hi lang-hidden">हमारी टीम 24/7 उपलब्ध है।</span></p>
+            <ul class="appt-contact-list">
+              <li><div class="ci"><i class="fa-solid fa-location-dot"></i></div><div class="ct"><strong><span class="en">Hospital Address</span><span class="hi lang-hidden">अस्पताल का पता</span></strong><span class="en">529/078CC, Tedhi Pulia Ring Rd, Kalyanpur (East), Lucknow, U.P. 226022</span><span class="hi lang-hidden">529/078CC, टेढ़ी पुलिया रिंग रोड, कल्याणपुर (पूर्व), लखनऊ, उ.प्र. 226022</span></div></li>
+              <li><div class="ci"><i class="fa-solid fa-phone"></i></div><div class="ct"><strong><span class="en">Emergency Helpline</span><span class="hi lang-hidden">आपातकालीन हेल्पलाइन</span></strong><a href="tel:+919335030190" style="color:rgba(255,255,255,.8);">+91 93350 30190</a> / <a href="tel:05223646448" style="color:rgba(255,255,255,.8);">0522-3646448</a></div></li>
+              <li><div class="ci"><i class="fa-solid fa-envelope"></i></div><div class="ct"><strong>Email</strong><a href="mailto:info@fasttrackortho.com" style="color:rgba(255,255,255,.8);">info@fasttrackortho.com</a></div></li>
+              <li><div class="ci"><i class="fa-solid fa-clock"></i></div><div class="ct"><strong><span class="en">Working Hours</span><span class="hi lang-hidden">काम के घंटे</span></strong><span class="en">Open 24 Hours — 7 Days a Week</span><span class="hi lang-hidden">24 घंटे खुला — सप्ताह के 7 दिन</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       BLOG CAROUSEL  (3 cards, 3-up → 2-up → 1-up)
+  ══════════════════════════════════════════════ -->
+  <section class="blog-section section-pad" id="blog">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge-tag"><span class="en">Health Articles</span><span class="hi lang-hidden">स्वास्थ्य लेख</span></span>
+        <h2 class="section-title"><span class="en">Recent Blog Posts</span><span class="hi lang-hidden">हाल के ब्लॉग पोस्ट</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub"><span class="en">Stay informed with the latest orthopaedic health tips, surgical advances, and patient education articles.</span><span class="hi lang-hidden">नवीनतम ऑर्थोपेडिक स्वास्थ्य सुझावों के साथ अपडेट रहें।</span></p>
+      </div>
+
+      <div class="carousel-outer px-4" data-aos="fade-up">
+        <button class="c-arrow prev" id="blogPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="c-arrow next" id="blogNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="carousel-viewport" id="blogViewport">
+          <div class="carousel-track" id="blogTrack">
+
+            <div class="carousel-slide">
+              <article class="blog-card">
+                <div class="blog-thumb" style="background-image:url('img/fasttrack (19).jpeg');"><div class="blog-date-badge">Jan 23, 2024</div></div>
+                <div class="blog-body">
+                  <div class="blog-category"><span class="en">Joint Health</span><span class="hi lang-hidden">जोड़ों की सेहत</span></div>
+                  <h3 class="blog-title"><a href="blog.html"><span class="en">5 Warning Signs You May Need Knee Replacement Surgery</span><span class="hi lang-hidden">5 संकेत जो बताते हैं नी रिप्लेसमेंट की जरूरत है</span></a></h3>
+                  <p class="blog-excerpt"><span class="en">Persistent knee pain, swelling, and reduced mobility might signal that conservative treatment is no longer enough...</span><span class="hi lang-hidden">लगातार घुटने का दर्द, सूजन और गतिशीलता में कमी संकेत दे सकती है...</span></p>
+                  <div class="blog-footer"><span><i class="fa-regular fa-user"></i> Dr. Intekhab Alam</span><a href="blog.html" class="read-more-link"><span class="en">Read More</span><span class="hi lang-hidden">और पढ़ें</span><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="blog-card">
+                <div class="blog-thumb" style="background-image:url('img/fasttrack (21).jpeg');"><div class="blog-date-badge">Feb 10, 2024</div></div>
+                <div class="blog-body">
+                  <div class="blog-category"><span class="en">Surgery &amp; Recovery</span><span class="hi lang-hidden">सर्जरी और रिकवरी</span></div>
+                  <h3 class="blog-title"><a href="blog.html"><span class="en">What to Expect After Arthroscopic Ligament Surgery</span><span class="hi lang-hidden">आर्थ्रोस्कोपिक सर्जरी के बाद क्या उम्मीद करें</span></a></h3>
+                  <p class="blog-excerpt"><span class="en">Arthroscopic surgery offers faster recovery compared to open surgery. Here is a complete week-by-week recovery guide...</span><span class="hi lang-hidden">आर्थ्रोस्कोपिक सर्जरी में तेज़ रिकवरी होती है...</span></p>
+                  <div class="blog-footer"><span><i class="fa-regular fa-user"></i> Dr. Intekhab Alam</span><a href="blog.html" class="read-more-link"><span class="en">Read More</span><span class="hi lang-hidden">और पढ़ें</span><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="blog-card">
+                <div class="blog-thumb" style="background-image:url('img/fasttrack (22).jpeg');"><div class="blog-date-badge">Mar 05, 2024</div></div>
+                <div class="blog-body">
+                  <div class="blog-category"><span class="en">Children's Health</span><span class="hi lang-hidden">बच्चों की सेहत</span></div>
+                  <h3 class="blog-title"><a href="blog.html"><span class="en">Clubfoot in Children: Early Detection and Correction</span><span class="hi lang-hidden">बच्चों में क्लबफुट: शीघ्र पहचान और सुधार</span></a></h3>
+                  <p class="blog-excerpt"><span class="en">CTEV (clubfoot) affects 1 in 1000 newborns. Early intervention with the Ponseti method leads to excellent outcomes...</span><span class="hi lang-hidden">CTEV प्रत्येक 1000 नवजात शिशुओं में से 1 को प्रभावित करता है...</span></p>
+                  <div class="blog-footer"><span><i class="fa-regular fa-user"></i> Dr. Intekhab Alam</span><a href="blog.html" class="read-more-link"><span class="en">Read More</span><span class="hi lang-hidden">और पढ़ें</span><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="blog-card">
+                <div class="blog-thumb" style="background-image:url('img/fasttrack (40).jpeg');"><div class="blog-date-badge">Apr 12, 2024</div></div>
+                <div class="blog-body">
+                  <div class="blog-category"><span class="en">Fracture Care</span><span class="hi lang-hidden">फ्रैक्चर देखभाल</span></div>
+                  <h3 class="blog-title"><a href="blog.html"><span class="en">Understanding Complex Fractures and Modern Fixation Techniques</span><span class="hi lang-hidden">जटिल फ्रैक्चर और आधुनिक फिक्सेशन तकनीकें</span></a></h3>
+                  <p class="blog-excerpt"><span class="en">With 7,000+ fracture surgeries, Dr. Alam explains when surgical fixation is necessary and what patients can expect...</span><span class="hi lang-hidden">7,000+ फ्रैक्चर सर्जरी के अनुभव से — डॉ. आलम बताते हैं कब सर्जरी ज़रूरी है...</span></p>
+                  <div class="blog-footer"><span><i class="fa-regular fa-user"></i> Dr. Intekhab Alam</span><a href="blog.html" class="read-more-link"><span class="en">Read More</span><span class="hi lang-hidden">और पढ़ें</span><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-slide">
+              <article class="blog-card">
+                <div class="blog-thumb" style="background-image:url('img/fasttrack (38).jpeg');"><div class="blog-date-badge">May 20, 2024</div></div>
+                <div class="blog-body">
+                  <div class="blog-category"><span class="en">Sports Medicine</span><span class="hi lang-hidden">स्पोर्ट्स मेडिसिन</span></div>
+                  <h3 class="blog-title"><a href="blog.html"><span class="en">ACL Injury: Recovery Timeline and Return to Sport</span><span class="hi lang-hidden">ACL चोट: रिकवरी टाइमलाइन और खेल में वापसी</span></a></h3>
+                  <p class="blog-excerpt"><span class="en">ACL tears are common sports injuries. Learn about arthroscopic reconstruction and the road back to full activity...</span><span class="hi lang-hidden">ACL टियर एक सामान्य खेल चोट है। आर्थ्रोस्कोपिक रिकंस्ट्रक्शन के बारे में जानें...</span></p>
+                  <div class="blog-footer"><span><i class="fa-regular fa-user"></i> Dr. Intekhab Alam</span><a href="blog.html" class="read-more-link"><span class="en">Read More</span><span class="hi lang-hidden">और पढ़ें</span><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+              </article>
+            </div>
+
+          </div>
+        </div>
+        <div class="c-dots" id="blogDots"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-logo"><img src="img/fasttrack (17).jpeg" alt="Fast Track Orthopaedic Care" /></div>
+          <p class="footer-desc"><span class="en">Expert orthopaedic care in Lucknow. Led by Dr. Intekhab Alam — Peoples Mobility First.</span><span class="hi lang-hidden">लखनऊ में विशेषज्ञ ऑर्थोपेडिक देखभाल।</span></p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-heading"><span class="en">Quick Links</span><span class="hi lang-hidden">त्वरित लिंक</span></div>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i><span class="en">About Doctor</span><span class="hi lang-hidden">डॉक्टर के बारे में</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+            <li><a href="appointment.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट</span></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-heading"><span class="en">Services</span><span class="hi lang-hidden">सेवाएं</span></div>
+          <ul class="footer-links">
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Arthritis Care</span><span class="hi lang-hidden">गठिया देखभाल</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Fracture Treatment</span><span class="hi lang-hidden">फ्रैक्चर उपचार</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Arthroscopy</span><span class="hi lang-hidden">आर्थ्रोस्कोपी</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Paediatric Ortho</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span></a></li>
+            <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Spine Care</span><span class="hi lang-hidden">स्पाइन केयर</span></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-heading"><span class="en">Contact Info</span><span class="hi lang-hidden">संपर्क जानकारी</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>529/078CC, Tedhi Pulia Ring Rd, Kalyanpur (East), Lucknow, U.P. 226022</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:+919335030190" style="color:rgba(255,255,255,.7);">+91 93350 30190</a><br/><a href="tel:05223646448" style="color:rgba(255,255,255,.7);">0522-3646448</a></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:info@fasttrackortho.com" style="color:rgba(255,255,255,.7);">info@fasttrackortho.com</a></span></div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-heading"><span class="en">Opening Hours</span><span class="hi lang-hidden">खुलने का समय</span></div>
+          <div class="footer-hours">
+            <div class="hours-row"><span class="day"><span class="en">Mon – Fri</span><span class="hi lang-hidden">सोम – शुक्र</span></span><span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span></div>
+            <div class="hours-row"><span class="day"><span class="en">Saturday</span><span class="hi lang-hidden">शनिवार</span></span><span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span></div>
+            <div class="hours-row"><span class="day"><span class="en">Sunday</span><span class="hi lang-hidden">रविवार</span></span><span class="time open"><span class="en">Emergency</span><span class="hi lang-hidden">आपातकालीन</span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="copyrightYear"></span> <span class="en">Fast Track Orthopaedic Care. All Rights Reserved. Designed with ❤️ for better healthcare in Lucknow.</span><span class="hi lang-hidden">Fast Track Orthopaedic Care. सर्वाधिकार सुरक्षित। ❤️</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+  /* ══════════════════════════════════════════════════════
+     AOS
+  ══════════════════════════════════════════════════════ */
+  AOS.init({ duration: 700, easing: 'ease-out-quad', once: true, offset: 60 });
+
+  /* ══════════════════════════════════════════════════════
+     LANGUAGE SWITCHER
+  ══════════════════════════════════════════════════════ */
+  function setLanguage(lang) {
+    document.querySelectorAll('.en').forEach(el => el.classList.toggle('lang-hidden', lang !== 'en'));
+    document.querySelectorAll('.hi').forEach(el => el.classList.toggle('lang-hidden', lang !== 'hi'));
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-hi').classList.toggle('active', lang === 'hi');
+    document.documentElement.lang = lang;
+    document.querySelector('.logo-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelector('.logo-hi').style.display = lang === 'hi' ? 'block' : 'none';
+    localStorage.setItem('preferredLang', lang);
+  }
+  setLanguage(localStorage.getItem('preferredLang') || 'en');
+
+  /* ══════════════════════════════════════════════════════
+     HERO SLIDER
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const slides = document.querySelectorAll('.hero-slide');
+    const wrap   = document.getElementById('heroIndicators');
+    let cur = 0, timer;
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', `Slide ${i+1}`);
+      if (i === 0) b.classList.add('active');
+      b.onclick = () => goTo(i);
+      wrap.appendChild(b);
+    });
+    function goTo(i) {
+      slides[cur].classList.remove('active'); wrap.children[cur].classList.remove('active');
+      cur = (i + slides.length) % slides.length;
+      slides[cur].classList.add('active'); wrap.children[cur].classList.add('active');
+      clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000);
+    }
+    document.getElementById('heroPrev').onclick = () => goTo(cur - 1);
+    document.getElementById('heroNext').onclick = () => goTo(cur + 1);
+    document.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') goTo(cur-1); if (e.key === 'ArrowRight') goTo(cur+1); });
+    timer = setInterval(() => goTo(cur + 1), 5000);
+  })();
+
+  /* ══════════════════════════════════════════════════════
+     TREATMENT TABS
+  ══════════════════════════════════════════════════════ */
+  document.querySelectorAll('.treatment-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.treatment-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.treatment-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* ══════════════════════════════════════════════════════
+     UNIVERSAL RESPONSIVE CAROUSEL ENGINE
+     Supports: 3-up (≥992), 2-up (≥576), 1-up (<576)
+     Features: arrows, dots, touch/mouse drag, auto-play
+  ══════════════════════════════════════════════════════ */
+  function buildCarousel(cfg) {
+    const { trackId, viewportId, prevId, nextId, dotsId, perPage, autoPlay, autoDelay } = cfg;
+
+    const track    = document.getElementById(trackId);
+    const viewport = document.getElementById(viewportId);
+    const prevBtn  = document.getElementById(prevId);
+    const nextBtn  = document.getElementById(nextId);
+    const dotsWrap = document.getElementById(dotsId);
+
+    if (!track || !viewport) return;
+
+    const slides  = Array.from(track.children);
+    const total   = slides.length;
+    let cur       = 0;
+    let autoTimer = null;
+
+    /* Determine how many slides to show based on viewport width */
+    function getVisible() {
+      const w = window.innerWidth;
+      if (w >= 992)  return Math.min(perPage[2] || 3, total);
+      if (w >= 576)  return Math.min(perPage[1] || 2, total);
+      return Math.min(perPage[0] || 1, total);
+    }
+
+    /* Total number of "pages" */
+    function getPages() { return Math.max(1, total - getVisible() + 1); }
+
+    /* Width of one slide = viewport / visible */
+    function setWidths() {
+      const vis   = getVisible();
+      const pct   = 100 / vis;
+      slides.forEach(s => s.style.width = pct + '%');
+    }
+
+    /* Move to page index */
+    function goTo(idx) {
+      const pages = getPages();
+      cur = (idx + pages) % pages;
+      const pct = (cur / total) * 100;
+      track.style.transform = `translateX(-${pct}%)`;
+      updateDots();
+    }
+
+    /* Build dots */
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const pages = getPages();
+      for (let i = 0; i < pages; i++) {
+        const d = document.createElement('button');
+        d.className = 'c-dot' + (i === cur ? ' active' : '');
+        d.setAttribute('aria-label', `Page ${i+1}`);
+        d.onclick = () => { goTo(i); resetAuto(); };
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    /* Prev / next */
+    prevBtn && prevBtn.addEventListener('click', () => { goTo(cur - 1); resetAuto(); });
+    nextBtn && nextBtn.addEventListener('click', () => { goTo(cur + 1); resetAuto(); });
+
+    /* Auto-play */
+    function startAuto() {
+      if (!autoPlay) return;
+      autoTimer = setInterval(() => goTo(cur + 1), autoDelay || 4000);
+    }
+    function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+    /* Touch / mouse drag */
+    let dragStart = null, dragDelta = 0, isDragging = false;
+
+    function onDragStart(x) { dragStart = x; isDragging = false; }
+    function onDragMove(x) {
+      if (dragStart === null) return;
+      dragDelta = x - dragStart;
+      if (Math.abs(dragDelta) > 8) { isDragging = true; }
+    }
+    function onDragEnd() {
+      if (isDragging) {
+        const threshold = viewport.offsetWidth * 0.2;
+        if (dragDelta < -threshold) goTo(cur + 1);
+        else if (dragDelta > threshold) goTo(cur - 1);
+        resetAuto();
+      }
+      dragStart = null; dragDelta = 0; isDragging = false;
+    }
+
+    viewport.addEventListener('mousedown',  e => onDragStart(e.clientX));
+    viewport.addEventListener('mousemove',  e => onDragMove(e.clientX));
+    viewport.addEventListener('mouseup',    () => onDragEnd());
+    viewport.addEventListener('mouseleave', () => onDragEnd());
+    viewport.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+    viewport.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
+    viewport.addEventListener('touchend',   () => onDragEnd());
+
+    /* Click guard (prevent link clicks during drag) */
+    viewport.addEventListener('click', e => { if (isDragging) e.preventDefault(); }, true);
+
+    /* Recalculate on resize */
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const pages = getPages();
+        if (cur >= pages) cur = pages - 1;
+        setWidths();
+        buildDots();
+        goTo(cur);
+      }, 200);
+    });
+
+    /* Init */
+    setWidths();
+    buildDots();
+    goTo(0);
+    startAuto();
+  }
+
+  /* ── Gallery Carousel (3 → 2 → 1) ── */
+  buildCarousel({
+    trackId:    'gallTrack',
+    viewportId: 'gallViewport',
+    prevId:     'gallPrev',
+    nextId:     'gallNext',
+    dotsId:     'gallDots',
+    perPage:    [1, 2, 3],   // [mobile, tablet, desktop]
+    autoPlay:   true,
+    autoDelay:  3500
+  });
+
+  /* ── Testimonials Carousel (3 → 2 → 1) ── */
+  buildCarousel({
+    trackId:    'testTrack',
+    viewportId: 'testViewport',
+    prevId:     'testPrev',
+    nextId:     'testNext',
+    dotsId:     'testDots',
+    perPage:    [1, 2, 3],
+    autoPlay:   true,
+    autoDelay:  4500
+  });
+
+  /* ── Blog Carousel (3 → 2 → 1) ── */
+  buildCarousel({
+    trackId:    'blogTrack',
+    viewportId: 'blogViewport',
+    prevId:     'blogPrev',
+    nextId:     'blogNext',
+    dotsId:     'blogDots',
+    perPage:    [1, 2, 3],
+    autoPlay:   false
+  });
+
+  /* ══════════════════════════════════════════════════════
+     COUNTER ANIMATION
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const counters = document.querySelectorAll('.counter');
+    let done = false;
+    new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting || done) return;
+        done = true;
+        counters.forEach(el => {
+          const target = +el.dataset.target;
+          const step   = target / (2000 / 16);
+          let cur = 0;
+          const tick = () => {
+            cur = Math.min(cur + step, target);
+            el.textContent = Math.floor(cur).toLocaleString('en-IN');
+            if (cur < target) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      });
+    }, { threshold: 0.3 }).observe(document.getElementById('stats'));
+  })();
+
+  /* ══════════════════════════════════════════════════════
+     MOBILE HAMBURGER
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const btn  = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+    document.addEventListener('click', e => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      }
+    });
+  })();
+
+  /* ══════════════════════════════════════════════════════
+     STICKY NAV SHADOW
+  ══════════════════════════════════════════════════════ */
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.boxShadow =
+      window.scrollY > 60 ? '0 4px 20px rgba(10,61,107,.15)' : '0 2px 12px rgba(10,61,107,.07)';
+  }, { passive: true });
+
+  /* ══════════════════════════════════════════════════════
+     APPOINTMENT FORM
+  ══════════════════════════════════════════════════════ */
+  (function () {
+    const form = document.getElementById('appointmentForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const fn = form.firstName.value.trim();
+      const ln = form.lastName.value.trim();
+      const ph = form.phone.value.trim();
+      if (!fn || !ln || !ph) { alert('Please fill in all required fields.'); return; }
+      if (!/^[\d\s\+\-]{7,15}$/.test(ph)) { alert('Please enter a valid phone number.'); return; }
+      form.innerHTML = `<div style="text-align:center;padding:40px 0;"><div style="font-size:3rem;color:var(--clr-teal);margin-bottom:16px;"><i class="fa-solid fa-circle-check"></i></div><h4 style="color:var(--clr-primary);margin-bottom:8px;">Appointment Request Received!</h4><p style="color:var(--clr-muted);">Thank you, <strong>${fn}</strong>. Our team will contact you shortly.</p></div>`;
+    });
+  })();
+
+  /* COPYRIGHT YEAR */
+  document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

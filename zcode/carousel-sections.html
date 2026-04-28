@@ -1,0 +1,1293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel Sections — Fast Track Orthopaedic Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      /* ── RESET & ROOT VARS (matching site theme) ────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: #f5f7fb;
+        color: #1e2d3d;
+        overflow-x: hidden;
+      }
+
+      :root {
+        --clr-primary: #0a3d6b;
+        --clr-primary-lt: #1060a8;
+        --clr-accent: #e8a020;
+        --clr-accent-lt: #ffeabc;
+        --clr-teal: #0d8a74;
+        --clr-bg: #f5f7fb;
+        --clr-bg-dark: #071e38;
+        --clr-text: #1e2d3d;
+        --clr-muted: #6c7a8a;
+        --clr-white: #ffffff;
+        --clr-border: #dde4ee;
+        --font-head: "Playfair Display", Georgia, serif;
+        --font-body: "DM Sans", sans-serif;
+        --radius-sm: 6px;
+        --radius-md: 14px;
+        --radius-lg: 24px;
+        --shadow-sm: 0 2px 10px rgba(10, 61, 107, 0.08);
+        --shadow-md: 0 8px 30px rgba(10, 61, 107, 0.14);
+        --shadow-lg: 0 20px 56px rgba(10, 61, 107, 0.2);
+        --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: var(--font-head);
+        color: var(--clr-primary);
+        line-height: 1.25;
+      }
+
+      /* ── SHARED UTILITIES ───────────────────────────────────── */
+      .section-pad {
+        padding: 100px 0;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .badge-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--clr-accent);
+        margin-bottom: 14px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .badge-tag::before,
+      .badge-tag::after {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 2px;
+        background: var(--clr-accent);
+        border-radius: 2px;
+        opacity: 0.6;
+      }
+      .section-title {
+        font-size: clamp(1.9rem, 3vw, 2.7rem);
+        margin-bottom: 14px;
+        color: var(--clr-primary);
+      }
+      .section-sub {
+        color: var(--clr-muted);
+        font-size: 0.97rem;
+        max-width: 540px;
+        line-height: 1.7;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .divider {
+        width: 56px;
+        height: 3px;
+        border-radius: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--clr-accent),
+          var(--clr-primary-lt)
+        );
+        margin: 16px 0 28px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+   SECTION 1 — SPECIALTIES CAROUSEL
+════════════════════════════════════════════════════════════ */
+      .specialties-section {
+        background: var(--clr-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* decorative geometric blobs */
+      .specialties-section::before {
+        content: "";
+        position: absolute;
+        top: -120px;
+        right: -120px;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(16, 96, 168, 0.07) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .specialties-section::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(232, 160, 32, 0.07) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .spec-header {
+        text-align: center;
+        margin-bottom: 52px;
+      }
+
+      /* ── Carousel Shell ── */
+      .spec-carousel-wrap {
+        position: relative;
+        padding: 0 0 28px;
+      }
+
+      .spec-track-outer {
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+      }
+
+      .spec-track {
+        display: flex;
+        gap: 24px;
+        transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
+        will-change: transform;
+      }
+
+      /* ── Specialty Card ── */
+      .spec-card {
+        flex: 0 0 calc(33.333% - 16px);
+        min-width: 0;
+        background: var(--clr-white);
+        border-radius: var(--radius-lg);
+        padding: 38px 30px 34px;
+        border: 1px solid var(--clr-border);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition);
+        cursor: default;
+      }
+
+      /* accent ribbon top */
+      .spec-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--clr-primary),
+          var(--clr-primary-lt)
+        );
+        transition: var(--transition);
+      }
+      .spec-card:hover::before {
+        background: linear-gradient(90deg, var(--clr-accent), #f5c050);
+      }
+
+      /* large background number */
+      .spec-card .card-num {
+        position: absolute;
+        bottom: -18px;
+        right: 14px;
+        font-family: var(--font-head);
+        font-size: 7rem;
+        font-weight: 700;
+        color: var(--clr-primary);
+        opacity: 0.04;
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        transition: var(--transition);
+      }
+      .spec-card:hover .card-num {
+        opacity: 0.07;
+      }
+
+      .spec-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-md);
+      }
+
+      .spec-icon-wrap {
+        width: 66px;
+        height: 66px;
+        background: linear-gradient(135deg, #e6f0fb, #d0e4f7);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        color: var(--clr-primary);
+        margin-bottom: 22px;
+        transition: var(--transition);
+      }
+      .spec-card:hover .spec-icon-wrap {
+        background: var(--clr-primary);
+        color: var(--clr-white);
+        transform: scale(1.08) rotate(-4deg);
+        box-shadow: 0 8px 24px rgba(10, 61, 107, 0.25);
+      }
+
+      .spec-card h4 {
+        font-size: 1.08rem;
+        margin-bottom: 12px;
+        color: var(--clr-primary);
+      }
+      .spec-card p {
+        font-size: 0.85rem;
+        color: var(--clr-muted);
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* pill tag */
+      .spec-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 20px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--clr-primary-lt);
+        background: rgba(16, 96, 168, 0.08);
+        padding: 5px 12px;
+        border-radius: 100px;
+        transition: var(--transition);
+      }
+      .spec-card:hover .spec-tag {
+        background: var(--clr-accent-lt);
+        color: #b87800;
+      }
+
+      /* ── Carousel Nav ── */
+      .carousel-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 40px;
+      }
+
+      .nav-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid var(--clr-border);
+        background: var(--clr-white);
+        color: var(--clr-primary);
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        box-shadow: var(--shadow-sm);
+        flex-shrink: 0;
+      }
+      .nav-btn:hover:not(:disabled) {
+        background: var(--clr-primary);
+        border-color: var(--clr-primary);
+        color: var(--clr-white);
+        transform: scale(1.08);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+
+      .dot-nav {
+        display: flex;
+        gap: 8px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        background: var(--clr-border);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .dot.active {
+        background: var(--clr-primary);
+        width: 28px;
+      }
+
+      /* ═══════════════════════════════════════════════════════════
+   SECTION 2 — TESTIMONIALS CAROUSEL
+════════════════════════════════════════════════════════════ */
+      .testimonials-section {
+        background: linear-gradient(
+          165deg,
+          var(--clr-bg-dark) 0%,
+          #0e3a6e 55%,
+          #0a3d6b 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* decorative pattern overlay */
+      .testimonials-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(232, 160, 32, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(13, 138, 116, 0.08) 0%,
+            transparent 50%
+          ),
+          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+
+      .testi-header {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 56px;
+      }
+      .testi-header .badge-tag {
+        color: var(--clr-accent);
+      }
+      .testi-header .section-title {
+        color: var(--clr-white);
+      }
+      .testi-header .section-sub {
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0 auto;
+      }
+      .testi-header .divider {
+        margin: 16px auto 28px;
+      }
+
+      /* ── Large decorative quote ── */
+      .testi-mega-quote {
+        position: absolute;
+        top: 60px;
+        right: 5%;
+        font-family: Georgia, serif;
+        font-size: 18rem;
+        color: rgba(255, 255, 255, 0.04);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        z-index: 1;
+      }
+
+      /* ── Testi Carousel Shell ── */
+      .testi-carousel-wrap {
+        position: relative;
+        z-index: 2;
+        padding-bottom: 20px;
+      }
+
+      .testi-track-outer {
+        overflow: hidden;
+      }
+
+      .testi-track {
+        display: flex;
+        gap: 28px;
+        transition: transform 0.55s cubic-bezier(0.77, 0, 0.175, 1);
+        will-change: transform;
+      }
+
+      /* ── Testimonial Card ── */
+      .testi-card {
+        flex: 0 0 calc(50% - 14px);
+        min-width: 0;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--radius-lg);
+        padding: 38px 36px 32px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition),
+          background var(--transition);
+      }
+      .testi-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(232, 160, 32, 0.4);
+        transform: translateY(-6px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      /* accent left border on hover */
+      .testi-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 20%;
+        bottom: 20%;
+        width: 3px;
+        border-radius: 0 3px 3px 0;
+        background: var(--clr-accent);
+        transform: scaleY(0);
+        transform-origin: center;
+        transition: transform 0.4s ease;
+      }
+      .testi-card:hover::before {
+        transform: scaleY(1);
+      }
+
+      /* large quote mark on card */
+      .testi-quote-bg {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        font-family: Georgia, serif;
+        font-size: 5.5rem;
+        color: rgba(232, 160, 32, 0.18);
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      /* stars */
+      .testi-stars {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 18px;
+      }
+      .testi-stars i {
+        color: var(--clr-accent);
+        font-size: 0.88rem;
+      }
+
+      /* quote text */
+      .testi-text {
+        font-size: 0.95rem;
+        line-height: 1.78;
+        color: rgba(255, 255, 255, 0.82);
+        margin-bottom: 26px;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* reviewer row */
+      .testi-reviewer {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reviewer-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, var(--clr-accent), #f5c050);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--clr-bg-dark);
+        box-shadow: 0 4px 14px rgba(232, 160, 32, 0.4);
+        letter-spacing: 0.02em;
+      }
+
+      .reviewer-name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: var(--clr-white);
+        margin-bottom: 2px;
+      }
+      .reviewer-role {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .reviewer-role::before {
+        content: "";
+        width: 12px;
+        height: 1px;
+        background: var(--clr-accent);
+        opacity: 0.7;
+      }
+
+      /* verified badge */
+      .testi-verified {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--clr-teal);
+        background: rgba(13, 138, 116, 0.15);
+        border: 1px solid rgba(13, 138, 116, 0.3);
+        padding: 4px 10px;
+        border-radius: 100px;
+        flex-shrink: 0;
+      }
+
+      /* ── Testi Nav ── */
+      .testi-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 44px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .testi-nav-btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        flex-shrink: 0;
+      }
+      .testi-nav-btn:hover:not(:disabled) {
+        background: var(--clr-accent);
+        border-color: var(--clr-accent);
+        color: var(--clr-bg-dark);
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(232, 160, 32, 0.4);
+      }
+      .testi-nav-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .testi-dots {
+        display: flex;
+        gap: 8px;
+      }
+      .testi-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .testi-dot.active {
+        background: var(--clr-accent);
+        width: 28px;
+      }
+
+      /* ── Rating summary bar ── */
+      .rating-summary {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        margin-bottom: 52px;
+        flex-wrap: wrap;
+      }
+      .rating-pill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 100px;
+        padding: 10px 22px;
+      }
+      .rating-pill .rp-num {
+        font-family: var(--font-head);
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--clr-white);
+        line-height: 1;
+      }
+      .rating-pill .rp-label {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.3;
+      }
+      .rating-pill .rp-stars {
+        display: flex;
+        gap: 2px;
+      }
+      .rating-pill .rp-stars i {
+        color: var(--clr-accent);
+        font-size: 0.78rem;
+      }
+
+      /* ── RESPONSIVE ──────────────────────────────────────────── */
+      @media (max-width: 992px) {
+        .spec-card {
+          flex: 0 0 calc(50% - 12px);
+        }
+        .testi-card {
+          flex: 0 0 calc(100%);
+        }
+      }
+      @media (max-width: 640px) {
+        .spec-card {
+          flex: 0 0 calc(100%);
+        }
+        .testi-card {
+          flex: 0 0 calc(100%);
+          padding: 28px 22px 24px;
+        }
+        .section-pad {
+          padding: 70px 0;
+        }
+        .testi-mega-quote {
+          display: none;
+        }
+        .rating-summary {
+          gap: 12px;
+        }
+        .rating-pill {
+          padding: 8px 16px;
+        }
+      }
+
+      /* ── Smooth drag hint on mobile ── */
+      @media (hover: none) {
+        .spec-track-outer,
+        .testi-track-outer {
+          cursor: grab;
+        }
+      }
+
+      /* ── Autoplay progress bar ── */
+      .progress-bar-wrap {
+        height: 3px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 2px;
+        margin-top: 16px;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+      }
+      .progress-bar {
+        height: 100%;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--clr-accent), #f5c050);
+        width: 0%;
+        transition: width linear;
+      }
+
+      /* spec section progress bar */
+      .spec-progress-wrap {
+        height: 3px;
+        background: var(--clr-border);
+        border-radius: 2px;
+        margin-top: 8px;
+        overflow: hidden;
+      }
+      .spec-progress-bar {
+        height: 100%;
+        border-radius: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--clr-primary),
+          var(--clr-primary-lt)
+        );
+        width: 0%;
+        transition: width linear;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════
+     SECTION 1 — AREAS OF EXPERTISE / SPECIALTIES
+════════════════════════════════════════════════════ -->
+    <section class="specialties-section section-pad" id="specialties">
+      <div class="container">
+        <div class="spec-header">
+          <div class="badge-tag">Areas of Expertise</div>
+          <h2 class="section-title">Clinical Specialisations</h2>
+          <div class="divider"></div>
+          <p class="section-sub">
+            Dr. Alam's expertise spans the full spectrum of orthopaedic care —
+            from sports injuries to complex reconstruction.
+          </p>
+        </div>
+
+        <div class="spec-carousel-wrap">
+          <div class="spec-track-outer" id="specOuter">
+            <div class="spec-track" id="specTrack">
+              <div class="spec-card">
+                <div class="card-num">01</div>
+                <div class="spec-icon-wrap">
+                  <i class="fa-solid fa-bone"></i>
+                </div>
+                <h4>Joint Replacement</h4>
+                <p>
+                  Total knee and hip replacement surgeries using advanced
+                  implant systems with minimal blood loss and faster recovery
+                  protocols.
+                </p>
+                <div class="spec-tag">
+                  <i class="fa-solid fa-arrow-right"></i> Learn More
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="card-num">02</div>
+                <div class="spec-icon-wrap">
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <h4>Arthroscopic Surgery</h4>
+                <p>
+                  Minimally invasive ACL/PCL reconstruction, meniscus repair,
+                  and shoulder arthroscopy with keyhole incisions for faster
+                  healing.
+                </p>
+                <div class="spec-tag">
+                  <i class="fa-solid fa-arrow-right"></i> Learn More
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="card-num">03</div>
+                <div class="spec-icon-wrap">
+                  <i class="fa-solid fa-child"></i>
+                </div>
+                <h4>Paediatric Orthopaedics</h4>
+                <p>
+                  Specialised treatment of CTEV (clubfoot), congenital
+                  deformities, limb lengthening, and growth plate disorders in
+                  children.
+                </p>
+                <div class="spec-tag">
+                  <i class="fa-solid fa-arrow-right"></i> Learn More
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="card-num">04</div>
+                <div class="spec-icon-wrap">
+                  <i class="fa-solid fa-person-falling-burst"></i>
+                </div>
+                <h4>Trauma & Fracture Care</h4>
+                <p>
+                  Management of all fracture types — open, closed, and complex
+                  trauma — using modern fixation techniques including plating
+                  and nailing.
+                </p>
+                <div class="spec-tag">
+                  <i class="fa-solid fa-arrow-right"></i> Learn More
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="card-num">05</div>
+                <div class="spec-icon-wrap">
+                  <i class="fa-solid fa-fire-flame-simple"></i>
+                </div>
+                <h4>Arthritis Management</h4>
+                <p>
+                  Comprehensive rheumatoid and osteoarthritis management
+                  including PRP therapy, joint injections, physiotherapy, and
+                  lifestyle guidance.
+                </p>
+                <div class="spec-tag">
+                  <i class="fa-solid fa-arrow-right"></i> Learn More
+                </div>
+              </div>
+
+              <div class="spec-card">
+                <div class="card-num">06</div>
+                <div class="spec-icon-wrap">
+                  <i class="fa-solid fa-person-running"></i>
+                </div>
+                <h4>Sports Injury Repair</h4>
+                <p>
+                  Diagnosis and surgical repair of sports-related injuries with
+                  evidence-based rehabilitation protocols to return athletes to
+                  peak performance.
+                </p>
+                <div class="spec-tag">
+                  <i class="fa-solid fa-arrow-right"></i> Learn More
+                </div>
+              </div>
+            </div>
+            <!-- /spec-track -->
+          </div>
+          <!-- /spec-track-outer -->
+
+          <div class="spec-progress-wrap">
+            <div class="spec-progress-bar" id="specProgressBar"></div>
+          </div>
+
+          <div class="carousel-nav">
+            <button class="nav-btn" id="specPrev" aria-label="Previous">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="dot-nav" id="specDots"></div>
+            <button class="nav-btn" id="specNext" aria-label="Next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /spec-carousel-wrap -->
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     SECTION 2 — TESTIMONIALS
+════════════════════════════════════════════════════ -->
+    <section class="testimonials-section section-pad" id="testimonials">
+      <div class="testi-mega-quote">"</div>
+      <div class="container">
+        <div class="testi-header">
+          <div class="badge-tag">Testimonials</div>
+          <h2 class="section-title">What Our Patients Say</h2>
+          <div class="divider"></div>
+          <p class="section-sub">
+            Patients trust Fast Track Orthopaedic Care for expert treatment,
+            clear guidance, and compassionate care.
+          </p>
+        </div>
+
+        <!-- rating summary pills -->
+        <div class="rating-summary">
+          <div class="rating-pill">
+            <div>
+              <div class="rp-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="rp-label">Google Reviews</div>
+            </div>
+            <div class="rp-num">4.9</div>
+          </div>
+          <div class="rating-pill">
+            <div class="rp-num" style="color: var(--clr-accent)">4500+</div>
+            <div class="rp-label">Happy<br />Patients</div>
+          </div>
+          <div class="rating-pill">
+            <div class="rp-num">98%</div>
+            <div class="rp-label">Patient<br />Satisfaction</div>
+          </div>
+        </div>
+
+        <div class="testi-carousel-wrap">
+          <div class="testi-track-outer" id="testiOuter">
+            <div class="testi-track" id="testiTrack">
+              <div class="testi-card">
+                <div class="testi-quote-bg">"</div>
+                <div class="testi-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">
+                  My mother had spine surgery by Dr. Intekhab Sir. She was
+                  bedridden for 2 months, but after the operation,
+                  Alhamdulillah, she has started walking again. Best orthopaedic
+                  hospital in Lucknow.
+                </p>
+                <div class="testi-reviewer">
+                  <div class="reviewer-avatar">AK</div>
+                  <div>
+                    <div class="reviewer-name">Adnan Khan</div>
+                    <div class="reviewer-role">Farmer, Lucknow</div>
+                  </div>
+                  <div class="testi-verified">
+                    <i class="fa-solid fa-circle-check"></i> Verified
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card">
+                <div class="testi-quote-bg">"</div>
+                <div class="testi-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">
+                  My relative was admitted here for leg surgery. Dr. Intekhab
+                  Alam performed the operation brilliantly. The staff is very
+                  cooperative and food is provided as per patient's needs.
+                </p>
+                <div class="testi-reviewer">
+                  <div class="reviewer-avatar">AF</div>
+                  <div>
+                    <div class="reviewer-name">Abdul Fareed</div>
+                    <div class="reviewer-role">Businessman</div>
+                  </div>
+                  <div class="testi-verified">
+                    <i class="fa-solid fa-circle-check"></i> Verified
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card">
+                <div class="testi-quote-bg">"</div>
+                <div class="testi-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">
+                  Fast Track Hospital is the best option for orthopaedic care.
+                  Dr. Intekhab Alam and his staff are very helpful and
+                  supportive. Highly satisfied with the services provided here.
+                </p>
+                <div class="testi-reviewer">
+                  <div class="reviewer-avatar">AS</div>
+                  <div>
+                    <div class="reviewer-name">Abdul Samad</div>
+                    <div class="reviewer-role">Student</div>
+                  </div>
+                  <div class="testi-verified">
+                    <i class="fa-solid fa-circle-check"></i> Verified
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card">
+                <div class="testi-quote-bg">"</div>
+                <div class="testi-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">
+                  I had an accident that badly injured my left shoulder. Dr.
+                  Intekhab Alam supported me well and performed the surgery
+                  successfully. Now I am fully recovered and happy with the
+                  results.
+                </p>
+                <div class="testi-reviewer">
+                  <div class="reviewer-avatar">SA</div>
+                  <div>
+                    <div class="reviewer-name">Sarfraz Ahmad</div>
+                    <div class="reviewer-role">Professional</div>
+                  </div>
+                  <div class="testi-verified">
+                    <i class="fa-solid fa-circle-check"></i> Verified
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card">
+                <div class="testi-quote-bg">"</div>
+                <div class="testi-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">
+                  My mother underwent bilateral knee replacement here. The care
+                  and guidance were outstanding. All facilities are excellent
+                  and the hospital uses advanced technology throughout.
+                </p>
+                <div class="testi-reviewer">
+                  <div class="reviewer-avatar">SS</div>
+                  <div>
+                    <div class="reviewer-name">Shadma Shamim</div>
+                    <div class="reviewer-role">Manager</div>
+                  </div>
+                  <div class="testi-verified">
+                    <i class="fa-solid fa-circle-check"></i> Verified
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card">
+                <div class="testi-quote-bg">"</div>
+                <div class="testi-stars">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="testi-text">
+                  Excellent experience at Fast Track Orthocare. The diagnosis
+                  was precise and the treatment plan was clearly explained. The
+                  staff treated us like family throughout the entire stay.
+                </p>
+                <div class="testi-reviewer">
+                  <div class="reviewer-avatar">MR</div>
+                  <div>
+                    <div class="reviewer-name">Mohammad Raza</div>
+                    <div class="reviewer-role">Retired Officer</div>
+                  </div>
+                  <div class="testi-verified">
+                    <i class="fa-solid fa-circle-check"></i> Verified
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /testi-track -->
+          </div>
+          <!-- /testi-track-outer -->
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="testiProgressBar"></div>
+          </div>
+
+          <div class="testi-nav">
+            <button class="testi-nav-btn" id="testiPrev" aria-label="Previous">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="testi-dots" id="testiDots"></div>
+            <button class="testi-nav-btn" id="testiNext" aria-label="Next">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /testi-carousel-wrap -->
+      </div>
+    </section>
+
+    <script>
+      /* ─── UNIVERSAL CAROUSEL FACTORY ─────────────────────── */
+      function buildCarousel({
+        trackEl,
+        dotsWrapEl,
+        prevBtn,
+        nextBtn,
+        progressEl,
+        cardSelector,
+        visibleCount,
+        autoplayMs = 4500,
+        dotClass,
+        dotActiveClass,
+      }) {
+        const cards = trackEl.querySelectorAll(cardSelector);
+        const total = cards.length;
+        let current = 0;
+        let autoTimer, progressTimer;
+
+        /* Responsive visible count */
+        function getVisible() {
+          if (window.innerWidth <= 640) return 1;
+          if (window.innerWidth <= 992) return Math.min(2, visibleCount);
+          return visibleCount;
+        }
+
+        /* Build dot indicators */
+        function buildDots() {
+          dotsWrapEl.innerHTML = "";
+          const pages = Math.ceil(total / getVisible());
+          for (let i = 0; i < pages; i++) {
+            const d = document.createElement("button");
+            d.className = dotClass + (i === 0 ? " " + dotActiveClass : "");
+            d.setAttribute("aria-label", "Go to slide " + (i + 1));
+            d.addEventListener("click", () => goTo(i));
+            dotsWrapEl.appendChild(d);
+          }
+        }
+
+        function updateDots() {
+          const dotEls = dotsWrapEl.querySelectorAll("." + dotClass);
+          const page = Math.floor(current / getVisible());
+          dotEls.forEach((d, i) =>
+            d.classList.toggle(dotActiveClass, i === page),
+          );
+        }
+
+        function updateNav() {
+          prevBtn.disabled = current === 0;
+          nextBtn.disabled = current >= total - getVisible();
+        }
+
+        function goTo(pageIndex) {
+          const vis = getVisible();
+          current = Math.min(pageIndex * vis, total - vis);
+          const cardW = cards[0].getBoundingClientRect().width;
+          const gap = 24;
+          trackEl.style.transform = `translateX(-${current * (cardW + gap)}px)`;
+          updateDots();
+          updateNav();
+          resetProgress();
+        }
+
+        function next() {
+          const vis = getVisible();
+          const maxPage = Math.ceil(total / vis) - 1;
+          const curPage = Math.floor(current / vis);
+          goTo(curPage < maxPage ? curPage + 1 : 0);
+        }
+        function prev() {
+          const vis = getVisible();
+          const curPage = Math.floor(current / vis);
+          goTo(curPage > 0 ? curPage - 1 : Math.ceil(total / vis) - 1);
+        }
+
+        prevBtn.addEventListener("click", () => {
+          prev();
+          resetAutoplay();
+        });
+        nextBtn.addEventListener("click", () => {
+          next();
+          resetAutoplay();
+        });
+
+        /* Progress bar */
+        function resetProgress() {
+          if (!progressEl) return;
+          progressEl.style.transition = "none";
+          progressEl.style.width = "0%";
+          requestAnimationFrame(() => {
+            progressEl.style.transition = `width ${autoplayMs}ms linear`;
+            progressEl.style.width = "100%";
+          });
+        }
+
+        /* Autoplay */
+        function startAutoplay() {
+          autoTimer = setInterval(next, autoplayMs);
+          resetProgress();
+        }
+        function resetAutoplay() {
+          clearInterval(autoTimer);
+          startAutoplay();
+        }
+
+        /* Touch / drag support */
+        let dragStart = null;
+        trackEl.addEventListener("pointerdown", (e) => {
+          dragStart = e.clientX;
+        });
+        window.addEventListener("pointerup", (e) => {
+          if (dragStart === null) return;
+          const diff = dragStart - e.clientX;
+          if (Math.abs(diff) > 48) {
+            diff > 0 ? next() : prev();
+            resetAutoplay();
+          }
+          dragStart = null;
+        });
+
+        /* Pause on hover */
+        trackEl
+          .closest("[id]")
+          .addEventListener("mouseenter", () => clearInterval(autoTimer));
+        trackEl
+          .closest("[id]")
+          .addEventListener("mouseleave", () => startAutoplay());
+
+        /* Resize */
+        let resizeTO;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTO);
+          resizeTO = setTimeout(() => {
+            buildDots();
+            const vis = getVisible();
+            current = Math.min(current, total - vis);
+            goTo(Math.floor(current / vis));
+          }, 200);
+        });
+
+        /* Init */
+        buildDots();
+        updateNav();
+        startAutoplay();
+      }
+
+      /* ── INIT SPECIALTIES CAROUSEL ── */
+      buildCarousel({
+        trackEl: document.getElementById("specTrack"),
+        dotsWrapEl: document.getElementById("specDots"),
+        prevBtn: document.getElementById("specPrev"),
+        nextBtn: document.getElementById("specNext"),
+        progressEl: document.getElementById("specProgressBar"),
+        cardSelector: ".spec-card",
+        visibleCount: 3,
+        autoplayMs: 5000,
+        dotClass: "dot",
+        dotActiveClass: "active",
+      });
+
+      /* ── INIT TESTIMONIALS CAROUSEL ── */
+      buildCarousel({
+        trackEl: document.getElementById("testiTrack"),
+        dotsWrapEl: document.getElementById("testiDots"),
+        prevBtn: document.getElementById("testiPrev"),
+        nextBtn: document.getElementById("testiNext"),
+        progressEl: document.getElementById("testiProgressBar"),
+        cardSelector: ".testi-card",
+        visibleCount: 2,
+        autoplayMs: 5500,
+        dotClass: "testi-dot",
+        dotActiveClass: "active",
+      });
+    </script>
+  </body>
+</html>
