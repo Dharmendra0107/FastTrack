@@ -1,676 +1,1091 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Dr.Intekhab Alam - Free Bootstrap 4 Template by Sipher Web</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<!-- ============================================================
+     FAST TRACK ORTHOPAEDIC CARE
+     Blog Single Page — Consistent Theme v2.0
+     ============================================================ -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Read Dr. Intekhab Alam's expert article on joint replacement surgery — when to consider it, the procedure, and recovery tips. Fast Track Orthopaedic Care, Lucknow." />
+    <title>Joint Replacement: What You Need to Know | Fast Track Orthopaedic Care</title>
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/aos.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- BOOTSTRAP 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-
-<!-- JAVASCRIPT -->
-<script>
-function setLanguage(lang) {
-    var en = document.getElementsByClassName("en");
-    var hi = document.getElementsByClassName("hi");
-
-    for (var i = 0; i < en.length; i++) {
-        if (lang === "en") {
-            en[i].style.display = "inline";
-            hi[i].style.display = "none";
-        } else {
-            en[i].style.display = "none";
-            hi[i].style.display = "inline";
+    <style>
+        /* ── CSS VARIABLES (identical theme) ─────────────── */
+        :root {
+            --clr-primary: #0a3d6b;
+            --clr-primary-lt: #1060a8;
+            --clr-accent: #e8a020;
+            --clr-accent-lt: #ffeabc;
+            --clr-teal: #0d8a74;
+            --clr-bg: #f5f7fb;
+            --clr-bg-dark: #071e38;
+            --clr-text: #1e2d3d;
+            --clr-text-muted: #6c7a8a;
+            --clr-white: #ffffff;
+            --clr-border: #dde4ee;
+            --font-head: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', sans-serif;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 2px 8px rgba(10, 61, 107, .08);
+            --shadow-md: 0 6px 28px rgba(10, 61, 107, .14);
+            --shadow-lg: 0 18px 52px rgba(10, 61, 107, .18);
+            --transition: 0.3s cubic-bezier(.4, 0, .2, 1);
         }
-    }
 
-    // Save selected language
-    localStorage.setItem("language", lang);
-}
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            font-family: var(--font-body);
+            color: var(--clr-text);
+            background: var(--clr-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-head);
+            color: var(--clr-primary);
+            line-height: 1.25;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        section {
+            overflow: hidden;
+        }
 
-// Load saved language on refresh
-window.onload = function() {
-    var savedLang = localStorage.getItem("language") || "en";
-    setLanguage(savedLang);
-};
-</script>
+        /* ── UTILITIES ───────────────────────────────────── */
+        .section-pad {
+            padding: 90px 0;
+        }
+        .section-pad-sm {
+            padding: 60px 0;
+        }
+        .badge-tag {
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--clr-accent);
+            margin-bottom: 12px;
+        }
+        .badge-tag::before {
+            content: "─── ";
+            opacity: .5;
+        }
+        .badge-tag::after {
+            content: " ───";
+            opacity: .5;
+        }
+        .lang-hidden {
+            display: none !important;
+        }
+        .btn-primary-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 30px;
+            background: var(--clr-primary);
+            color: var(--clr-white);
+            border: 2px solid var(--clr-primary);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: .95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-primary-custom:hover {
+            background: var(--clr-accent);
+            border-color: var(--clr-accent);
+            color: var(--clr-white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
 
+        /* ── INFO BAR ────────────────────────────────────── */
+        .info-bar {
+            background: #f0f5fb;
+            border-bottom: 1px solid var(--clr-border);
+            padding: 8px 0;
+            font-size: .82rem;
+            color: var(--clr-text-muted);
+        }
+        .info-bar .info-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .info-bar .info-item i {
+            color: var(--clr-primary);
+            font-size: .9rem;
+        }
+        .info-bar a {
+            color: var(--clr-text-muted);
+        }
+        .info-bar a:hover {
+            color: var(--clr-primary);
+        }
 
+        /* ── NAVBAR ──────────────────────────────────────── */
+        .main-navbar {
+            background: var(--clr-white);
+            border-bottom: 1px solid var(--clr-border);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(10, 61, 107, .07);
+            transition: box-shadow var(--transition);
+        }
+        .main-navbar .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            gap: 20px;
+        }
+        .nav-logo img {
+            height: 56px;
+            width: auto;
+            border-radius: var(--radius-sm);
+        }
+        .logo-hi {
+            display: none;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li a {
+            display: block;
+            padding: 8px 14px;
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--clr-text);
+            border-radius: var(--radius-sm);
+            position: relative;
+        }
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 14px;
+            right: 14px;
+            height: 2px;
+            background: var(--clr-accent);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: left;
+        }
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: var(--clr-primary);
+            background: #f0f5fb;
+        }
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+            transform: scaleX(1);
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        .lang-selector {
+            display: flex;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            font-size: .82rem;
+            font-weight: 600;
+        }
+        .lang-btn {
+            padding: 6px 12px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--clr-text-muted);
+            transition: var(--transition);
+        }
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--clr-primary);
+            color: var(--clr-white);
+        }
+        .nav-appt-btn {
+            padding: 9px 20px;
+            background: var(--clr-accent);
+            color: var(--clr-white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: .85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .nav-appt-btn:hover {
+            background: var(--clr-primary);
+            transform: translateY(-1px);
+        }
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            padding: 7px 10px;
+            cursor: pointer;
+            color: var(--clr-primary);
+            font-size: 1.1rem;
+        }
+        .mobile-menu {
+            display: none;
+            background: var(--clr-white);
+            border-top: 1px solid var(--clr-border);
+            padding: 16px 0;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .mobile-menu ul li a {
+            display: block;
+            padding: 10px 20px;
+            font-weight: 500;
+            color: var(--clr-text);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .mobile-menu ul li a:hover {
+            background: #f0f5fb;
+            color: var(--clr-primary);
+        }
 
-  <body>
-	<div style="overflow:hidden; background:linear-gradient(to right,#ffffff,#e3f2fd); padding:8px 0;">
+        /* ── PAGE HERO ───────────────────────────────────── */
+        .page-hero {
+            position: relative;
+            background: linear-gradient(110deg, var(--clr-bg-dark) 0%, #0e3a6e 100%);
+            padding: 80px 0 60px;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--clr-white);
+            margin-bottom: 16px;
+        }
+        .page-hero h1 span {
+            color: var(--clr-accent);
+        }
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .9rem;
+        }
+        .breadcrumb-nav a {
+            color: rgba(255, 255, 255, .65);
+            transition: var(--transition);
+        }
+        .breadcrumb-nav a:hover {
+            color: var(--clr-accent);
+        }
+        .breadcrumb-nav .sep {
+            color: rgba(255, 255, 255, .35);
+            font-size: .75rem;
+        }
+        .breadcrumb-nav .current {
+            color: var(--clr-accent);
+            font-weight: 600;
+        }
 
-    <!-- RIGHT TO LEFT -->
-    <div style="
-        white-space:nowrap;
-        display:inline-block;
-        font-weight:bold;
-        font-size:16px;
-        color:#0d6efd;
-        animation: moveLeft 12s linear infinite;
-    ">
-        🏥 24×7 Emergency Services Available | Expert Doctors | Advanced Care | Your Health, Our Priority ❤️
-    </div>
+        /* ── BLOG ARTICLE LAYOUT ─────────────────────────── */
+        .blog-single-section {
+            background: var(--clr-white);
+        }
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .article-content p {
+            color: var(--clr-text-muted);
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+        .article-content img {
+            border-radius: var(--radius-md);
+            margin: 20px 0;
+        }
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-cloud-link {
+            background: var(--clr-bg);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: .78rem;
+            font-weight: 500;
+            color: var(--clr-text-muted);
+            border: 1px solid var(--clr-border);
+            transition: var(--transition);
+        }
+        .tag-cloud-link:hover {
+            background: var(--clr-primary);
+            color: var(--clr-white);
+            border-color: var(--clr-primary);
+        }
 
-</div>
-	
-<!-- NAVBAR -->
-<nav class="navbar py-2 navbar-expand-lg navbar-light bg-light flex-row" style="border-bottom:1px solid #ddd;">
-    <div class="container">
-        <div class="row no-gutters d-flex align-items-center px-3 px-md-0 w-100">
+        /* Author Bio */
+        .author-bio {
+            background: var(--clr-bg);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            border: 1px solid var(--clr-border);
+        }
+        .author-bio img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--clr-white);
+            box-shadow: var(--shadow-sm);
+        }
+        .author-bio h4 {
+            margin-bottom: 4px;
+        }
+        .author-bio p {
+            color: var(--clr-text-muted);
+            font-size: .88rem;
+        }
 
-            <!-- NAV CONTENT -->
-            <div class="col-lg-12">
-                <div class="row d-flex align-items-center text-center text-md-start">
+        /* Comments */
+        .comment-list {
+            list-style: none;
+            padding: 0;
+        }
+        .comment-list .comment {
+            margin-bottom: 20px;
+        }
+        .comment-body {
+            background: var(--clr-bg);
+            padding: 18px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--clr-border);
+        }
+        .comment-body h5 {
+            margin-bottom: 4px;
+        }
+        .comment-body .meta {
+            font-size: .78rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 8px;
+        }
+        .reply {
+            color: var(--clr-primary-lt);
+            font-weight: 600;
+            font-size: .82rem;
+        }
 
-                    <!-- ADDRESS -->
-                    <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-start mb-2 mb-md-0">
-                        <div style="margin-right:8px;">📍</div>
-                   <span class="en">Address:Tedhi Pulia Kalyanpur Lucknow,U.P.</span>
-                            <span class="hi" style="display:none;">पता: 198 वेस्ट 21वीं स्ट्रीट, न्यूयॉर्क</span>
+        /* Comment form */
+        .comment-form-wrap {
+            background: var(--clr-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border: 1px solid var(--clr-border);
+        }
+        .comment-form-wrap .form-control {
+            border: 1.5px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-size: .92rem;
+            transition: var(--transition);
+            background: var(--clr-white);
+        }
+        .comment-form-wrap .form-control:focus {
+            border-color: var(--clr-primary-lt);
+            box-shadow: 0 0 0 3px rgba(16, 96, 168, .1);
+        }
+
+        /* Sidebar */
+        .sidebar-box {
+            background: var(--clr-white);
+            border: 1px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .sidebar-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--clr-accent);
+        }
+        .categories {
+            list-style: none;
+            padding: 0;
+        }
+        .categories li a {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--clr-border);
+            color: var(--clr-text-muted);
+            font-size: .88rem;
+        }
+        .categories li a:hover {
+            color: var(--clr-accent);
+        }
+        .popular-post {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .popular-post .post-thumb {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-sm);
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+        .popular-post .post-info h4 {
+            font-size: .88rem;
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+        .popular-post .post-info .meta {
+            font-size: .75rem;
+            color: var(--clr-text-muted);
+        }
+        .search-form .form-control {
+            border: 1.5px solid var(--clr-border);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+        }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        .site-footer {
+            background: var(--clr-bg-dark);
+            color: rgba(255, 255, 255, .75);
+            padding-top: 72px;
+        }
+        .footer-logo {
+            margin-bottom: 18px;
+        }
+        .footer-logo img {
+            height: 58px;
+            border-radius: var(--radius-sm);
+        }
+        .footer-desc {
+            font-size: .88rem;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .7);
+            font-size: .9rem;
+            border: 1px solid rgba(255, 255, 255, .1);
+            transition: var(--transition);
+        }
+        .footer-social a:hover {
+            background: var(--clr-accent);
+            border-color: var(--clr-accent);
+            color: var(--clr-white);
+            transform: translateY(-2px);
+        }
+        .footer-heading {
+            font-family: var(--font-body);
+            font-size: .78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--clr-accent);
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .65);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--clr-accent);
+            padding-left: 4px;
+        }
+        .footer-links a i {
+            font-size: .7rem;
+            color: var(--clr-accent);
+        }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .footer-contact-item i {
+            color: var(--clr-accent);
+            font-size: .95rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .footer-contact-item span {
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .7);
+        }
+        .footer-hours {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-top: 8px;
+        }
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: .85rem;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+        .hours-row .day {
+            color: rgba(255, 255, 255, .6);
+        }
+        .hours-row .time {
+            color: var(--clr-white);
+            font-weight: 500;
+        }
+        .hours-row .open {
+            color: var(--clr-teal);
+        }
+        .footer-bottom {
+            margin-top: 60px;
+            padding: 22px 0;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            text-align: center;
+            font-size: .82rem;
+            color: rgba(255, 255, 255, .4);
+        }
+        .footer-bottom a {
+            color: var(--clr-accent);
+        }
+
+        /* ── RESPONSIVE ──────────────────────────────────── */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-hamburger {
+                display: flex;
+                align-items: center;
+            }
+            .author-bio {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .section-pad {
+                padding: 60px 0;
+            }
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-4 col-sm-12 mb-1 mb-md-0">
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="en">Tedhi Pulia, Kalyanpur, Lucknow, U.P. 226022</span>
+                        <span class="hi lang-hidden">टेढ़ी पुलिया, कल्याणपुर, लखनऊ, उ.प्र. 226022</span>
                     </div>
-
-                    <!-- EMAIL -->
-                    <div class="col-md-4 d-flex align-items-center justify-content-center mb-2 mb-md-0">
-                        <div style="margin-right:8px;">📧</div>
-                        <span class="en">Email: youremail@email.com</span>
-                            <span class="hi" style="display:none;">ईमेल: youremail@email.com</span>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-1 mb-md-0 text-md-center">
+                    <div class="info-item justify-content-md-center">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:info@fasttrackortho.com">info@fasttrackortho.com</a>
                     </div>
-
-                    <!-- PHONE -->
-                    <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-end">
-                        <div style="margin-right:8px;">📞</div>
-                         <span class="en">Phone: +1235235598</span>
-                            <span class="hi" style="display:none;">फ़ोन: +1235235598</span>
+                </div>
+                <div class="col-md-4 col-sm-12 text-md-end">
+                    <div class="info-item justify-content-md-end">
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+919335030190">+91 93350 30190</a> &nbsp;|&nbsp; <a href="tel:05223646448">0522-3646448</a>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
-</nav>
 
-
-
-
-<!-- KEYFRAMES (INLINE IN STYLE TAG - REQUIRED) -->
-<style>
-@keyframes moveLeft {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-@keyframes moveRight {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-</style>
-	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container d-flex align-items-center">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-		  
-	      <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-			      <div class="col-lg-2 d-flex align-items-center">
-                <img src="img/fasttrack (15).jpeg" class="en" alt="Logo"
-                     style="height:60px; width:auto; border-radius:8px; background:#fff; padding:4px;">
-					   <img src="img/fasttrack (16).jpeg" class="hi" alt="Logo"
-                     style="height:60px; width:auto; border-radius:8px; background:#fff; padding:4px;">
+    <!-- NAVBAR -->
+    <nav class="main-navbar" id="mainNav" aria-label="Main Navigation">
+        <div class="container">
+            <div class="navbar-inner">
+                <a href="index.html" class="nav-logo" aria-label="Fast Track Orthopaedic Care — Home">
+                    <img src="images/logo/logoint.jpeg" alt="Orthopaedic Care Logo" class="logo-en" />
+                    <img src="images/logo/logoint.jpeg" alt="Orthopaedic Care Logo Hindi" class="logo-hi" />
+                </a>
+                <ul class="nav-links" role="list">
+                    <li><a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+                    <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+                    <li><a href="doctor.html"><span class="en">Doctors</span><span class="hi lang-hidden">डॉक्टर</span></a></li>
+                    <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+                    <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+                    <li><a href="blog.html" class="active"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+                    <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="lang-selector" role="group" aria-label="Language Selector">
+                        <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
+                        <button class="lang-btn" id="btn-hi" onclick="setLanguage('hi')">हि</button>
+                    </div>
+                    <a href="appointment.html" class="nav-appt-btn">
+                        <span class="en">Book Appointment</span>
+                        <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
+                    </a>
+                    <button class="nav-hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
             </div>
-	    <ul class="navbar-nav mr-auto">
+        </div>
+        <div class="mobile-menu" id="mobileMenu" role="navigation">
+            <ul>
+                <li><a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+                <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+                <li><a href="doctor.html"><span class="en">Doctors</span><span class="hi lang-hidden">डॉक्टर</span></a></li>
+                <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+                <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+                <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+                <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+                <li><a href="appointment.html" style="color:var(--clr-accent);font-weight:700;">
+                        <span class="en">📅 Book Appointment</span><span class="hi lang-hidden">📅 अपॉइंटमेंट लें</span>
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <li class="nav-item active">
-          <a href="index.html" class="nav-link pl-0">
-            <span class="en">Home</span>
-            <span class="hi" style="display:none;">होम</span>
-          </a>
-        </li>
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Blog Single Page Banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h1>
+                        <span class="en">Joint Replacement: <span>What You Need to Know</span></span>
+                        <span class="hi lang-hidden">जॉइंट रिप्लेसमेंट: <span>आपको क्या जानना चाहिए</span></span>
+                    </h1>
+                    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                        <a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a>
+                        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+                        <a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a>
+                        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+                        <span class="current"><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">
-            <span class="en">About</span>
-            <span class="hi" style="display:none;">हमारे बारे में</span>
-          </a>
-        </li>
+    <!-- BLOG SINGLE CONTENT -->
+    <section class="blog-single-section section-pad">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Main Content -->
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="article-content">
+                        <img src="images/department/JointReplacementSurgery.jpeg" alt="Joint Replacement Surgery" class="img-fluid" />
+                        <h2><span class="en">Understanding Joint Replacement Surgery</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट सर्जरी को समझना</span></h2>
+                        <p><span class="en">Joint replacement surgery is one of the most successful orthopaedic procedures performed today. At Fast Track Orthopaedic Care, Dr. Intekhab Alam and his team have performed over 2,000 joint replacements, helping patients regain mobility and live pain-free. Whether it's the knee or the hip, modern implant technology combined with minimally invasive techniques ensures faster recovery and excellent long-term results.</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट सर्जरी सबसे सफल ऑर्थोपेडिक प्रक्रियाओं में से एक है। Fast Track Orthopaedic Care में, डॉ. इंतेखाब आलम और उनकी टीम ने 2,000 से अधिक जॉइंट रिप्लेसमेंट किए हैं, जिससे मरीजों को गतिशीलता वापस मिली है।</span></p>
+                        <p><span class="en">The decision to undergo joint replacement is not taken lightly. It is typically recommended when conservative treatments like medication, physiotherapy, and injections no longer provide relief. Common signs that you may need a joint replacement include persistent pain, stiffness that limits daily activities, and difficulty walking or climbing stairs.</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट का निर्णय हल्के में नहीं लिया जाता। यह आमतौर पर तब सुझाया जाता है जब दवा, फिजियोथेरेपी और इंजेक्शन जैसे रूढ़िवादी उपचार राहत नहीं देते।</span></p>
+                        <blockquote class="bg-light p-3 rounded" style="border-left: 4px solid var(--clr-accent);">
+                            <p class="mb-0 fst-italic"><span class="en">"Our goal is not just to replace a joint — it's to restore a life. With the right implant and a dedicated rehabilitation plan, most patients return to their normal activities within weeks."</span><span class="hi lang-hidden">"हमारा लक्ष्य सिर्फ जोड़ बदलना नहीं है — बल्कि जीवन वापस देना है। सही इम्प्लांट और समर्पित पुनर्वास योजना से अधिकांश मरीज कुछ हफ्तों में सामान्य गतिविधियों में लौट आते हैं।"</span> — <strong>Dr. Intekhab Alam</strong></p>
+                        </blockquote>
+                        <p><span class="en">Recovery after joint replacement involves a structured physiotherapy program. Most patients begin walking with support on the same day of surgery and are discharged within 2-3 days. Complete recovery can take 6-12 weeks, but the relief from arthritic pain is immediate. Our team provides comprehensive post-operative care, including home physiotherapy visits and regular follow-ups.</span><span class="hi lang-hidden">रिकवरी में संरचित फिजियोथेरेपी शामिल है। अधिकांश मरीज सर्जरी के दिन ही सहारे से चलना शुरू कर देते हैं और 2-3 दिनों में डिस्चार्ज हो जाते हैं।</span></p>
+                        <p><span class="en">If you or a loved one is suffering from severe joint pain, don't wait. Schedule a consultation with Dr. Intekhab Alam to discuss whether joint replacement is the right option for you. Early intervention can prevent further damage and significantly improve your quality of life.</span><span class="hi lang-hidden">यदि आप या आपका कोई प्रियजन गंभीर जोड़ों के दर्द से पीड़ित है, तो प्रतीक्षा न करें। डॉ. इंतेखाब आलम से परामर्श लें।</span></p>
+                    </div>
 
-      <!-- <li class="nav-item">
-          <a href="doctor.html" class="nav-link">
-            <span class="en">Doctor</span>
-            <span class="hi" style="display:none;">डॉक्टर</span>
-          </a>
-        </li> -->
+                    <!-- Tags -->
+                    <div class="mt-4 mb-5">
+                        <div class="tag-cloud">
+                            <a href="#" class="tag-cloud-link"><span class="en">Joint Health</span><span class="hi lang-hidden">जोड़ों की सेहत</span></a>
+                            <a href="#" class="tag-cloud-link"><span class="en">Knee Replacement</span><span class="hi lang-hidden">नी रिप्लेसमेंट</span></a>
+                            <a href="#" class="tag-cloud-link"><span class="en">Hip Surgery</span><span class="hi lang-hidden">हिप सर्जरी</span></a>
+                            <a href="#" class="tag-cloud-link"><span class="en">Recovery</span><span class="hi lang-hidden">रिकवरी</span></a>
+                            <a href="#" class="tag-cloud-link"><span class="en">Dr. Intekhab Alam</span><span class="hi lang-hidden">डॉ. इंतेखाब आलम</span></a>
+                        </div>
+                    </div>
 
-        <li class="nav-item">
-          <a href="department.html" class="nav-link">
-            <span class="en">Departments</span>
-            <span class="hi" style="display:none;">विभाग</span>
-          </a>
-        </li>
+                    <!-- Author Bio -->
+                    <div class="author-bio mb-5">
+                        <img src="images/doctor/intekhabalam.jpg" alt="Dr. Intekhab Alam" loading="lazy" />
+                        <div>
+                            <h4><span class="en">Dr. Intekhab Alam</span><span class="hi lang-hidden">डॉ. इंतेखाब आलम</span></h4>
+                            <p><span class="en">MS Ortho (AMU), Ex Consultant Apollo, Max & Fortis. 10,000+ surgeries, 2,000+ joint replacements. Founder of Fast Track Orthopaedic Care — Peoples Mobility First.</span><span class="hi lang-hidden">MS ऑर्थो (AMU), पूर्व परामर्शदाता अपोलो, मैक्स और फोर्टिस। 10,000+ सर्जरी। Fast Track Orthopaedic Care के संस्थापक।</span></p>
+                        </div>
+                    </div>
 
-        <li class="nav-item">
-          <a href="pricing.html" class="nav-link">
-              <span class="en">Facility</span>
-            <span class="hi" style="display:none;">सुविधा</span>
-          </a>
-        </li>
+                    <!-- Comments -->
+                    <div class="mb-5">
+                        <h3 class="mb-4"><span class="en">3 Comments</span><span class="hi lang-hidden">3 टिप्पणियां</span></h3>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="comment-body">
+                                    <h5>Rajesh Kumar</h5>
+                                    <div class="meta">January 23, 2024 at 2:21 pm</div>
+                                    <p><span class="en">My mother underwent knee replacement at Fast Track last month. Dr. Alam explained everything clearly and the staff took excellent care. She is walking without pain now!</span><span class="hi lang-hidden">मेरी माँ का पिछले महीने Fast Track में नी रिप्लेसमेंट हुआ। डॉ. आलम ने सबकुछ स्पष्ट रूप से समझाया। अब वह बिना दर्द के चल रही हैं!</span></p>
+                                    <a href="#" class="reply"><i class="fa-solid fa-reply"></i> <span class="en">Reply</span><span class="hi lang-hidden">जवाब दें</span></a>
+                                </div>
+                            </li>
+                            <li class="comment">
+                                <div class="comment-body">
+                                    <h5>Priya Verma</h5>
+                                    <div class="meta">February 10, 2024 at 10:05 am</div>
+                                    <p><span class="en">Very informative article. I had been delaying my hip surgery, but after reading this and consulting Dr. Alam, I finally scheduled it. Thank you for the guidance!</span><span class="hi lang-hidden">बहुत जानकारीपूर्ण लेख। मैं अपनी हिप सर्जरी टाल रही थी, लेकिन इसे पढ़ने और डॉ. आलम से परामर्श के बाद मैंने अंततः इसे शेड्यूल कर दिया।</span></p>
+                                    <a href="#" class="reply"><i class="fa-solid fa-reply"></i> <span class="en">Reply</span><span class="hi lang-hidden">जवाब दें</span></a>
+                                </div>
+                            </li>
+                            <li class="comment">
+                                <div class="comment-body">
+                                    <h5>Amit Singh</h5>
+                                    <div class="meta">March 05, 2024 at 4:15 pm</div>
+                                    <p><span class="en">The recovery timeline mentioned here is spot on. I was back to my morning walks within 8 weeks of my knee replacement. Highly recommend Fast Track Orthopaedic Care.</span><span class="hi lang-hidden">यहां बताई गई रिकवरी टाइमलाइन बिल्कुल सही है। मैं अपने नी रिप्लेसमेंट के 8 सप्ताह के भीतर सुबह की सैर पर वापस आ गया।</span></p>
+                                    <a href="#" class="reply"><i class="fa-solid fa-reply"></i> <span class="en">Reply</span><span class="hi lang-hidden">जवाब दें</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-        <li class="nav-item">
-          <a href="blog.html" class="nav-link">
-            <span class="en">Blog</span>
-            <span class="hi" style="display:none;">ब्लॉग</span>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">
-            <span class="en">Contact</span>
-            <span class="hi" style="display:none;">संपर्क</span>
-          </a>
-        </li>
-
-      </ul>
-			
-                    <!-- LANGUAGE DROPDOWN -->
-                    <div class="col-md d-flex justify-content-end">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle"
-                                    type="button"
-                                    data-toggle="dropdown"
-                                    style="border-radius:6px;">
-                                🌐 Language
+                    <!-- Comment Form -->
+                    <div class="comment-form-wrap">
+                        <h3 class="mb-4"><span class="en">Leave a Comment</span><span class="hi lang-hidden">टिप्पणी करें</span></h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6 mb-3">
+                                    <label class="form-label"><span class="en">Name *</span><span class="hi lang-hidden">नाम *</span></label>
+                                    <input type="text" class="form-control" placeholder="Your Name" required />
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <label class="form-label"><span class="en">Email *</span><span class="hi lang-hidden">ईमेल *</span></label>
+                                    <input type="email" class="form-control" placeholder="you@example.com" required />
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label"><span class="en">Your Comment</span><span class="hi lang-hidden">आपकी टिप्पणी</span></label>
+                                <textarea class="form-control" rows="4" placeholder="Write your thoughts..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary-custom">
+                                <i class="fa-regular fa-paper-plane"></i>
+                                <span class="en">Post Comment</span>
+                                <span class="hi lang-hidden">टिप्पणी पोस्ट करें</span>
                             </button>
+                        </form>
+                    </div>
+                </div>
 
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a>
-                                <a class="dropdown-item" href="#" onclick="setLanguage('hi')">हिंदी</a>
+                <!-- Sidebar -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <!-- Search -->
+                    <div class="sidebar-box">
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search articles...">
+                                <button class="btn btn-primary-custom" style="padding:10px 16px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-box">
+                        <h3><span class="en">Categories</span><span class="hi lang-hidden">श्रेणियां</span></h3>
+                        <ul class="categories">
+                            <li><a href="#"><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span> <span>(6)</span></a></li>
+                            <li><a href="#"><span class="en">Arthritis Care</span><span class="hi lang-hidden">गठिया देखभाल</span> <span>(8)</span></a></li>
+                            <li><a href="#"><span class="en">Fracture Treatment</span><span class="hi lang-hidden">फ्रैक्चर उपचार</span> <span>(5)</span></a></li>
+                            <li><a href="#"><span class="en">Arthroscopy</span><span class="hi lang-hidden">आर्थ्रोस्कोपी</span> <span>(4)</span></a></li>
+                            <li><a href="#"><span class="en">Paediatric Ortho</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span> <span>(3)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Articles -->
+                    <div class="sidebar-box">
+                        <h3><span class="en">Popular Articles</span><span class="hi lang-hidden">लोकप्रिय लेख</span></h3>
+                        <div class="popular-post">
+                            <div class="post-thumb" style="background-image:url('img/fasttrack%20(21).jpeg');"></div>
+                            <div class="post-info">
+                                <h4><a href="#"><span class="en">What to Expect After Arthroscopic Surgery</span><span class="hi lang-hidden">आर्थ्रोस्कोपिक सर्जरी के बाद क्या उम्मीद करें</span></a></h4>
+                                <div class="meta">Feb 10, 2024</div>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="post-thumb" style="background-image:url('img/fasttrack%20(22).jpeg');"></div>
+                            <div class="post-info">
+                                <h4><a href="#"><span class="en">Clubfoot in Children: Early Detection and Correction</span><span class="hi lang-hidden">बच्चों में क्लबफुट: शीघ्र पहचान और सुधार</span></a></h4>
+                                <div class="meta">Mar 05, 2024</div>
+                            </div>
+                        </div>
+                        <div class="popular-post">
+                            <div class="post-thumb" style="background-image:url('img/fasttrack%20(19).jpeg');"></div>
+                            <div class="post-info">
+                                <h4><a href="#"><span class="en">5 Warning Signs You May Need Knee Replacement</span><span class="hi lang-hidden">5 संकेत जो बताते हैं आपको नी रिप्लेसमेंट की जरूरत है</span></a></h4>
+                                <div class="meta">Jan 23, 2024</div>
                             </div>
                         </div>
                     </div>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
 
-    <!-- <nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
-    	<div class="container">
-    		<div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
-    			<div class="col-lg-2 pr-4 align-items-center">
-		    		<a class="navbar-brand" href="index.html">Dr.<span>care</span></a>
-	    		</div>
-	    		<div class="col-lg-10 d-none d-md-block">
-		    		<div class="row d-flex">
-			    		<div class="col-md-4 pr-4 d-flex topper align-items-center">
-			    			<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
-						    <span class="text">Address: 198 West 21th Street, Suite 721 New York NY 10016</span>
-					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">Email: youremail@email.com</span>
-					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">Phone: + 1235 2355 98</span>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-		  </div>
-    </nav>
-	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container d-flex align-items-center">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <p class="button-custom order-lg-last mb-0"><a href="appointment.html" class="btn btn-secondary py-2 px-3">Make An Appointment</a></p>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="doctor.html" class="nav-link">Doctor</a></li>
-	        	<li class="nav-item"><a href="department.html" class="nav-link">Departments</a></li>
-	        	<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-	        	<li class="nav-item active"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav> -->
-    <!-- END nav -->
-    
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread">Blog Single</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="index.html">Blog <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog Single <i class="ion-ios-arrow-forward"></i></span></p>
-          </div>
+                    <!-- Tag Cloud -->
+                    <div class="sidebar-box">
+                        <h3><span class="en">Tags</span><span class="hi lang-hidden">टैग</span></h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag-cloud-link">Orthopaedics</a>
+                            <a href="#" class="tag-cloud-link">Surgery</a>
+                            <a href="#" class="tag-cloud-link">Knee Pain</a>
+                            <a href="#" class="tag-cloud-link">Hip Replacement</a>
+                            <a href="#" class="tag-cloud-link">Recovery</a>
+                            <a href="#" class="tag-cloud-link">Physiotherapy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-		
-		<section class="ftco-section">
-			<div class="container">
-				<div class="row">
-          <div class="col-lg-8 ftco-animate">
-            <h2 class="mb-3">#2. Creative WordPress Themes</h2>
-            <p>Temporibus ad error suscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem atque quidem tempora maiores ex architecto voluptatum aut officia doloremque. Error dolore voluptas, omnis molestias odio dignissimos culpa ex earum nisi consequatur quos odit quasi repellat qui officiis reiciendis incidunt hic non? Debitis commodi aut, adipisci.</p>
-            <p>
-              <img src="images/image_2.jpg" alt="" class="img-fluid">
-            </p>
-            <p>Quisquam esse aliquam fuga distinctio, quidem delectus veritatis reiciendis. Nihil explicabo quod, est eos ipsum. Unde aut non tenetur tempore, nisi culpa voluptate maiores officiis quis vel ab consectetur suscipit veritatis nulla quos quia aspernatur perferendis, libero sint. Error, velit, porro. Deserunt minus, quibusdam iste enim veniam, modi rem maiores.</p>
-            <p>Odit voluptatibus, eveniet vel nihil cum ullam dolores laborum, quo velit commodi rerum eum quidem pariatur! Quia fuga iste tenetur, ipsa vel nisi in dolorum consequatur, veritatis porro explicabo soluta commodi libero voluptatem similique id quidem? Blanditiis voluptates aperiam non magni. Reprehenderit nobis odit inventore, quia laboriosam harum excepturi ea.</p>
-            <p>Adipisci vero culpa, eius nobis soluta. Dolore, maxime ullam ipsam quidem, dolor distinctio similique asperiores voluptas enim, exercitationem ratione aut adipisci modi quod quibusdam iusto, voluptates beatae iure nemo itaque laborum. Consequuntur et pariatur totam fuga eligendi vero dolorum provident. Voluptatibus, veritatis. Beatae numquam nam ab voluptatibus culpa, tenetur recusandae!</p>
-            <p>Voluptas dolores dignissimos dolorum temporibus, autem aliquam ducimus at officia adipisci quasi nemo a perspiciatis provident magni laboriosam repudiandae iure iusto commodi debitis est blanditiis alias laborum sint dolore. Dolores, iure, reprehenderit. Error provident, pariatur cupiditate soluta doloremque aut ratione. Harum voluptates mollitia illo minus praesentium, rerum ipsa debitis, inventore?</p>
-            <div class="tag-widget post-tag-container mb-5 mt-5">
-              <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">Life</a>
-                <a href="#" class="tag-cloud-link">Sport</a>
-                <a href="#" class="tag-cloud-link">Tech</a>
-                <a href="#" class="tag-cloud-link">Travel</a>
-              </div>
-            </div>
-            
-            <div class="about-author d-flex p-4 bg-light">
-              <div class="bio mr-5">
-                <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-              </div>
-              <div class="desc">
-                <h3>George Washington</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-              </div>
-            </div>
 
-
-            <div class="pt-5 mt-5">
-              <h3 class="mb-5 h4 font-weight-bold">6 Comments</h3>
-              <ul class="comment-list">
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>John Doe</h3>
-                    <div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>John Doe</h3>
-                    <div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-
-                  <ul class="children">
-                    <li class="comment">
-                      <div class="vcard bio">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body">
-                        <h3>John Doe</h3>
-                        <div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                        <p><a href="#" class="reply">Reply</a></p>
-                      </div>
-
-
-                      <ul class="children">
-                        <li class="comment">
-                          <div class="vcard bio">
-                            <img src="images/person_1.jpg" alt="Image placeholder">
-                          </div>
-                          <div class="comment-body">
-                            <h3>John Doe</h3>
-                            <div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                            <p><a href="#" class="reply">Reply</a></p>
-                          </div>
-
-                            <ul class="children">
-                              <li class="comment">
-                                <div class="vcard bio">
-                                  <img src="images/person_1.jpg" alt="Image placeholder">
-                                </div>
-                                <div class="comment-body">
-                                  <h3>John Doe</h3>
-                                  <div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                                  <p><a href="#" class="reply">Reply</a></p>
-                                </div>
-                              </li>
-                            </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="images/person_1.jpg" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>John Doe</h3>
-                    <div class="meta mb-2">January 03, 2019 at 2:21pm</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-                    <p><a href="#" class="reply">Reply</a></p>
-                  </div>
-                </li>
-              </ul>
-              <!-- END comment-list -->
-              
-              <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5 h4 font-weight-bold">Leave a comment</h3>
-                <form action="#" class="p-5 bg-light">
-                  <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" class="form-control" id="name">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" class="form-control" id="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="website">Website</label>
-                    <input type="url" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
-                  </div>
-
-                </form>
-              </div>
-            </div>
-          </div> <!-- .col-md-8 -->
-
-          <div class="col-lg-4 sidebar ftco-animate">
-            <div class="sidebar-box">
-              <form action="#" class="search-form">
-                <div class="form-group">
-                  <span class="icon icon-search"></span>
-                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo">
+                        <img src="img/fasttrack%20(17).jpeg" alt="Fast Track Orthopaedic Care" />
+                    </div>
+                    <p class="footer-desc">
+                        <span class="en">Expert orthopaedic care in Lucknow. Led by Dr. Intekhab Alam — Peoples Mobility First.</span>
+                        <span class="hi lang-hidden">लखनऊ में विशेषज्ञ ऑर्थोपेडिक देखभाल। डॉ. इंतेखाब आलम के नेतृत्व में।</span>
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
-              </form>
-            </div>
-            <div class="sidebar-box ftco-animate">
-            	<h3>Category</h3>
-              <ul class="categories">
-                <li><a href="#">Neurology <span>(6)</span></a></li>
-                <li><a href="#">Cardiology <span>(8)</span></a></li>
-                <li><a href="#">Surgery <span>(2)</span></a></li>
-                <li><a href="#">Dental <span>(2)</span></a></li>
-                <li><a href="#">Ophthalmology <span>(2)</span></a></li>
-              </ul>
-            </div>
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Popular Articles</h3>
-              <div class="block-21 mb-4 d-flex">
-                 <a class="blog-img mr-4" style="background-image: url(img/fasttrack\ \(21\).jpeg
-				);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-heading"><span class="en">Quick Links</span><span class="hi lang-hidden">त्वरित लिंक</span></div>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i><span class="en">About Doctor</span><span class="hi lang-hidden">डॉक्टर के बारे में</span></a></li>
+                        <li><a href="doctor.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Doctors</span><span class="hi lang-hidden">डॉक्टर</span></a></li>
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+                        <li><a href="pricing.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+                    </ul>
                 </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                 <a class="blog-img mr-4" style="background-image: url(img/fasttrack\ \(22\).jpeg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-heading"><span class="en">Services</span><span class="hi lang-hidden">सेवाएं</span></div>
+                    <ul class="footer-links">
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Joint Replacement</span><span class="hi lang-hidden">जॉइंट रिप्लेसमेंट</span></a></li>
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Arthritis Care</span><span class="hi lang-hidden">गठिया देखभाल</span></a></li>
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Fracture Treatment</span><span class="hi lang-hidden">फ्रैक्चर उपचार</span></a></li>
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Arthroscopy</span><span class="hi lang-hidden">आर्थ्रोस्कोपी</span></a></li>
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Paediatric Ortho</span><span class="hi lang-hidden">बाल ऑर्थोपेडिक</span></a></li>
+                        <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Spine Care</span><span class="hi lang-hidden">स्पाइन केयर</span></a></li>
+                    </ul>
                 </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-heading"><span class="en">Contact Info</span><span class="hi lang-hidden">संपर्क जानकारी</span></div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>529/078CC, Tedhi Pulia Ring Rd, Kalyanpur (East), Lucknow, U.P. 226022</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span><a href="tel:+919335030190" style="color:rgba(255,255,255,.7);">+91 93350 30190</a> &nbsp;|&nbsp; <a href="tel:05223646448" style="color:rgba(255,255,255,.7);">0522-3646448</a></span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><a href="mailto:info@fasttrackortho.com" style="color:rgba(255,255,255,.7);">info@fasttrackortho.com</a></span>
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-heading"><span class="en">Opening Hours</span><span class="hi lang-hidden">खुलने का समय</span></div>
+                    <div class="footer-hours">
+                        <div class="hours-row"><span class="day"><span class="en">Mon – Fri</span><span class="hi lang-hidden">सोम – शुक्र</span></span><span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span></div>
+                        <div class="hours-row"><span class="day"><span class="en">Saturday</span><span class="hi lang-hidden">शनिवार</span></span><span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span></div>
+                        <div class="hours-row"><span class="day"><span class="en">Sunday</span><span class="hi lang-hidden">रविवार</span></span><span class="time open"><span class="en">Emergency</span><span class="hi lang-hidden">आपातकालीन</span></span></div>
+                    </div>
+                </div>
             </div>
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Tag Cloud</h3>
-              <ul class="tagcloud m-0 p-0">
-                <a href="#" class="tag-cloud-link">Medical</a>
-                <a href="#" class="tag-cloud-link">Hospital</a>
-                <a href="#" class="tag-cloud-link">Nurse</a>
-                <a href="#" class="tag-cloud-link">Doctor</a>
-                <a href="#" class="tag-cloud-link">Medicine</a>
-                <a href="#" class="tag-cloud-link">Facilities</a>
-                <a href="#" class="tag-cloud-link">Staff</a>
-              </ul>
+            <div class="footer-bottom">
+                <p>
+                    &copy; <span id="copyrightYear"></span>
+                    <span class="en">Fast Track Orthopaedic Care. All Rights Reserved. Designed with</span>
+                    <span class="hi lang-hidden">Fast Track Orthopaedic Care. सर्वाधिकार सुरक्षित।</span>
+                    ❤️
+                    <span class="en">for better healthcare in Lucknow.</span>
+                    <span class="hi lang-hidden">लखनऊ में बेहतर स्वास्थ्य सेवा के लिए।</span>
+                </p>
             </div>
-
-            <div class="sidebar-box ftco-animate">
-            	<h3>Archives</h3>
-              <ul class="categories">
-              	<li><a href="#">December 2018 <span>(30)</span></a></li>
-              	<li><a href="#">Novemmber 2018 <span>(20)</span></a></li>
-                <li><a href="#">September 2018 <span>(6)</span></a></li>
-                <li><a href="#">August 2018 <span>(8)</span></a></li>
-              </ul>
-            </div>
-
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Paragraph</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-            </div>
-          </div><!-- END COL -->
         </div>
-			</div>
-		</section>
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-5">
-               <img src="img/fasttrack (17).jpeg" class="en" alt="Logo"
-                     style="height:60px; width:auto; border-radius:8px; background:#fff; padding:4px;">
-					   <img src="img/fasttrack (16).jpeg" class="hi" alt="Logo"
-                     style="height:60px; width:auto; border-radius:8px; background:#fff; padding:4px;">
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-            <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">529/078CC, Tedhi Pulia Ring Rd, Adarsh Nagar, Kalyanpur (East), Lucknow, Uttar Pradesh 226022</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 93350 30190</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-
-	            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-5 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-      <ul class="list-unstyled">
-  <li>
-    <a href="index.html">
-      <span class="ion-ios-arrow-round-forward mr-2"></span>
-      <span class="en">Home</span>
-      <span class="hi" style="display:none;">होम</span>
-    </a>
-  </li>
-
-  <li>
-    <a href="about.html">
-      <span class="ion-ios-arrow-round-forward mr-2"></span>
-      <span class="en">About</span>
-      <span class="hi" style="display:none;">हमारे बारे में</span>
-    </a>
-  </li>
-
-  <li>
-    <a href="doctor.html">
-      <span class="ion-ios-arrow-round-forward mr-2"></span>
-      <span class="en">Doctors</span>
-      <span class="hi" style="display:none;">डॉक्टर</span>
-    </a>
-  </li>
-
-  <li>
-    <a href="department.html">
-      <span class="ion-ios-arrow-round-forward mr-2"></span>
-      <span class="en">Departments</span>
-      <span class="hi" style="display:none;">विभाग</span>
-    </a>
-  </li>
-
-  <li>
-    <a href="contact.html">
-      <span class="ion-ios-arrow-round-forward mr-2"></span>
-      <span class="en">Contact</span>
-      <span class="hi" style="display:none;">संपर्क करें</span>
-    </a>
-  </li>
-</ul>
-            </div>
-            <div class="ftco-footer-widget mb-5 ml-md-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Neurolgy</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li>
-                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Surgery</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-5">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                 <a class="blog-img mr-4" style="background-image: url(img/fasttrack\ \(21\).jpeg
-				);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Dec 25, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-5 d-flex">
-                 <a class="blog-img mr-4" style="background-image: url(img/fasttrack\ \(22\).jpeg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Dec 25, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md">
-          	<div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Opening Hours</h2>
-            	<h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>We are open 24/7</h3>
-            </div>
-            <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Subscribe Us!</h2>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                  <input type="submit" value="Subscribe" class="form-control submit px-3">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Sipher Web can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://Sipher Web.com" target="_blank">Sipher Web</a>
-  <!-- Link back to Sipher Web can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
     </footer>
-    
-  
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js">
+    </script>
+    <script>
+        /* 1. AOS */
+        AOS.init({ duration: 700, easing: 'ease-out-quad', once: true, offset: 60 });
 
+        /* 2. LANGUAGE SWITCHER */
+        function setLanguage(lang) {
+            document.querySelectorAll('.en').forEach(el => el.classList.toggle('lang-hidden', lang !== 'en'));
+            document.querySelectorAll('.hi').forEach(el => el.classList.toggle('lang-hidden', lang !== 'hi'));
+            const btnEn = document.getElementById('btn-en');
+            const btnHi = document.getElementById('btn-hi');
+            if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+            if (btnHi) btnHi.classList.toggle('active', lang === 'hi');
+            document.documentElement.lang = lang;
+            const logoEn = document.querySelector('.logo-en');
+            const logoHi = document.querySelector('.logo-hi');
+            if (logoEn) logoEn.style.display = lang === 'en' ? 'block' : 'none';
+            if (logoHi) logoHi.style.display = lang === 'hi' ? 'block' : 'none';
+            localStorage.setItem('preferredLang', lang);
+        }
+        setLanguage(localStorage.getItem('preferredLang') || 'en');
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
-  </body>
+        /* 3. MOBILE HAMBURGER */
+        (function() {
+            const btn = document.getElementById('hamburgerBtn');
+            const menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', () => {
+                const isOpen = menu.classList.toggle('open');
+                btn.setAttribute('aria-expanded', isOpen);
+                btn.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+            });
+            document.addEventListener('click', e => {
+                if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                    menu.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                }
+            });
+        })();
+
+        /* 4. STICKY NAV SHADOW */
+        (function() {
+            const nav = document.getElementById('mainNav');
+            if (!nav) return;
+            window.addEventListener('scroll', () => {
+                nav.style.boxShadow = window.scrollY > 60 ?
+                    '0 4px 20px rgba(10,61,107,.15)' :
+                    '0 2px 12px rgba(10,61,107,.07)';
+            }, { passive: true });
+        })();
+
+        /* 5. COPYRIGHT YEAR */
+        const yearEl = document.getElementById('copyrightYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+</body>
 </html>
