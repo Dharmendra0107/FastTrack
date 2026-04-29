@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Track Orthopaedic Care — Hero & About</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       TOKENS
+    ═══════════════════════════════════════════ */
+    :root {
+      --navy:      #09274d;
+      --navy-lt:   #1254a0;
+      --teal:      #0d9488;
+      --gold:      #d4930a;
+      --gold-lt:   #fdf3dc;
+      --slate:     #f0f4fb;
+      --muted:     #607590;
+      --white:     #ffffff;
+      --border:    #dde6f3;
+
+      --font-head: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --r-sm: 8px;
+      --r-md: 16px;
+      --r-lg: 28px;
+      --r-xl: 44px;
+
+      --sh-sm:  0 2px 10px rgba(9,39,77,.08);
+      --sh-md:  0 8px 32px rgba(9,39,77,.13);
+      --sh-lg:  0 20px 60px rgba(9,39,77,.18);
+      --sh-glow:0 0 0 1px rgba(212,147,10,.25), 0 8px 32px rgba(212,147,10,.18);
+
+      --ease: cubic-bezier(.4,0,.2,1);
+      --t: .32s var(--ease);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--navy); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ═══════════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════════ */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-body); font-size: .72rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: ''; display: block; width: 28px; height: 2px;
+      background: var(--gold); border-radius: 2px; opacity: .6;
+    }
+
+    .btn-navy {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 28px; background: var(--navy); color: var(--white);
+      border: 2px solid var(--navy); border-radius: var(--r-sm);
+      font-family: var(--font-body); font-size: .9rem; font-weight: 600;
+      cursor: pointer; transition: var(--t);
+    }
+    .btn-navy:hover {
+      background: var(--navy-lt); border-color: var(--navy-lt);
+      transform: translateY(-2px); box-shadow: var(--sh-md);
+    }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 11px 26px; background: transparent; color: var(--navy);
+      border: 2px solid var(--border); border-radius: var(--r-sm);
+      font-family: var(--font-body); font-size: .9rem; font-weight: 600;
+      cursor: pointer; transition: var(--t);
+    }
+    .btn-outline:hover {
+      border-color: var(--navy); background: var(--slate);
+      transform: translateY(-2px);
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 28px; background: var(--gold); color: var(--white);
+      border: 2px solid var(--gold); border-radius: var(--r-sm);
+      font-family: var(--font-body); font-size: .9rem; font-weight: 600;
+      cursor: pointer; transition: var(--t);
+    }
+    .btn-gold:hover {
+      background: #b87c06; border-color: #b87c06;
+      transform: translateY(-2px); box-shadow: var(--sh-glow);
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero {
+      min-height: 92vh;
+      background: var(--slate);
+      position: relative;
+      overflow: hidden;
+      display: flex; align-items: center;
+    }
+
+    /* Decorative blobs */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(13,148,136,.10) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 20% 80%, rgba(18,84,160,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(9,39,77,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(9,39,77,.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .hero-blob-1 {
+      position: absolute; top: -120px; right: -80px;
+      width: 520px; height: 520px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(13,148,136,.12), transparent 70%);
+      pointer-events: none; animation: float1 8s ease-in-out infinite;
+    }
+    .hero-blob-2 {
+      position: absolute; bottom: -60px; left: 30%;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,147,10,.09), transparent 70%);
+      pointer-events: none; animation: float2 11s ease-in-out infinite;
+    }
+    @keyframes float1 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-30px) scale(1.06)} }
+    @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(20px)} }
+
+    /* Left column */
+    .hero-left {
+      position: relative; z-index: 2;
+      animation: fadeUp .8s var(--ease) both;
+    }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:none} }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 4.5vw, 4rem);
+      font-weight: 700; color: var(--navy);
+      margin-bottom: 20px; line-height: 1.1;
+    }
+    .hero-title .accent { color: var(--teal); }
+    .hero-title .line2 { display: block; }
+
+    .hero-desc {
+      color: var(--muted); font-size: 1rem; max-width: 440px;
+      margin-bottom: 32px; line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    /* Trust badges */
+    .trust-strip {
+      display: flex; gap: 0; flex-wrap: wrap;
+      border: 1.5px solid var(--border); border-radius: var(--r-md);
+      overflow: hidden; background: var(--white);
+      box-shadow: var(--sh-sm); max-width: 420px;
+    }
+    .trust-item {
+      flex: 1; min-width: 100px;
+      padding: 14px 16px;
+      border-right: 1.5px solid var(--border);
+      text-align: center;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-num {
+      font-family: var(--font-head); font-size: 1.65rem; font-weight: 700;
+      color: var(--navy); line-height: 1;
+    }
+    .trust-lbl {
+      font-size: .7rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .06em; margin-top: 3px;
+    }
+
+    /* Right column */
+    .hero-right {
+      position: relative; z-index: 2;
+      animation: fadeUp .8s var(--ease) .25s both;
+    }
+
+    /* Doctor card */
+    .doctor-card {
+      position: relative;
+      background: var(--white);
+      border-radius: var(--r-xl);
+      box-shadow: var(--sh-lg);
+      overflow: hidden;
+      max-width: 400px; margin: 0 auto;
+    }
+    .doctor-card-img {
+      width: 100%; height: 420px; object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform .6s var(--ease);
+    }
+    .doctor-card:hover .doctor-card-img { transform: scale(1.04); }
+    .doctor-card-footer {
+      padding: 18px 22px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-lt) 100%);
+    }
+    .doctor-card-name {
+      font-family: var(--font-head); font-size: 1.25rem;
+      font-weight: 700; color: var(--white);
+    }
+    .doctor-card-spec {
+      font-size: .78rem; color: rgba(255,255,255,.7);
+      font-weight: 500; margin-top: 2px;
+    }
+    .doctor-avail {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 6px; font-size: .72rem; font-weight: 600;
+      color: #4ade80;
+    }
+    .doctor-avail::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 0 3px rgba(74,222,128,.25);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,.25)} 50%{box-shadow:0 0 0 6px rgba(74,222,128,.08)} }
+
+    /* Floating info cards */
+    .float-card {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--r-md);
+      padding: 13px 16px;
+      box-shadow: var(--sh-md);
+      display: flex; align-items: center; gap: 11px;
+      border: 1.5px solid var(--border);
+      backdrop-filter: blur(8px);
+      animation: floatCard 5s ease-in-out infinite;
+      z-index: 10;
+    }
+    @keyframes floatCard { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .float-card-icon {
+      width: 40px; height: 40px; border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .float-card-title { font-size: .85rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
+    .float-card-sub { font-size: .72rem; color: var(--muted); margin-top: 1px; }
+
+    .float-exp {
+      top: -20px; left: -50px;
+      animation-delay: 0s;
+    }
+    .float-exp .float-card-icon { background: #e0f2fe; color: #0369a1; }
+
+    .float-emer {
+      bottom: 90px; left: -60px;
+      animation-delay: 1.5s;
+    }
+    .float-emer .float-card-icon { background: #fef9c3; color: #a16207; }
+
+    .float-sat {
+      top: 50%; right: -30px; transform: translateY(-50%);
+      animation-delay: .8s;
+    }
+    .float-sat .float-card-icon { background: #dcfce7; color: #15803d; }
+
+    .sat-bar { display: flex; align-items: center; gap: 6px; margin-top: 6px; }
+    .sat-bar-track {
+      width: 80px; height: 4px; background: var(--border);
+      border-radius: 4px; overflow: hidden;
+    }
+    .sat-bar-fill {
+      height: 100%; background: #22c55e; border-radius: 4px;
+      width: 0; transition: width 1.6s var(--ease);
+    }
+    .sat-bar-fill.loaded { width: 97%; }
+    .sat-pct { font-size: .78rem; font-weight: 700; color: #15803d; }
+
+    /* ═══════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════ */
+    .about { padding: 96px 0; background: var(--white); }
+
+    /* Image gallery */
+    .gallery-wrap {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 12px;
+      max-width: 520px;
+    }
+    .gallery-main {
+      position: relative; border-radius: var(--r-lg); overflow: hidden;
+      height: 320px; background: #dde6f3;
+    }
+    .gallery-main img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: opacity .4s var(--ease), transform .5s var(--ease);
+    }
+    .gallery-main img.fading { opacity: 0; transform: scale(1.04); }
+    .gallery-main-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,39,77,.55) 0%, transparent 55%);
+      display: flex; align-items: flex-end; padding: 18px 20px;
+    }
+    .gallery-main-tag {
+      font-family: var(--font-head); font-size: 1rem; font-weight: 600;
+      color: var(--white); line-height: 1.3;
+    }
+    .gallery-thumbs {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 10px;
+    }
+    .gallery-thumb {
+      border-radius: var(--r-md); overflow: hidden;
+      height: 84px; cursor: pointer;
+      border: 2.5px solid transparent;
+      transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+    }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-thumb:hover { transform: translateY(-3px); box-shadow: var(--sh-md); }
+    .gallery-thumb.active { border-color: var(--gold); box-shadow: var(--sh-glow); }
+
+    /* Badge overlapping the gallery */
+    .gallery-badge {
+      position: absolute; bottom: -22px; right: 20px;
+      background: var(--gold); color: var(--white);
+      padding: 16px 22px; border-radius: var(--r-md);
+      text-align: center; box-shadow: var(--sh-lg); z-index: 5;
+    }
+    .gallery-badge .num {
+      font-family: var(--font-head); font-size: 2.2rem;
+      font-weight: 700; line-height: 1;
+    }
+    .gallery-badge .lbl { font-size: .72rem; font-weight: 600; opacity: .9; margin-top: 2px; }
+
+    /* Right side */
+    .about-right { padding-left: 48px; }
+
+    .about-heading {
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-weight: 700; color: var(--navy); margin-bottom: 16px;
+    }
+    .about-desc { color: var(--muted); font-size: .95rem; margin-bottom: 28px; line-height: 1.75; }
+
+    .feature-list { list-style: none; padding: 0; margin-bottom: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feature-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .88rem; font-weight: 500; color: var(--navy);
+    }
+    .feature-list li .fi {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--slate); display: flex; align-items: center;
+      justify-content: center; font-size: .75rem; color: var(--teal);
+      flex-shrink: 0; transition: var(--t);
+    }
+    .feature-list li:hover .fi { background: var(--teal); color: var(--white); }
+
+    .about-stats {
+      display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;
+    }
+    .about-stat-card {
+      flex: 1; min-width: 120px;
+      background: var(--slate); border-radius: var(--r-md);
+      padding: 18px 20px;
+      border-left: 3px solid var(--teal);
+      transition: var(--t);
+    }
+    .about-stat-card:hover { background: #e0f2f0; transform: translateY(-2px); }
+    .about-stat-card .snum {
+      font-family: var(--font-head); font-size: 1.8rem;
+      font-weight: 700; color: var(--navy); line-height: 1;
+    }
+    .about-stat-card .slbl { font-size: .72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 991px) {
+      .float-exp { left: -10px; top: -12px; }
+      .float-emer { left: -10px; }
+      .float-sat { right: -10px; }
+      .about-right { padding-left: 0; margin-top: 56px; }
+    }
+    @media (max-width: 767px) {
+      .hero { min-height: auto; padding: 72px 0 56px; }
+      .doctor-card { max-width: 320px; }
+      .doctor-card-img { height: 320px; }
+      .float-exp, .float-emer { display: none; }
+      .float-sat { right: 0; top: 14px; bottom: auto; transform: none; }
+      .feature-list { grid-template-columns: 1fr; }
+      .gallery-thumbs { grid-template-columns: repeat(4,1fr); gap: 7px; }
+      .gallery-main { height: 230px; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.1rem; }
+      .trust-strip { flex-direction: row; }
+      .trust-item { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-blob-1"></div>
+  <div class="hero-blob-2"></div>
+
+  <div class="container py-5">
+    <div class="row align-items-center gy-5">
+
+      <!-- LEFT -->
+      <div class="col-lg-6 hero-left">
+        <div class="eyebrow">Lucknow's Trusted Orthopaedic Centre</div>
+
+        <h1 class="hero-title">
+          We Care About
+          <span class="line2">Your <span class="accent">Health</span> &amp;</span>
+          <span class="line2">Mobility.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Expert orthopaedic treatment led by Dr. Intekhab Alam. 30+ years of precision care — from complex fractures to joint replacements — all under one roof.
+        </p>
+
+        <div class="hero-actions">
+          <a href="appointment.html" class="btn-gold">
+            <i class="fa-regular fa-calendar-check"></i> Book Appointment
+          </a>
+          <a href="about.html" class="btn-outline">
+            <i class="fa-solid fa-play" style="font-size:.65rem"></i> Learn More
+          </a>
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-item">
+            <div class="trust-num">15+</div>
+            <div class="trust-lbl">Doctors</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num">20k+</div>
+            <div class="trust-lbl">Patients</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num">24/7</div>
+            <div class="trust-lbl">Support</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-num">97%</div>
+            <div class="trust-lbl">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-6 hero-right">
+        <div style="position:relative; padding: 24px 60px 24px 60px;">
+
+          <!-- Floating: Experience -->
+          <div class="float-card float-exp">
+            <div class="float-card-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <div class="float-card-title">Experienced Doctors</div>
+              <div class="float-card-sub">AMU · Apollo · Fortis trained</div>
+            </div>
+          </div>
+
+          <!-- Doctor card -->
+          <div class="doctor-card">
+            <!-- Using a placeholder gradient in place of actual image -->
+            <div style="width:100%;height:420px;background:linear-gradient(160deg,#cde4f9 0%,#a8d4f5 40%,#89bfef 100%);display:flex;align-items:center;justify-content:center;">
+              <img src="images/doctor/intekhabalam.jpg"
+                   alt="Dr. Intekhab Alam"
+                   class="doctor-card-img"
+                   onerror="this.style.display='none';this.parentNode.querySelector('.doc-placeholder').style.display='flex'"
+              />
+              <div class="doc-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+                <i class="fa-solid fa-user-doctor" style="font-size:4rem;color:var(--navy-lt);opacity:.5;"></i>
+                <span style="font-family:var(--font-head);font-size:1.1rem;color:var(--navy);opacity:.6;">Dr. Intekhab Alam</span>
+              </div>
+            </div>
+            <div class="doctor-card-footer">
+              <div class="doctor-card-name">Dr. Intekhab Alam</div>
+              <div class="doctor-card-spec">MS Orthopaedics · Fast Track Orthopaedic Care</div>
+              <div class="doctor-avail">Available Today</div>
+            </div>
+          </div>
+
+          <!-- Floating: Emergency -->
+          <div class="float-card float-emer">
+            <div class="float-card-icon"><i class="fa-solid fa-truck-medical"></i></div>
+            <div>
+              <div class="float-card-title">Emergency Care</div>
+              <div class="float-card-sub">24 × 7 rapid response</div>
+            </div>
+          </div>
+
+          <!-- Floating: Satisfaction -->
+          <div class="float-card float-sat">
+            <div class="float-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div>
+              <div class="float-card-title">Patient Satisfaction</div>
+              <div class="sat-bar">
+                <div class="sat-bar-track">
+                  <div class="sat-bar-fill" id="satFill"></div>
+                </div>
+                <div class="sat-pct">97%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     ABOUT SECTION
+═══════════════════════════════════════════ -->
+<section class="about">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+
+      <!-- LEFT: Gallery -->
+      <div class="col-lg-5">
+        <div class="gallery-wrap" style="position:relative">
+
+          <!-- Main image -->
+          <div class="gallery-main">
+            <img id="galleryMain"
+              src="images/facilty/facilty (3).jpeg"
+              alt="Hospital facility"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBlOGY0Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzYwNzU5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkhvc3BpdGFsIEZhY2lsaXR5PC90ZXh0Pjwvc3ZnPg=='"/>
+            <div class="gallery-main-overlay">
+              <span class="gallery-main-tag" id="galleryTag">Advanced Operation Theatre</span>
+            </div>
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="gallery-thumbs">
+            <div class="gallery-thumb active" data-src="images/facilty/facilty (3).jpeg" data-tag="Advanced Operation Theatre" onclick="switchGallery(this)">
+              <img src="images/facilty/facilty (3).jpeg" alt="OT"
+                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNjZGU0ZjkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNjA3NTkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+T1Q8L3RleHQ+PC9zdmc+'"/>
+            </div>
+            <div class="gallery-thumb" data-src="images/facilty/facilty (1).jpeg" data-tag="100 Beds Facility" onclick="switchGallery(this)">
+              <img src="images/facilty/facilty (1).jpeg" alt="Beds"
+                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNkY2ZjZTciLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNjA3NTkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+QmVkczwvdGV4dD48L3N2Zz4='"/>
+            </div>
+            <div class="gallery-thumb" data-src="images/facilty/facilty (4).jpeg" data-tag="In-House Diagnostic Lab" onclick="switchGallery(this)">
+              <img src="images/facilty/facilty (4).jpeg" alt="Lab"
+                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmZWYzYzciLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNjA3NTkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+TGFiPC90ZXh0Pjwvc3ZnPg=='"/>
+            </div>
+            <div class="gallery-thumb" data-src="images/facilty/facilty (5).jpeg" data-tag="Physiotherapy & Rehab Unit" onclick="switchGallery(this)">
+              <img src="images/facilty/facilty (5).jpeg" alt="Physio"
+                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlZGUwZjQiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNjA3NTkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UGh5c2lvPC90ZXh0Pjwvc3ZnPg=='"/>
+            </div>
+          </div>
+
+          <!-- Gold badge -->
+          <div class="gallery-badge">
+            <div class="num">30+</div>
+            <div class="lbl">Years Experience</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: Content -->
+      <div class="col-lg-7">
+        <div class="about-right">
+          <div class="eyebrow">About Our Hospital</div>
+          <h2 class="about-heading">
+            Providing Advanced<br/>Healthcare Solutions
+          </h2>
+          <p class="about-desc">
+            Fast Track Orthopaedic Care is Lucknow's premier orthopaedic centre led by Dr. Intekhab Alam — MBBS &amp; MS Orthopaedics, AMU. With ex-consultant experience at Apollo, Max, and Fortis hospitals, we deliver world-class surgical precision combined with compassionate patient care.
+          </p>
+
+          <ul class="feature-list">
+            <li>
+              <span class="fi"><i class="fa-solid fa-check"></i></span>
+              <span>Qualified &amp; Experienced Doctors</span>
+            </li>
+            <li>
+              <span class="fi"><i class="fa-solid fa-check"></i></span>
+              <span>Modern Surgical Equipment</span>
+            </li>
+            <li>
+              <span class="fi"><i class="fa-solid fa-check"></i></span>
+              <span>24/7 Emergency Support</span>
+            </li>
+            <li>
+              <span class="fi"><i class="fa-solid fa-check"></i></span>
+              <span>Affordable &amp; Transparent Care</span>
+            </li>
+            <li>
+              <span class="fi"><i class="fa-solid fa-check"></i></span>
+              <span>In-House Diagnostics &amp; Lab</span>
+            </li>
+            <li>
+              <span class="fi"><i class="fa-solid fa-check"></i></span>
+              <span>Post-Op Rehab &amp; Physiotherapy</span>
+            </li>
+          </ul>
+
+          <div class="about-stats">
+            <div class="about-stat-card">
+              <div class="snum">25+</div>
+              <div class="slbl">Years of Excellence</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="snum">50+</div>
+              <div class="slbl">Specialists</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="snum">10k+</div>
+              <div class="slbl">Surgeries Done</div>
+            </div>
+          </div>
+
+          <a href="about.html" class="btn-navy">
+            View More <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ── Satisfaction bar on load ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const fill = document.getElementById('satFill');
+    if (fill) fill.classList.add('loaded');
+  }, 600);
+});
+
+/* ── Gallery switcher ── */
+function switchGallery(thumb) {
+  const src = thumb.dataset.src;
+  const tag = thumb.dataset.tag;
+  const mainImg = document.getElementById('galleryMain');
+  const mainTag = document.getElementById('galleryTag');
+
+  // Mark active thumb
+  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+
+  // Fade out → swap → fade in
+  mainImg.classList.add('fading');
+  setTimeout(() => {
+    mainImg.src = src;
+    mainImg.onerror = function() {
+      this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBlOGY0Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzYwNzU5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkhvc3BpdGFsIEZhY2lsaXR5PC90ZXh0Pjwvc3ZnPg==';
+    };
+    mainTag.textContent = tag;
+    mainImg.classList.remove('fading');
+  }, 300);
+}
+</script>
+
+</body>
+</html>
