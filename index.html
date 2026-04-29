@@ -1409,93 +1409,91 @@
         }
       }
 
-
       /* ══ FACILITY CAROUSEL CARDS ══ */
-.facility-slide-card {
-  background: var(--clr-white);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--clr-border);
-  transition: var(--transition);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.facility-slide-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-.fac-img-wrap {
-  position: relative;
-  height: 210px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.fac-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-  display: block;
-}
-.facility-slide-card:hover .fac-img-wrap img {
-  transform: scale(1.06);
-}
-.fac-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 61, 107, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: var(--transition);
-  font-size: 1.6rem;
-  color: var(--clr-white);
-}
-.facility-slide-card:hover .fac-overlay {
-  opacity: 1;
-}
-.fac-body {
-  padding: 20px 22px 24px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.fac-icon-wrap {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #e6f0fb, #d0e4f7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: var(--clr-primary);
-  transition: var(--transition);
-  flex-shrink: 0;
-}
-.facility-slide-card:hover .fac-icon-wrap {
-  background: var(--clr-primary);
-  color: var(--clr-white);
-}
-.fac-title {
-  font-size: 1rem;
-  font-family: var(--font-body);
-  font-weight: 700;
-  color: var(--clr-primary);
-  margin: 0;
-  line-height: 1.3;
-}
-.fac-desc {
-  font-size: 0.83rem;
-  color: var(--clr-muted);
-  margin: 0;
-  line-height: 1.6;
-}
-
+      .facility-slide-card {
+        background: var(--clr-white);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--clr-border);
+        transition: var(--transition);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .facility-slide-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+      .fac-img-wrap {
+        position: relative;
+        height: 210px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .fac-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        display: block;
+      }
+      .facility-slide-card:hover .fac-img-wrap img {
+        transform: scale(1.06);
+      }
+      .fac-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 61, 107, 0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+        font-size: 1.6rem;
+        color: var(--clr-white);
+      }
+      .facility-slide-card:hover .fac-overlay {
+        opacity: 1;
+      }
+      .fac-body {
+        padding: 20px 22px 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .fac-icon-wrap {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, #e6f0fb, #d0e4f7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--clr-primary);
+        transition: var(--transition);
+        flex-shrink: 0;
+      }
+      .facility-slide-card:hover .fac-icon-wrap {
+        background: var(--clr-primary);
+        color: var(--clr-white);
+      }
+      .fac-title {
+        font-size: 1rem;
+        font-family: var(--font-body);
+        font-weight: 700;
+        color: var(--clr-primary);
+        margin: 0;
+        line-height: 1.3;
+      }
+      .fac-desc {
+        font-size: 0.83rem;
+        color: var(--clr-muted);
+        margin: 0;
+        line-height: 1.6;
+      }
     </style>
   </head>
 
@@ -1587,7 +1585,12 @@
                 ><span class="hi lang-hidden">सुविधा</span></a
               >
             </li>
-                    <li><a href="gallery.html"><span class="en">Gallery</span><span class="hi lang-hidden">गैलरी</span></a></li>
+            <li>
+              <a href="gallery.html"
+                ><span class="en">Gallery</span
+                ><span class="hi lang-hidden">गैलरी</span></a
+              >
+            </li>
             <li>
               <a href="blog.html"
                 ><span class="en">Blog</span
@@ -2300,169 +2303,260 @@
       </div>
     </section>
 
-
     <!-- ══════════════════════════════════════════════
    FACILITY CAROUSEL  (3-up → 2-up → 1-up)
 ══════════════════════════════════════════════ -->
-<section class="facility-section section-pad" id="facility" style="background: var(--clr-bg);">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <span class="badge-tag">
-        <span class="en">Infrastructure</span>
-        <span class="hi lang-hidden">बुनियादी ढांचा</span>
-      </span>
-      <h2 class="section-title">
-        <span class="en">Our World-Class Facilities</span>
-        <span class="hi lang-hidden">हमारी विश्वस्तरीय सुविधाएं</span>
-      </h2>
-      <div class="divider"></div>
-      <p class="section-sub">
-        <span class="en">Modern infrastructure to provide comprehensive orthopaedic treatment — all under one roof.</span>
-        <span class="hi lang-hidden">एक ही छत के नीचे व्यापक ऑर्थोपेडिक उपचार के लिए आधुनिक बुनियादी ढांचा।</span>
-      </p>
-    </div>
+    <section
+      class="facility-section section-pad"
+      id="facility"
+      style="background: var(--clr-bg)"
+    >
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge-tag">
+            <span class="en">Infrastructure</span>
+            <span class="hi lang-hidden">बुनियादी ढांचा</span>
+          </span>
+          <h2 class="section-title">
+            <span class="en">Our World-Class Facilities</span>
+            <span class="hi lang-hidden">हमारी विश्वस्तरीय सुविधाएं</span>
+          </h2>
+          <div class="divider"></div>
+          <p class="section-sub">
+            <span class="en"
+              >Modern infrastructure to provide comprehensive orthopaedic
+              treatment — all under one roof.</span
+            >
+            <span class="hi lang-hidden"
+              >एक ही छत के नीचे व्यापक ऑर्थोपेडिक उपचार के लिए आधुनिक बुनियादी
+              ढांचा।</span
+            >
+          </p>
+        </div>
 
-    <div class="carousel-outer px-4" data-aos="fade-up">
-      <button class="c-arrow prev" id="facPrev" aria-label="Previous">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <button class="c-arrow next" id="facNext" aria-label="Next">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
+        <div class="carousel-outer px-4" data-aos="fade-up">
+          <button class="c-arrow prev" id="facPrev" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="c-arrow next" id="facNext" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
 
-      <div class="carousel-viewport" id="facViewport">
-        <div class="carousel-track" id="facTrack">
-
-          <div class="carousel-slide">
-            <div class="facility-slide-card">
-              <div class="fac-img-wrap">
-                <img src="images/facilty/facilty (1).jpeg" alt="100 Beds Facility" loading="lazy" />
-                <div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+          <div class="carousel-viewport" id="facViewport">
+            <div class="carousel-track" id="facTrack">
+              <div class="carousel-slide">
+                <div class="facility-slide-card">
+                  <div class="fac-img-wrap">
+                    <img
+                      src="images/facilty/facilty (1).jpeg"
+                      alt="100 Beds Facility"
+                      loading="lazy"
+                    />
+                    <div class="fac-overlay">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                  </div>
+                  <div class="fac-body">
+                    <div class="fac-icon-wrap">
+                      <i class="fa-solid fa-bed-pulse"></i>
+                    </div>
+                    <h4 class="fac-title">
+                      <span class="en">100 Beds Facility</span>
+                      <span class="hi lang-hidden">100 बेड की सुविधा</span>
+                    </h4>
+                    <p class="fac-desc">
+                      <span class="en"
+                        >Spacious, hygienic wards with dedicated nursing care
+                        round the clock.</span
+                      >
+                      <span class="hi lang-hidden"
+                        >समर्पित नर्सिंग देखभाल के साथ विशाल और स्वच्छ
+                        वार्ड।</span
+                      >
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div class="fac-body">
-                <div class="fac-icon-wrap"><i class="fa-solid fa-bed-pulse"></i></div>
-                <h4 class="fac-title">
-                  <span class="en">100 Beds Facility</span>
-                  <span class="hi lang-hidden">100 बेड की सुविधा</span>
-                </h4>
-                <p class="fac-desc">
-                  <span class="en">Spacious, hygienic wards with dedicated nursing care round the clock.</span>
-                  <span class="hi lang-hidden">समर्पित नर्सिंग देखभाल के साथ विशाल और स्वच्छ वार्ड।</span>
-                </p>
+
+              <div class="carousel-slide">
+                <div class="facility-slide-card">
+                  <div class="fac-img-wrap">
+                    <img
+                      src="images/facilty/facilty (2).jpeg"
+                      alt="Ambulance Service"
+                      loading="lazy"
+                    />
+                    <div class="fac-overlay">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                  </div>
+                  <div class="fac-body">
+                    <div class="fac-icon-wrap">
+                      <i class="fa-solid fa-truck-medical"></i>
+                    </div>
+                    <h4 class="fac-title">
+                      <span class="en">24/7 Ambulance Service</span>
+                      <span class="hi lang-hidden">24/7 एम्बुलेंस सेवा</span>
+                    </h4>
+                    <p class="fac-desc">
+                      <span class="en"
+                        >Fully equipped ambulances available at all hours for
+                        rapid patient transport.</span
+                      >
+                      <span class="hi lang-hidden"
+                        >त्वरित परिवहन के लिए पूरी तरह सुसज्जित एम्बुलेंस।</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <div class="facility-slide-card">
+                  <div class="fac-img-wrap">
+                    <img
+                      src="images/facilty/facilty (3).jpeg"
+                      alt="Advanced Operation Theatre"
+                      loading="lazy"
+                    />
+                    <div class="fac-overlay">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                  </div>
+                  <div class="fac-body">
+                    <div class="fac-icon-wrap">
+                      <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h4 class="fac-title">
+                      <span class="en">Advanced Operation Theatre</span>
+                      <span class="hi lang-hidden">उन्नत ऑपरेशन थियेटर</span>
+                    </h4>
+                    <p class="fac-desc">
+                      <span class="en"
+                        >State-of-the-art OT with laminar airflow and advanced
+                        surgical equipment.</span
+                      >
+                      <span class="hi lang-hidden"
+                        >लैमिनार एयरफ्लो और उन्नत सर्जिकल उपकरणों से
+                        सुसज्जित।</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <div class="facility-slide-card">
+                  <div class="fac-img-wrap">
+                    <img
+                      src="images/facilty/facilty (4).jpeg"
+                      alt="Diagnostic Lab"
+                      loading="lazy"
+                    />
+                    <div class="fac-overlay">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                  </div>
+                  <div class="fac-body">
+                    <div class="fac-icon-wrap">
+                      <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h4 class="fac-title">
+                      <span class="en">In-House Diagnostic Lab</span>
+                      <span class="hi lang-hidden"
+                        >इन-हाउस डायग्नोस्टिक लैब</span
+                      >
+                    </h4>
+                    <p class="fac-desc">
+                      <span class="en"
+                        >Pathology, X-ray, and imaging under one roof for faster
+                        diagnosis.</span
+                      >
+                      <span class="hi lang-hidden"
+                        >तेज़ निदान के लिए पैथोलॉजी, एक्स-रे और इमेजिंग।</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <div class="facility-slide-card">
+                  <div class="fac-img-wrap">
+                    <img
+                      src="images/facilty/facilty (5).jpeg"
+                      alt="Physiotherapy Unit"
+                      loading="lazy"
+                    />
+                    <div class="fac-overlay">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                  </div>
+                  <div class="fac-body">
+                    <div class="fac-icon-wrap">
+                      <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h4 class="fac-title">
+                      <span class="en">Physiotherapy &amp; Rehab Unit</span>
+                      <span class="hi lang-hidden"
+                        >फिजियोथेरेपी और रिहैब यूनिट</span
+                      >
+                    </h4>
+                    <p class="fac-desc">
+                      <span class="en"
+                        >Dedicated rehabilitation space with modern physio
+                        equipment and expert therapists.</span
+                      >
+                      <span class="hi lang-hidden"
+                        >आधुनिक उपकरणों और विशेषज्ञ थेरेपिस्ट के साथ पुनर्वास
+                        केंद्र।</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-slide">
+                <div class="facility-slide-card">
+                  <div class="fac-img-wrap">
+                    <img
+                      src="images/facilty/facilty (1).jpeg"
+                      alt="Emergency Trauma Care"
+                      loading="lazy"
+                    />
+                    <div class="fac-overlay">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                  </div>
+                  <div class="fac-body">
+                    <div class="fac-icon-wrap">
+                      <i class="fa-solid fa-kit-medical"></i>
+                    </div>
+                    <h4 class="fac-title">
+                      <span class="en">24/7 Emergency &amp; Trauma Care</span>
+                      <span class="hi lang-hidden"
+                        >24/7 आपातकालीन और ट्रॉमा देखभाल</span
+                      >
+                    </h4>
+                    <p class="fac-desc">
+                      <span class="en"
+                        >Always-ready emergency unit staffed for immediate
+                        orthopaedic trauma response.</span
+                      >
+                      <span class="hi lang-hidden"
+                        >तत्काल ऑर्थोपेडिक ट्रॉमा के लिए सदैव तैयार आपातकालीन
+                        इकाई।</span
+                      >
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="carousel-slide">
-            <div class="facility-slide-card">
-              <div class="fac-img-wrap">
-                <img src="images/facilty/facilty (2).jpeg" alt="Ambulance Service" loading="lazy" />
-                <div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-              <div class="fac-body">
-                <div class="fac-icon-wrap"><i class="fa-solid fa-truck-medical"></i></div>
-                <h4 class="fac-title">
-                  <span class="en">24/7 Ambulance Service</span>
-                  <span class="hi lang-hidden">24/7 एम्बुलेंस सेवा</span>
-                </h4>
-                <p class="fac-desc">
-                  <span class="en">Fully equipped ambulances available at all hours for rapid patient transport.</span>
-                  <span class="hi lang-hidden">त्वरित परिवहन के लिए पूरी तरह सुसज्जित एम्बुलेंस।</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <div class="facility-slide-card">
-              <div class="fac-img-wrap">
-                <img src="images/facilty/facilty (3).jpeg" alt="Advanced Operation Theatre" loading="lazy" />
-                <div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-              <div class="fac-body">
-                <div class="fac-icon-wrap"><i class="fa-solid fa-microscope"></i></div>
-                <h4 class="fac-title">
-                  <span class="en">Advanced Operation Theatre</span>
-                  <span class="hi lang-hidden">उन्नत ऑपरेशन थियेटर</span>
-                </h4>
-                <p class="fac-desc">
-                  <span class="en">State-of-the-art OT with laminar airflow and advanced surgical equipment.</span>
-                  <span class="hi lang-hidden">लैमिनार एयरफ्लो और उन्नत सर्जिकल उपकरणों से सुसज्जित।</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <div class="facility-slide-card">
-              <div class="fac-img-wrap">
-                <img src="images/facilty/facilty (4).jpeg" alt="Diagnostic Lab" loading="lazy" />
-                <div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-              <div class="fac-body">
-                <div class="fac-icon-wrap"><i class="fa-solid fa-flask"></i></div>
-                <h4 class="fac-title">
-                  <span class="en">In-House Diagnostic Lab</span>
-                  <span class="hi lang-hidden">इन-हाउस डायग्नोस्टिक लैब</span>
-                </h4>
-                <p class="fac-desc">
-                  <span class="en">Pathology, X-ray, and imaging under one roof for faster diagnosis.</span>
-                  <span class="hi lang-hidden">तेज़ निदान के लिए पैथोलॉजी, एक्स-रे और इमेजिंग।</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <div class="facility-slide-card">
-              <div class="fac-img-wrap">
-                <img src="images/facilty/facilty (5).jpeg" alt="Physiotherapy Unit" loading="lazy" />
-                <div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-              <div class="fac-body">
-                <div class="fac-icon-wrap"><i class="fa-solid fa-dumbbell"></i></div>
-                <h4 class="fac-title">
-                  <span class="en">Physiotherapy &amp; Rehab Unit</span>
-                  <span class="hi lang-hidden">फिजियोथेरेपी और रिहैब यूनिट</span>
-                </h4>
-                <p class="fac-desc">
-                  <span class="en">Dedicated rehabilitation space with modern physio equipment and expert therapists.</span>
-                  <span class="hi lang-hidden">आधुनिक उपकरणों और विशेषज्ञ थेरेपिस्ट के साथ पुनर्वास केंद्र।</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-slide">
-            <div class="facility-slide-card">
-              <div class="fac-img-wrap">
-                <img src="images/facilty/facilty (1).jpeg" alt="Emergency Trauma Care" loading="lazy" />
-                <div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-              <div class="fac-body">
-                <div class="fac-icon-wrap"><i class="fa-solid fa-kit-medical"></i></div>
-                <h4 class="fac-title">
-                  <span class="en">24/7 Emergency &amp; Trauma Care</span>
-                  <span class="hi lang-hidden">24/7 आपातकालीन और ट्रॉमा देखभाल</span>
-                </h4>
-                <p class="fac-desc">
-                  <span class="en">Always-ready emergency unit staffed for immediate orthopaedic trauma response.</span>
-                  <span class="hi lang-hidden">तत्काल ऑर्थोपेडिक ट्रॉमा के लिए सदैव तैयार आपातकालीन इकाई।</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
+          <div class="c-dots" id="facDots"></div>
         </div>
       </div>
-      <div class="c-dots" id="facDots"></div>
-    </div>
-  </div>
-</section>
-
-
-
-
+    </section>
 
     <!-- ══════════════════════════════════════════════
        GALLERY CAROUSEL  (9 images, 3-up → 2-up → 1-up)
@@ -3713,212 +3807,123 @@
      Supports: 3-up (≥992), 2-up (≥576), 1-up (<576)
      Features: arrows, dots, touch/mouse drag, auto-play
   ══════════════════════════════════════════════════════ */
-      function buildCarousel(cfg) {
-        const {
-          trackId,
-          viewportId,
-          prevId,
-          nextId,
-          dotsId,
-          perPage,
-          autoPlay,
-          autoDelay,
-        } = cfg;
+function buildCarousel(cfg) {
+  const { trackId, viewportId, prevId, nextId, dotsId, perPage, autoPlay, autoDelay } = cfg;
+  const track    = document.getElementById(trackId);
+  const viewport = document.getElementById(viewportId);
+  const prevBtn  = document.getElementById(prevId);
+  const nextBtn  = document.getElementById(nextId);
+  const dotsWrap = document.getElementById(dotsId);
+  if (!track || !viewport) return;
 
-        const track = document.getElementById(trackId);
-        const viewport = document.getElementById(viewportId);
-        const prevBtn = document.getElementById(prevId);
-        const nextBtn = document.getElementById(nextId);
-        const dotsWrap = document.getElementById(dotsId);
+  const slides = Array.from(track.children);
+  const total  = slides.length;
+  let cur = 0, autoTimer = null;
 
-        if (!track || !viewport) return;
+  function getVisible() {
+    const w = window.innerWidth;
+    if (w >= 992) return Math.min(perPage[2] || 3, total);
+    if (w >= 576) return Math.min(perPage[1] || 2, total);
+    return Math.min(perPage[0] || 1, total);
+  }
 
-        const slides = Array.from(track.children);
-        const total = slides.length;
-        let cur = 0;
-        let autoTimer = null;
+  function getPages() {
+    return Math.max(1, total - getVisible() + 1);
+  }
 
-        /* Determine how many slides to show based on viewport width */
-        function getVisible() {
-          const w = window.innerWidth;
-          if (w >= 992) return Math.min(perPage[2] || 3, total);
-          if (w >= 576) return Math.min(perPage[1] || 2, total);
-          return Math.min(perPage[0] || 1, total);
-        }
+  /* ── KEY FIX: use real pixel width ── */
+  function getSlideWidth() {
+    return viewport.offsetWidth / getVisible();
+  }
 
-        /* Total number of "pages" */
-        function getPages() {
-          return Math.max(1, total - getVisible() + 1);
-        }
+  function setWidths() {
+    const sw = getSlideWidth();
+    slides.forEach(s => {
+      s.style.width   = sw + 'px';
+      s.style.flexShrink = '0';
+    });
+  }
 
-        /* Width of one slide = viewport / visible */
-        function setWidths() {
-          const vis = getVisible();
-          const pct = 100 / vis;
-          slides.forEach((s) => (s.style.width = pct + "%"));
-        }
+  function goTo(idx) {
+    const pages = getPages();
+    cur = ((idx % pages) + pages) % pages;          // handles negatives safely
+    track.style.transform = `translateX(${-cur * getSlideWidth()}px)`;
+    updateDots();
+  }
 
-        /* Move to page index */
-        function goTo(idx) {
-          const pages = getPages();
-          cur = (idx + pages) % pages;
-          const pct = (cur / total) * 100;
-          track.style.transform = `translateX(-${pct}%)`;
-          updateDots();
-        }
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const pages = getPages();
+    for (let i = 0; i < pages; i++) {
+      const d = document.createElement('button');
+      d.className = 'c-dot' + (i === cur ? ' active' : '');
+      d.setAttribute('aria-label', `Page ${i + 1}`);
+      d.onclick = () => { goTo(i); resetAuto(); };
+      dotsWrap.appendChild(d);
+    }
+  }
 
-        /* Build dots */
-        function buildDots() {
-          dotsWrap.innerHTML = "";
-          const pages = getPages();
-          for (let i = 0; i < pages; i++) {
-            const d = document.createElement("button");
-            d.className = "c-dot" + (i === cur ? " active" : "");
-            d.setAttribute("aria-label", `Page ${i + 1}`);
-            d.onclick = () => {
-              goTo(i);
-              resetAuto();
-            };
-            dotsWrap.appendChild(d);
-          }
-        }
+  function updateDots() {
+    Array.from(dotsWrap.children).forEach((d, i) =>
+      d.classList.toggle('active', i === cur));
+  }
 
-        function updateDots() {
-          Array.from(dotsWrap.children).forEach((d, i) =>
-            d.classList.toggle("active", i === cur),
-          );
-        }
+  prevBtn && prevBtn.addEventListener('click', () => { goTo(cur - 1); resetAuto(); });
+  nextBtn && nextBtn.addEventListener('click', () => { goTo(cur + 1); resetAuto(); });
 
-        /* Prev / next */
-        prevBtn &&
-          prevBtn.addEventListener("click", () => {
-            goTo(cur - 1);
-            resetAuto();
-          });
-        nextBtn &&
-          nextBtn.addEventListener("click", () => {
-            goTo(cur + 1);
-            resetAuto();
-          });
+  function startAuto() {
+    if (!autoPlay) return;
+    autoTimer = setInterval(() => goTo(cur + 1), autoDelay || 4000);
+  }
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
 
-        /* Auto-play */
-        function startAuto() {
-          if (!autoPlay) return;
-          autoTimer = setInterval(() => goTo(cur + 1), autoDelay || 4000);
-        }
-        function resetAuto() {
-          clearInterval(autoTimer);
-          startAuto();
-        }
+  /* ── Drag / Touch ── */
+  let dragStart = null, dragDelta = 0, isDragging = false;
 
-        /* Touch / mouse drag */
-        let dragStart = null,
-          dragDelta = 0,
-          isDragging = false;
+  function onDragStart(x) { dragStart = x; isDragging = false; dragDelta = 0; }
+  function onDragMove(x) {
+    if (dragStart === null) return;
+    dragDelta = x - dragStart;
+    if (Math.abs(dragDelta) > 8) isDragging = true;
+  }
+  function onDragEnd() {
+    if (isDragging) {
+      const threshold = getSlideWidth() * 0.25;  /* 25% of one slide */
+      if      (dragDelta < -threshold) goTo(cur + 1);
+      else if (dragDelta >  threshold) goTo(cur - 1);
+      else                             goTo(cur);   /* snap back cleanly */
+      resetAuto();
+    }
+    dragStart = null; dragDelta = 0; isDragging = false;
+  }
 
-        function onDragStart(x) {
-          dragStart = x;
-          isDragging = false;
-        }
-        function onDragMove(x) {
-          if (dragStart === null) return;
-          dragDelta = x - dragStart;
-          if (Math.abs(dragDelta) > 8) {
-            isDragging = true;
-          }
-        }
-        function onDragEnd() {
-          if (isDragging) {
-            const threshold = viewport.offsetWidth * 0.2;
-            if (dragDelta < -threshold) goTo(cur + 1);
-            else if (dragDelta > threshold) goTo(cur - 1);
-            resetAuto();
-          }
-          dragStart = null;
-          dragDelta = 0;
-          isDragging = false;
-        }
+  viewport.addEventListener('mousedown',  e => onDragStart(e.clientX));
+  viewport.addEventListener('mousemove',  e => onDragMove(e.clientX));
+  viewport.addEventListener('mouseup',    () => onDragEnd());
+  viewport.addEventListener('mouseleave', () => onDragEnd());
+  viewport.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+  viewport.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
+  viewport.addEventListener('touchend',   () => onDragEnd());
+  viewport.addEventListener('click', e => { if (isDragging) e.preventDefault(); }, true);
 
-        viewport.addEventListener("mousedown", (e) => onDragStart(e.clientX));
-        viewport.addEventListener("mousemove", (e) => onDragMove(e.clientX));
-        viewport.addEventListener("mouseup", () => onDragEnd());
-        viewport.addEventListener("mouseleave", () => onDragEnd());
-        viewport.addEventListener(
-          "touchstart",
-          (e) => onDragStart(e.touches[0].clientX),
-          { passive: true },
-        );
-        viewport.addEventListener(
-          "touchmove",
-          (e) => onDragMove(e.touches[0].clientX),
-          { passive: true },
-        );
-        viewport.addEventListener("touchend", () => onDragEnd());
+  /* ── Recalculate on resize ── */
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const pages = getPages();
+      if (cur >= pages) cur = pages - 1;
+      setWidths();
+      buildDots();
+      goTo(cur);
+    }, 150);
+  });
 
-        /* Click guard (prevent link clicks during drag) */
-        viewport.addEventListener(
-          "click",
-          (e) => {
-            if (isDragging) e.preventDefault();
-          },
-          true,
-        );
-
-        /* Recalculate on resize */
-        let resizeTimer;
-        window.addEventListener("resize", () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => {
-            const pages = getPages();
-            if (cur >= pages) cur = pages - 1;
-            setWidths();
-            buildDots();
-            goTo(cur);
-          }, 200);
-        });
-
-        /* Init */
-        setWidths();
-        buildDots();
-        goTo(0);
-        startAuto();
-      }
-
-      /* ── Gallery Carousel (3 → 2 → 1) ── */
-      buildCarousel({
-        trackId: "gallTrack",
-        viewportId: "gallViewport",
-        prevId: "gallPrev",
-        nextId: "gallNext",
-        dotsId: "gallDots",
-        perPage: [1, 2, 3], // [mobile, tablet, desktop]
-        autoPlay: true,
-        autoDelay: 3500,
-      });
-
-      /* ── Testimonials Carousel (3 → 2 → 1) ── */
-      buildCarousel({
-        trackId: "testTrack",
-        viewportId: "testViewport",
-        prevId: "testPrev",
-        nextId: "testNext",
-        dotsId: "testDots",
-        perPage: [1, 2, 3],
-        autoPlay: true,
-        autoDelay: 4500,
-      });
-
-      /* ── Blog Carousel (3 → 2 → 1) ── */
-      buildCarousel({
-        trackId: "blogTrack",
-        viewportId: "blogViewport",
-        prevId: "blogPrev",
-        nextId: "blogNext",
-        dotsId: "blogDots",
-        perPage: [1, 2, 3],
-        autoPlay: false,
-      });
-
+  setWidths();
+  buildDots();
+  goTo(0);
+  startAuto();
+}
       /* ══════════════════════════════════════════════════════
      COUNTER ANIMATION
   ══════════════════════════════════════════════════════ */
@@ -4005,18 +4010,53 @@
         });
       })();
 
-
       /* ── Facility Carousel (3 → 2 → 1) ── */
-buildCarousel({
-  trackId: "facTrack",
-  viewportId: "facViewport",
-  prevId: "facPrev",
-  nextId: "facNext",
-  dotsId: "facDots",
-  perPage: [1, 2, 3],
-  autoPlay: true,
-  autoDelay: 4000,
-});
+    /* ── Facility Carousel (3 → 2 → 1) ── */
+      buildCarousel({
+        trackId: "facTrack",
+        viewportId: "facViewport",
+        prevId: "facPrev",
+        nextId: "facNext",
+        dotsId: "facDots",
+        perPage: [1, 2, 3],
+        autoPlay: true,
+        autoDelay: 4000,
+      });
+
+      /* ── Gallery / Memorable Events Carousel (3 → 2 → 1) ── */
+      buildCarousel({
+        trackId: "gallTrack",
+        viewportId: "gallViewport",
+        prevId: "gallPrev",
+        nextId: "gallNext",
+        dotsId: "gallDots",
+        perPage: [1, 2, 3],
+        autoPlay: true,
+        autoDelay: 3500,
+      });
+
+      /* ── Testimonials Carousel (3 → 2 → 1) ── */
+      buildCarousel({
+        trackId: "testTrack",
+        viewportId: "testViewport",
+        prevId: "testPrev",
+        nextId: "testNext",
+        dotsId: "testDots",
+        perPage: [1, 2, 3],
+        autoPlay: true,
+        autoDelay: 4500,
+      });
+
+      /* ── Blog Carousel (3 → 2 → 1) ── */
+      buildCarousel({
+        trackId: "blogTrack",
+        viewportId: "blogViewport",
+        prevId: "blogPrev",
+        nextId: "blogNext",
+        dotsId: "blogDots",
+        perPage: [1, 2, 3],
+        autoPlay: false,
+      });
 
       /* COPYRIGHT YEAR */
       document.getElementById("copyrightYear").textContent =
