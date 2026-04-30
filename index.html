@@ -389,8 +389,47 @@
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 992px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; align-items: center; }
+      .main-navbar .navbar-collapse {
+        margin-top: 12px;
+        padding: 12px 0 16px;
+        border-top: 1px solid var(--clr-border);
+        background: var(--clr-white);
+        text-align: center;
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        margin-bottom: 14px;
+      }
+      .nav-links .nav-item {
+        width: 100%;
+      }
+      .nav-links li a {
+        padding: 12px 0;
+        border-radius: 0;
+        border-bottom: 1px solid var(--clr-border);
+        text-align: center;
+        width: 100%;
+      }
+      .nav-links li:last-child a {
+        border-bottom: none;
+      }
+      .nav-links li a::after {
+        display: none;
+      }
+      .nav-right {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .nav-right .nav-appt-btn,
+      .nav-right .lang-selector {
+        margin-left: 0;
+      }
       .float-exp { left: -10px; top: -12px; }
       .float-emer { left: -10px; }
       .float-sat { right: -10px; }
@@ -425,6 +464,35 @@
       .stat-card { padding: 28px 12px; }
       .stat-card::after { display: none; }
     }
+
+    @media (max-width: 768px) {
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-right > div {
+    padding: 0 !important;   /* remove side padding */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .doctor-card {
+    width: 100%;
+    max-width: 320px;  /* control size */
+    margin: 0 auto;    /* center horizontally */
+  }
+
+  .doctor-card-img-wrap {
+    height: 300px; /* optional tweak */
+  }
+}
+.hero-left {
+  text-align: center;
+}
   </style>
 </head>
 <body>
@@ -458,45 +526,45 @@
   </div>
 
   <!-- NAVBAR -->
-  <nav class="main-navbar" id="mainNav">
+  <nav class="navbar navbar-expand-lg main-navbar" id="mainNav">
     <div class="container">
-      <div class="navbar-inner">
-        <a href="index.html" class="nav-logo">
-          <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-en" />
-          <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-hi" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
-          <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
-          <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
-          <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
-          <li><a href="gallery.html"><span class="en">Gallery</span><span class="hi lang-hidden">गैलरी</span></a></li>
-          <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
-          <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
+      <a href="index.html" class="navbar-brand nav-logo">
+        <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-en" />
+        <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-hi" />
+      </a>
+
+      <a href="appointment.html" class="nav-appt-btn btn d-flex d-md-none">
+          <span class="en">Book Appointment</span>
+          <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+        <ul class="navbar-nav me-auto mx-auto mb-2 mb-lg-0 nav-links">
+          <li class="nav-item"><a class="nav-link active" href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><span class="en">Gallery</span><span class="hi lang-hidden">गैलरी</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
         </ul>
-        <div class="nav-right">
-          <div class="lang-selector">
+
+        <div class="d-flex align-items-center nav-right">
+          <div class="lang-selector me-2">
             <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
             <button class="lang-btn" id="btn-hi" onclick="setLanguage('hi')">हि</button>
           </div>
-          <a href="appointment.html" class="nav-appt-btn">
-            <span class="en">Book Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट लें</span>
+          <a href="appointment.html" class="nav-appt-btn btn d-none d-lg-inline-block">
+            <span class="en">Book Appointment</span>
+            <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
           </a>
-          <button class="nav-hamburger" id="hamburgerBtn" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
-          </button>
         </div>
       </div>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <ul>
-        <li><a href="index.html"><span class="en">Home</span><span class="hi lang-hidden">होम</span></a></li>
-        <li><a href="about.html"><span class="en">About</span><span class="hi lang-hidden">हमारे बारे में</span></a></li>
-        <li><a href="department.html"><span class="en">Departments</span><span class="hi lang-hidden">विभाग</span></a></li>
-        <li><a href="pricing.html"><span class="en">Facility</span><span class="hi lang-hidden">सुविधा</span></a></li>
-        <li><a href="blog.html"><span class="en">Blog</span><span class="hi lang-hidden">ब्लॉग</span></a></li>
-        <li><a href="contact.html"><span class="en">Contact</span><span class="hi lang-hidden">संपर्क</span></a></li>
-      </ul>
     </div>
   </nav>
 
@@ -511,7 +579,7 @@
       <div class="row align-items-center gy-5">
 
         <!-- LEFT -->
-        <div class="col-lg-6 hero-left">
+        <div class="col-lg-6  hero-left ">
           <div class="hero-eyebrow">
             <span class="en">Lucknow's Trusted Orthopaedic Centre</span>
             <span class="hi lang-hidden">लखनऊ का विश्वसनीय ऑर्थोपेडिक केंद्र</span>
@@ -551,7 +619,7 @@
         </div>
 
         <!-- RIGHT -->
-        <div class="col-lg-6 hero-right">
+        <div class="col-lg-6 hero-right ">
           <div style="position:relative; padding: 24px 60px 24px 60px;">
             <!-- Floating: Experience -->
             <!-- <div class="float-card float-exp mt-5">
@@ -1170,10 +1238,11 @@
       }, { threshold: 0.3 }).observe(document.getElementById('stats'));
     })();
 
-    /* MOBILE HAMBURGER */
+    /* MOBILE HAMBURGER (legacy) */
     (function(){
       const btn = document.getElementById('hamburgerBtn');
       const menu = document.getElementById('mobileMenu');
+      if (!btn || !menu) return; // nothing to do when using Bootstrap collapse
       btn.addEventListener('click', () => {
         const open = menu.classList.toggle('open');
         btn.setAttribute('aria-expanded', open);
