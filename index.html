@@ -67,8 +67,8 @@
     section { overflow: hidden; }
 
     /* ══ UTILITIES ══ */
-    .section-pad   { padding: 90px 0; }
-    .section-pad-sm{ padding: 60px 0; }
+    .section-pad   { padding: 50px 0; }
+    .section-pad-sm{ padding: 40px 0; }
     .badge-tag { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: 12px; }
     .badge-tag::before { content: "─── "; opacity: .5; }
     .badge-tag::after  { content: " ───"; opacity: .5; }
@@ -159,7 +159,7 @@
     }
     .hero-title-new .accent { color: #0d9488; }
 
-    .hero-desc-new { color: var(--muted); font-size: 1rem; max-width: 440px; margin-bottom: 32px; line-height: 1.75; }
+    .hero-desc-new { color: var(--muted); font-size: 1rem; max-width: 440px; margin-bottom: 15px; line-height: 1.75; }
     .hero-actions-new { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
 
     .btn-gold { display: inline-flex; align-items: center; gap: 9px; padding: 13px 28px; background: var(--gold); color: #fff; border: 2px solid var(--gold); border-radius: var(--r-sm); font-family: var(--font-b); font-size: .9rem; font-weight: 600; cursor: pointer; transition: var(--t); }
@@ -175,7 +175,7 @@
 
     .hero-right { position: relative; z-index: 2; animation: fadeUp .8s var(--ease) .25s both; }
 
-    .doctor-card { position: relative; background: #fff; border-radius: var(--r-xl); box-shadow: var(--sh-lg); overflow: hidden; max-width: 400px; margin: 0 auto; }
+    .doctor-card { position: relative; background: #fff; border-radius: var(--r-xl); box-shadow: var(--sh-lg); overflow: hidden; width: 500px; margin: ; }
     .doctor-card-img-wrap { width: 100%; height: 420px; background: linear-gradient(160deg,#cde4f9 0%,#a8d4f5 40%,#89bfef 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .doctor-card-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .6s var(--ease); }
     .doctor-card:hover .doctor-card-img { transform: scale(1.04); }
@@ -218,7 +218,7 @@
     /* ══════════════════════════════════════
        NEW ABOUT SECTION
     ══════════════════════════════════════ */
-    .about-new { padding: 96px 0; background: var(--clr-white); font-family: var(--font-b); }
+    .about-new {background: var(--clr-white); font-family: var(--font-b); }
     .about-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
     .about-eyebrow::before, .about-eyebrow::after { content: ''; display: block; width: 28px; height: 2px; background: var(--gold); border-radius: 2px; opacity: .6; }
 
@@ -270,14 +270,14 @@
     /* ══ STATS ══ */
     .stats-section { background: linear-gradient(135deg,var(--clr-primary) 0%,var(--clr-primary-lt) 100%); position: relative; }
     .stats-section::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-    .stat-card { text-align: center; padding: 40px 20px; position: relative; }
+    .stat-card { text-align: center; position: relative; }
     .stat-card::after { content: ""; position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(255,255,255,.15); }
     .stat-card:last-child::after { display: none; }
     .stat-number { font-size: clamp(2.4rem,4vw,3.4rem); font-family: var(--font-head); font-weight: 700; color: var(--clr-white); line-height: 1; }
     .stat-label { color: rgba(255,255,255,.7); font-size: .88rem; font-weight: 500; margin-top: 8px; text-transform: uppercase; letter-spacing: .08em; }
 
     /* ══ CAROUSEL SHARED ══ */
-    .events-section { background: var(--clr-white); }
+    .events-section { background: var(--clr-bg); }
     .testimonials-section { background: var(--clr-bg); }
     .blog-section { background: var(--clr-bg); }
     .carousel-outer { position: relative; }
@@ -405,8 +405,8 @@
       .section-pad { padding: 60px 0; }
       .section-pad-sm { padding: 40px 0; }
       .about-new { padding: 60px 0; }
-      .hero { min-height: auto; padding: 72px 0 56px; }
-      .doctor-card-img-wrap { height: 320px; }
+      .hero { min-height: auto; margin-top: -50px;}
+      .doctor-card-img-wrap { height: 320px;}
       .float-exp, .float-emer { display: none; }
       .float-sat { right: 0; top: 14px; bottom: auto; transform: none; }
       .feature-list-new { grid-template-columns: 1fr; }
@@ -419,6 +419,7 @@
       .c-arrow { display: none; }
     }
     @media (max-width: 480px) {
+      .hero { padding-top: 84px; }
       .hero-title-new { font-size: 2.1rem; }
       .trust-strip { flex-direction: row; }
       .stat-card { padding: 28px 12px; }
@@ -502,11 +503,11 @@
   <!-- ══════════════════════════════════════
        NEW HERO SECTION
   ══════════════════════════════════════ -->
-  <section class="hero" id="hero">
+  <section class="hero pb-3" id="hero">
     <div class="hero-grid-lines"></div>
     <div class="hero-blob-1"></div>
     <div class="hero-blob-2"></div>
-    <div class="container py-5">
+    <div class="container ">
       <div class="row align-items-center gy-5">
 
         <!-- LEFT -->
@@ -523,7 +524,7 @@
             <span class="en">Expert orthopaedic treatment led by Dr. Intekhab Alam. 15+ years of precision care — from complex fractures to joint replacements — all under one roof.</span>
             <span class="hi lang-hidden">डॉ. इंतेखाब आलम द्वारा विशेषज्ञ ऑर्थोपेडिक उपचार। 30+ वर्षों का अनुभव — एक ही छत के नीचे।</span>
           </p>
-          <div class="hero-actions-new">
+          <!-- <div class="hero-actions-new">
             <a href="appointment.html" class="btn-gold">
               <i class="fa-regular fa-calendar-check"></i>
               <span class="en">Book Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट लें</span>
@@ -532,12 +533,8 @@
               <i class="fa-solid fa-play" style="font-size:.65rem"></i>
               <span class="en">Learn More</span><span class="hi lang-hidden">और जानें</span>
             </a>
-          </div>
+          </div> -->
           <div class="trust-strip">
-            <!-- <div class="trust-item">
-              <div class="trust-num">15+</div>
-              <div class="trust-lbl"><span class="en">Doctors</span><span class="hi lang-hidden">डॉक्टर</span></div>
-            </div> -->
             <div class="trust-item">
               <div class="trust-num">20k+</div>
               <div class="trust-lbl"><span class="en">Patients</span><span class="hi lang-hidden">मरीज</span></div>
@@ -557,16 +554,17 @@
         <div class="col-lg-6 hero-right">
           <div style="position:relative; padding: 24px 60px 24px 60px;">
             <!-- Floating: Experience -->
-            <div class="float-card float-exp mt-5">
+            <!-- <div class="float-card float-exp mt-5">
               <div class="float-card-icon"><i class="fa-solid fa-user-doctor"></i></div>
               <div>
                 <div class="float-card-title"><span class="en">Experienced Doctors</span><span class="hi lang-hidden">अनुभवी डॉक्टर</span></div>
                 <div class="float-card-sub">AMU · Apollo · Fortis trained</div>
               </div>
-            </div>
+            </div> -->
 
 
             <!-- Doctor card -->
+             
             <div class="doctor-card">
               <div class="doctor-card-img-wrap">
                 <img src="images/doctor/intekhabalam.jpg" alt="Dr. Intekhab Alam" class="doctor-card-img"
@@ -575,9 +573,11 @@
               <div class="doctor-card-footer">
                 <div class="doctor-card-name">Dr. Intekhab Alam</div>
                 <div class="doctor-card-spec">MS Orthopaedics · Fast Track Orthopaedic Care</div>
-                <!-- <div class="doctor-avail"><span class="en">Available Today</span><span class="hi lang-hidden">आज उपलब्ध</span></div> -->
               </div>
             </div>
+
+            <!-- <div class="doctor-avail"><span class="en">Available Today</span><span class="hi lang-hidden">आज उपलब्ध</span></div> -->
+
             <!-- Floating: Emergency -->
             <!-- <div class="float-card float-emer">
               <div class="float-card-icon"><i class="fa-solid fa-truck-medical"></i></div>
@@ -586,6 +586,7 @@
                 <div class="float-card-sub"><span class="en">24 × 7 rapid response</span><span class="hi lang-hidden">24×7 त्वरित सहायता</span></div>
               </div>
             </div> -->
+            
             <!-- Floating: Satisfaction -->
             <!-- <div class="float-card float-sat">
               <div class="float-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
@@ -651,9 +652,9 @@
   <!-- ══════════════════════════════════════
       ABOUT SECTION
   ══════════════════════════════════════ -->
-  <section class="about-new" id="about">
+  <section class="about-new section-pad" id="about">
     <div class="container">
-      <div class="row align-items-center gy-5">
+      <div class="row align-items-center ">
 
         <!-- LEFT: Gallery -->
         <div class="col-lg-5" data-aos="fade-right">
@@ -679,10 +680,10 @@
                 <img src="images/facilty/facilty (5).jpeg" alt="Physio" onerror="this.parentNode.style.background='#ede0f4'"/>
               </div>
             </div>
-            <div class="gallery-badge">
+            <!-- <div class="gallery-badge">
               <div class="num">30+</div>
               <div class="lbl"><span class="en">Years Experience</span><span class="hi lang-hidden">वर्ष अनुभव</span></div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -852,9 +853,9 @@
   </section>
 
   <!-- FACILITY CAROUSEL -->
-  <section class="facility-section section-pad" id="facility" style="background:var(--clr-bg)">
+  <section class="facility-section " id="facility" style="background:var(--clr-bg)">
     <div class="container">
-      <div class="text-center mb-5" data-aos="fade-up">
+      <div class="text-center mb-3" data-aos="fade-up">
         <span class="badge-tag"><span class="en">Infrastructure</span><span class="hi lang-hidden">बुनियादी ढांचा</span></span>
         <h2 class="section-title"><span class="en">Our World-Class Facilities</span><span class="hi lang-hidden">हमारी विश्वस्तरीय सुविधाएं</span></h2>
         <div class="divider"></div>
@@ -887,7 +888,7 @@
         <div class="divider"></div>
         <p class="section-sub"><span class="en">A glimpse of our milestones, conferences, live surgeries, and international workshops.</span><span class="hi lang-hidden">हमारी उपलब्धियों, सम्मेलनों और अंतर्राष्ट्रीय कार्यशालाओं की एक झलक।</span></p>
       </div>
-      <div class="carousel-outer px-4" data-aos="fade-up">
+      <div class="carousel-outer" data-aos="fade-up">
         <button class="c-arrow prev" id="gallPrev"><i class="fa-solid fa-chevron-left"></i></button>
         <button class="c-arrow next" id="gallNext"><i class="fa-solid fa-chevron-right"></i></button>
         <div class="carousel-viewport" id="gallViewport">
