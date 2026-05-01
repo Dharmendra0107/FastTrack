@@ -207,10 +207,10 @@
        FEATURES STRIP
     ══════════════════════════════════════ */
     .features-strip { background: var(--clr-white); box-shadow: var(--shadow-md); position: relative; z-index: 5; }
-    .feature-card { padding: 30px 24px; border-right: 1px solid var(--clr-border); display: flex; align-items: flex-start; gap: 16px; transition: var(--transition); }
+    .feature-card { padding: 30px 24px; border-right: 1px solid var(--clr-border); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; transition: var(--transition); }
     .feature-card:last-child { border-right: none; }
     .feature-card:hover { background: #f8fbff; }
-    .feature-card .icon-wrap { width: 54px; height: 54px; border-radius: var(--radius-md); background: linear-gradient(135deg,#e6f0fb,#d0e4f7); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--clr-primary); flex-shrink: 0; transition: var(--transition); }
+    .feature-card .icon-wrap { width: 54px; height: 54px; border-radius: var(--radius-md); background: linear-gradient(135deg,#e6f0fb,#d0e4f7); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--clr-primary); flex-shrink: 0; transition: var(--transition); margin-bottom: 2px; }
     .feature-card:hover .icon-wrap { background: var(--clr-primary); color: var(--clr-white); transform: scale(1.08); }
     .feature-card h4 { font-size: 1rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 4px; }
     .feature-card p { font-size: .83rem; color: var(--clr-muted); margin: 0; line-height: 1.5; }
@@ -377,10 +377,10 @@
     .footer-contact-item i { color: var(--clr-accent); font-size: .95rem; margin-top: 3px; flex-shrink: 0; }
     .footer-contact-item span { font-size: .88rem; color: rgba(255,255,255,.7); }
     .footer-hours { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-md); padding: 18px; margin-top: 8px; }
-    .hours-row { display: flex; justify-content: space-between; font-size: .85rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .hours-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: .85rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
     .hours-row:last-child { border-bottom: none; }
-    .hours-row .day { color: rgba(255,255,255,.6); }
-    .hours-row .time { color: var(--clr-white); font-weight: 500; }
+    .hours-row .day { color: rgba(255,255,255,.6); white-space: nowrap; }
+    .hours-row .time { color: var(--clr-white); font-weight: 500; white-space: nowrap; }
     .hours-row .open { color: var(--clr-teal); }
     .footer-bottom { margin-top: 60px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.08); text-align: center; font-size: .82rem; color: rgba(255,255,255,.4); }
     .footer-bottom a { color: var(--clr-accent); }
@@ -456,6 +456,10 @@
       .panel-points { grid-template-columns: 1fr; }
       .appt-form-card { padding: 28px 20px; }
       .c-arrow { display: none; }
+      .footer-brand-col { text-align: center; }
+      .footer-brand-col .footer-logo img { margin-left: auto; margin-right: auto; }
+      .footer-brand-col .footer-desc { margin-left: auto; margin-right: auto; }
+      .footer-brand-col .footer-social { justify-content: center; }
     }
     @media (max-width: 480px) {
       .hero { padding-top: 84px; }
@@ -533,10 +537,7 @@
         <img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care" class="logo-hi" />
       </a>
 
-      <a href="appointment.html" class="nav-appt-btn btn d-flex d-md-none">
-          <span class="en">Book Appointment</span>
-          <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
-      </a>
+      <a href="appointment.html" class="nav-appt-btn btn d-flex d-md-none"><span class="en">Book Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट लें</span></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars"></i>
@@ -559,16 +560,15 @@
             <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">EN</button>
             <button class="lang-btn" id="btn-hi" onclick="setLanguage('hi')">हि</button>
           </div>
-          <a href="appointment.html" class="nav-appt-btn btn d-none d-lg-inline-block">
-            <span class="en">Book Appointment</span>
-            <span class="hi lang-hidden">अपॉइंटमेंट लें</span>
-          </a>
+          
+          <a href="appointment.html" class="nav-appt-btn btn d-none d-lg-inline-block"><span class="en">Book Appointment</span><span class="hi lang-hidden">अपॉइंटमेंट लें</span></a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- ══════════════════════════════════════
+
+<!-- ══════════════════════════════════════
        NEW HERO SECTION
   ══════════════════════════════════════ -->
   <section class="hero pb-3" id="hero">
@@ -639,8 +639,8 @@
                   onerror="this.style.display='none'; this.parentNode.innerHTML += '<div style=\'display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;gap:12px\'><i class=\'fa-solid fa-user-doctor\' style=\'font-size:4rem;color:#1254a0;opacity:.4\'></i><span style=\'font-family:Cormorant Garamond,serif;font-size:1.1rem;color:#09274d;opacity:.6\'>Dr. Intekhab Alam</span></div>'" />
               </div>
               <div class="doctor-card-footer">
-                <div class="doctor-card-name">Dr. Intekhab Alam</div>
-                <div class="doctor-card-spec">MS Orthopaedics · Fast Track Orthopaedic Care</div>
+                <div class="doctor-card-name"><span class="en">Dr. Intekhab Alam</span><span class="hi lang-hidden">डॉ. इंतेखाब आलम</span></div>
+                <div class="doctor-card-spec"><span class="en">MS (Ortho.) · AMU · Joint Replacement Surgeon, Lucknow</span><span class="hi lang-hidden">एमएस (ऑर्थो.) · AMU · जॉइंट रिप्लेसमेंट सर्जन, लखनऊ</span></div>
               </div>
             </div>
 
@@ -677,7 +677,7 @@
   <section class="features-strip">
     <div class="container-fluid px-0">
       <div class="row g-0">
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
           <div class="feature-card">
             <div class="icon-wrap"><i class="fa-solid fa-user-doctor"></i></div>
             <div>
@@ -686,7 +686,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
           <div class="feature-card">
             <div class="icon-wrap"><i class="fa-solid fa-truck-medical"></i></div>
             <div>
@@ -695,7 +695,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
           <div class="feature-card">
             <div class="icon-wrap"><i class="fa-solid fa-stethoscope"></i></div>
             <div>
@@ -704,7 +704,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
           <div class="feature-card">
             <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
             <div>
@@ -731,17 +731,17 @@
               <img id="galleryMain" src="images/gallary/front.png" alt="Hospital facility"
                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBlOGY0Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzYwNzU5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkhvc3BpdGFsIEZhY2lsaXR5PC90ZXh0Pjwvc3ZnPg=='"/>
               <div class="gallery-main-overlay">
-                <span class="gallery-main-tag" id="galleryTag">Advanced Operation Theatre</span>
+                <span class="gallery-main-tag" id="galleryTag">The Hospital</span>
               </div>
             </div>
             <div class="gallery-thumbs">
-              <div class="gallery-thumb active" data-src="images/gallary/front.png" data-tag="Advanced Operation Theatre" onclick="switchGallery(this)">
+              <div class="gallery-thumb active" data-src="images/gallary/front.png" data-tag="The Hospital" onclick="switchGallery(this)">
                 <img src="images/gallary/front.png" alt="OT" onerror="this.parentNode.style.background='#cde4f9'"/>
               </div>
-              <div class="gallery-thumb" data-src="images/facilty/facilty (1).jpeg" data-tag="100 Beds Facility" onclick="switchGallery(this)">
+              <div class="gallery-thumb" data-src="images/facilty/facilty (1).jpeg" data-tag="In-House Diagnostic Lab" onclick="switchGallery(this)">
                 <img src="images/facilty/facilty (1).jpeg" alt="Beds" onerror="this.parentNode.style.background='#dcfce7'"/>
               </div>
-              <div class="gallery-thumb" data-src="images/facilty/facilty (4).jpeg" data-tag="In-House Diagnostic Lab" onclick="switchGallery(this)">
+              <div class="gallery-thumb" data-src="images/facilty/facilty (4).jpeg" data-tag="100 Beds Facility" onclick="switchGallery(this)">
                 <img src="images/facilty/facilty (4).jpeg" alt="Lab" onerror="this.parentNode.style.background='#fef3c7'"/>
               </div>
               <div class="gallery-thumb" data-src="images/facilty/facilty (5).jpeg" data-tag="Physiotherapy &amp; Rehab Unit" onclick="switchGallery(this)">
@@ -766,8 +766,8 @@
               <span class="hi lang-hidden">उन्नत स्वास्थ्य सेवाएं<br/>प्रदान करना</span>
             </h2>
             <p class="about-desc-new">
-              <span class="en">Fast Track Orthopaedic Care is Lucknow's premier orthopaedic centre led by Dr. Intekhab Alam — MBBS &amp; MS Orthopaedics from AMU. With ex-consultant experience at Apollo, Max, and Fortis hospitals, we deliver world-class surgical precision combined with compassionate patient care.</span>
-              <span class="hi lang-hidden">Fast Track Orthopaedic Care लखनऊ का प्रमुख ऑर्थोपेडिक केंद्र है। डॉ. इंतेखाब आलम के नेतृत्व में — अपोलो, मैक्स और फोर्टिस में पूर्व परामर्शदाता।</span>
+              <span class="en">Dr. Intekhab Alam is a skilled orthopaedics and joint replacement surgeon in Lucknow with over 14 years of experience in treating joint and musculoskeletal conditions. He practices at Fast Track Orthocare, providing expert diagnosis and advanced surgical and non-surgical orthopaedic care. He completed his MBBS and MS (Ortho.) from Aligarh Muslim University (AMU), Aligarh, and later worked as a Registrar at Jawaharlal Nehru Medical College, AMU, before gaining extensive experience at leading centres including Fortis Memorial Research Institute, Gurugram, Max Healthcare, Saket, New Delhi, and Apollo Hospital, Lucknow. He specializes in knee and hip replacement surgery, arthritis management, sports injuries, fractures, and other orthopaedic disorders, with a patient-focused and evidence-based approach.</span>
+              <span class="hi lang-hidden">डॉ. इंतेखाब आलम लखनऊ के एक अनुभवी ऑर्थोपेडिक्स और जॉइंट रिप्लेसमेंट सर्जन हैं, जिन्हें जोड़ों और मस्कुलोस्केलेटल समस्याओं के इलाज में 14+ वर्षों का अनुभव है। वे Fast Track Orthocare में विशेषज्ञ निदान और आधुनिक सर्जिकल तथा नॉन-सर्जिकल ऑर्थोपेडिक देखभाल प्रदान करते हैं। उन्होंने MBBS और MS (Ortho.) अलीगढ़ मुस्लिम विश्वविद्यालय (AMU), अलीगढ़ से किया है। इसके बाद उन्होंने जवाहरलाल नेहरू मेडिकल कॉलेज, AMU में रजिस्ट्रार के रूप में कार्य किया और Fortis Memorial Research Institute, गुरुग्राम, Max Healthcare, साकेत, नई दिल्ली, तथा Apollo Hospital, लखनऊ जैसे प्रमुख संस्थानों में व्यापक अनुभव प्राप्त किया। वे घुटने और कूल्हे की जॉइंट रिप्लेसमेंट सर्जरी, आर्थराइटिस मैनेजमेंट, स्पोर्ट्स इंजरी, फ्रैक्चर और अन्य ऑर्थोपेडिक समस्याओं के उपचार में विशेषज्ञ हैं और patient-focused, सुरक्षित तथा evidence-based इलाज पर जोर देते हैं।</span>
             </p>
             <ul class="feature-list-new">
               <li><span class="fi"><i class="fa-solid fa-check"></i></span><span><span class="en">Qualified &amp; Experienced Doctors</span><span class="hi lang-hidden">योग्य और अनुभवी डॉक्टर</span></span></li>
@@ -777,7 +777,7 @@
               <li><span class="fi"><i class="fa-solid fa-check"></i></span><span><span class="en">In-House Diagnostics &amp; Lab</span><span class="hi lang-hidden">इन-हाउस डायग्नोस्टिक्स</span></span></li>
               <li><span class="fi"><i class="fa-solid fa-check"></i></span><span><span class="en">Post-Op Rehab &amp; Physiotherapy</span><span class="hi lang-hidden">ऑपरेशन के बाद पुनर्वास</span></span></li>
             </ul>
-            <div class="about-stats-new">
+            <!-- <div class="about-stats-new">
               <div class="about-stat-card">
                 <div class="snum">25+</div>
                 <div class="slbl"><span class="en">Years of Excellence</span><span class="hi lang-hidden">उत्कृष्टता के वर्ष</span></div>
@@ -790,8 +790,8 @@
                 <div class="snum">10k+</div>
                 <div class="slbl"><span class="en">Surgeries Done</span><span class="hi lang-hidden">सर्जरी पूर्ण</span></div>
               </div>
-            </div>
-            <a href="about.html" class="btn-navy-new">
+            </div> -->
+            <a href="about.html" class="btn-navy-new rounded-pill">
               <span class="en">View More</span><span class="hi lang-hidden">और देखें</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
@@ -934,11 +934,11 @@
         <button class="c-arrow next" id="facNext"><i class="fa-solid fa-chevron-right"></i></button>
         <div class="carousel-viewport" id="facViewport">
           <div class="carousel-track" id="facTrack">
-            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (1).jpeg" alt="100 Beds" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-bed-pulse"></i></div><h4 class="fac-title"><span class="en">100 Beds Facility</span><span class="hi lang-hidden">100 बेड की सुविधा</span></h4><p class="fac-desc"><span class="en">Spacious, hygienic wards with dedicated nursing care round the clock.</span><span class="hi lang-hidden">समर्पित नर्सिंग देखभाल के साथ विशाल और स्वच्छ वार्ड।</span></p></div></div></div>
-            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (2).jpeg" alt="Ambulance" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-truck-medical"></i></div><h4 class="fac-title"><span class="en">24/7 Ambulance Service</span><span class="hi lang-hidden">24/7 एम्बुलेंस सेवा</span></h4><p class="fac-desc"><span class="en">Fully equipped ambulances available at all hours for rapid patient transport.</span><span class="hi lang-hidden">त्वरित परिवहन के लिए पूरी तरह सुसज्जित एम्बुलेंस।</span></p></div></div></div>
-            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (3).jpeg" alt="OT" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-microscope"></i></div><h4 class="fac-title"><span class="en">Advanced Operation Theatre</span><span class="hi lang-hidden">उन्नत ऑपरेशन थियेटर</span></h4><p class="fac-desc"><span class="en">State-of-the-art OT with laminar airflow and advanced surgical equipment.</span><span class="hi lang-hidden">लैमिनार एयरफ्लो और उन्नत सर्जिकल उपकरणों से सुसज्जित।</span></p></div></div></div>
-            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (4).jpeg" alt="Lab" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-flask"></i></div><h4 class="fac-title"><span class="en">In-House Diagnostic Lab</span><span class="hi lang-hidden">इन-हाउस डायग्नोस्टिक लैब</span></h4><p class="fac-desc"><span class="en">Pathology, X-ray, and imaging under one roof for faster diagnosis.</span><span class="hi lang-hidden">तेज़ निदान के लिए पैथोलॉजी, एक्स-रे और इमेजिंग।</span></p></div></div></div>
-            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (5).jpeg" alt="Physio" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-dumbbell"></i></div><h4 class="fac-title"><span class="en">Physiotherapy &amp; Rehab Unit</span><span class="hi lang-hidden">फिजियोथेरेपी और रिहैब यूनिट</span></h4><p class="fac-desc"><span class="en">Dedicated rehabilitation space with modern physio equipment and expert therapists.</span><span class="hi lang-hidden">आधुनिक उपकरणों और विशेषज्ञ थेरेपिस्ट के साथ पुनर्वास केंद्र।</span></p></div></div></div>
+            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (4).jpeg" alt="100 Beds" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-bed-pulse"></i></div><h4 class="fac-title"><span class="en">100 Beds Facility</span><span class="hi lang-hidden">100 बेड की सुविधा</span></h4><p class="fac-desc"><span class="en">Spacious, hygienic wards with dedicated nursing care round the clock.</span><span class="hi lang-hidden">समर्पित नर्सिंग देखभाल के साथ विशाल और स्वच्छ वार्ड।</span></p></div></div></div>
+            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty ().jpeg" alt="Ambulance" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-truck-medical"></i></div><h4 class="fac-title"><span class="en">24/7 Ambulance Service</span><span class="hi lang-hidden">24/7 एम्बुलेंस सेवा</span></h4><p class="fac-desc"><span class="en">Fully equipped ambulances available at all hours for rapid patient transport.</span><span class="hi lang-hidden">त्वरित परिवहन के लिए पूरी तरह सुसज्जित एम्बुलेंस।</span></p></div></div></div>
+            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (5).jpeg" alt="OT" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-microscope"></i></div><h4 class="fac-title"><span class="en">Advanced Operation Theatre</span><span class="hi lang-hidden">उन्नत ऑपरेशन थियेटर</span></h4><p class="fac-desc"><span class="en">State-of-the-art OT with laminar airflow and advanced surgical equipment.</span><span class="hi lang-hidden">लैमिनार एयरफ्लो और उन्नत सर्जिकल उपकरणों से सुसज्जित।</span></p></div></div></div>
+            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (1).jpeg" alt="Lab" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-flask"></i></div><h4 class="fac-title"><span class="en">In-House Diagnostic Lab</span><span class="hi lang-hidden">इन-हाउस डायग्नोस्टिक लैब</span></h4><p class="fac-desc"><span class="en">Pathology, X-ray, and imaging under one roof for faster diagnosis.</span><span class="hi lang-hidden">तेज़ निदान के लिए पैथोलॉजी, एक्स-रे और इमेजिंग।</span></p></div></div></div>
+            <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (3).jpeg" alt="Physio" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-dumbbell"></i></div><h4 class="fac-title"><span class="en">Physiotherapy &amp; Rehab Unit</span><span class="hi lang-hidden">फिजियोथेरेपी और रिहैब यूनिट</span></h4><p class="fac-desc"><span class="en">Dedicated rehabilitation space with modern physio equipment and expert therapists.</span><span class="hi lang-hidden">आधुनिक उपकरणों और विशेषज्ञ थेरेपिस्ट के साथ पुनर्वास केंद्र।</span></p></div></div></div>
             <div class="carousel-slide"><div class="facility-slide-card"><div class="fac-img-wrap"><img src="images/facilty/facilty (1).jpeg" alt="Emergency" loading="lazy"/><div class="fac-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div><div class="fac-body"><div class="fac-icon-wrap"><i class="fa-solid fa-kit-medical"></i></div><h4 class="fac-title"><span class="en">24/7 Emergency &amp; Trauma Care</span><span class="hi lang-hidden">24/7 आपातकालीन और ट्रॉमा देखभाल</span></h4><p class="fac-desc"><span class="en">Always-ready emergency unit staffed for immediate orthopaedic trauma response.</span><span class="hi lang-hidden">तत्काल ऑर्थोपेडिक ट्रॉमा के लिए सदैव तैयार आपातकालीन इकाई।</span></p></div></div></div>
           </div>
         </div>
@@ -1075,9 +1075,9 @@
   <footer class="site-footer" id="footer">
     <div class="container">
       <div class="row g-4 g-lg-5">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 footer-brand-col">
           <div class="footer-logo"><img src="images/logo/logoint.jpeg" alt="Fast Track Orthopaedic Care"/></div>
-          <p class="footer-desc"><span class="en">Expert orthopaedic care in Lucknow. Led by Dr. Intekhab Alam — Peoples Mobility First.</span><span class="hi lang-hidden">लखनऊ में विशेषज्ञ ऑर्थोपेडिक देखभाल।</span></p>
+          <p class="footer-desc"><span class="en">Expert orthopaedic care in Lucknow. Led by Dr. Intekhab Alam — Fast Track Orthocare.</span><span class="hi lang-hidden">लखनऊ में विशेषज्ञ ऑर्थोपेडिक देखभाल।</span></p>
           <div class="footer-social">
             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1108,13 +1108,13 @@
             <li><a href="department.html"><i class="fa-solid fa-chevron-right"></i><span class="en">Spine Care</span><span class="hi lang-hidden">स्पाइन केयर</span></a></li>
           </ul>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-2 col-md-6">
           <div class="footer-heading"><span class="en">Contact Info</span><span class="hi lang-hidden">संपर्क जानकारी</span></div>
           <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>529/078CC, Tedhi Pulia Ring Rd, Kalyanpur (East), Lucknow, U.P. 226022</span></div>
-          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:+919335030190" style="color:rgba(255,255,255,.7)">+91 93350 30190</a><br/><a href="tel:05223646448" style="color:rgba(255,255,255,.7)">0522-3646448</a></span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span><a href="tel:+919335030190" style="color:rgba(255,255,255,.7)">+91 93350 30190</a><br/><a href="tel:0522 3646448 " style="color:rgba(255,255,255,.7)">0522 3646448 </a></span></div>
           <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span><a href="mailto:info@fasttrackortho.com" style="color:rgba(255,255,255,.7)">info@fasttrackortho.com</a></span></div>
         </div>
-        <div class="col-lg-2 col-md-6">
+        <div class="col-lg-3 col-md-6">
           <div class="footer-heading"><span class="en">Opening Hours</span><span class="hi lang-hidden">खुलने का समय</span></div>
           <div class="footer-hours">
             <div class="hours-row"><span class="day"><span class="en">Mon – Fri</span><span class="hi lang-hidden">सोम – शुक्र</span></span><span class="time open"><span class="en">24 Hours</span><span class="hi lang-hidden">24 घंटे</span></span></div>
